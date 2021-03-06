@@ -1,0 +1,31 @@
+1 Introduction
+
+2 Quantum computing
+2.1 Mathematicalpreliminaries
+2.1.1 Hilbert-spaces
+2.1.2 Linear Operators on Hilbert Spaces
+2.1.3 Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma
+2.1.4 Pure and mixed quantum states
+2.1.5 Quantum Measurements, POVMs, Born-rule
+2.1.6 Circuit model of Quantum Computation, NOT, CNOT, Hadamard, RX, RZ, SWAP gates.
+2.1.7 Composite Quantum systems, Second quantization, Creation and Annihillation Operators
+2.1.8 Continuous Variable systems, Bosonic modes, linear and nonlinear gates
+2.1.9 CV Measurements, photon number resolving, Homodyne, Heterodyne
+
+3 Machine learning 
+3.1 Introduction
+3.1.1 Supervised learning
+3.1.2 Unsupervised learning
+3.1.3 Deep learning, neural networks, gradient descent
+3.1.4 Stochastic Gradient Descent, Adam
+3.1.5 Reinforcement learning.
+3.1.6 Proximal Policy Optimization
+
+4 Quantum Machine Learning
+4.1 Parametric Quantum Circuits 
+4.2 Calculating the Gradients of the parameters
+
+5 Results
+5.1 The Bose-Hubbard model, SGD
+5.2 Quantum Reinforcement learning (?)
+5.3 Quantum Autoencoder (?)

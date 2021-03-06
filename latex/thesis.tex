@@ -1,1 +1,552 @@
-alma
+\documentclass[12pt, a4paper]{article}
+
+%%%%%%%%%%%%%%%%%
+% Configuration %
+%%%%%%%%%%%%%%%%%
+\usepackage{allrunes}
+\usepackage{amsmath}
+% If magyar is wanted
+% \usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fixltx2e}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+% Nice algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Margins 
+\usepackage{anysize}
+\marginsize{1.64cm}{2.0cm}{1.2cm}{2.4cm} %\left right top bottom
+
+% Multiple languages
+\usepackage[english,magyar]{babel}
+
+% using circled symbols
+\usepackage{tikz}
+\newcommand*\circled[1]{
+    \tikz[baseline=(char.base)]{
+        \node[shape=circle,draw,inner sep=2pt] (char) {#1}
+    }
+}
+
+\newcommand{\ketbra}[2]{|#1\rangle\langle#2|}
+\newcommand{\Ketbra}[2]{\left|#1\right\rangle \left\langle#2\right|}
+
+%%%% Some things for fancier look %%%%
+\frenchspacing
+\setlength{\parskip}{2ex}
+\setlength{\headsep}{0,4cm}
+\setlength{\headheight}{4pt}
+
+% fej- es lábléc
+\usepackage{fancyhdr}
+\usepackage{fancyref}
+\usepackage{fancyvrb}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0,05pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\fancyhf{}
+\fancyhead[RE]{{ \nouppercase{\leftmark}} }
+\fancyhead[LO]{{ \nouppercase{\leftmark}} }
+\cfoot{--~\thepage~--}
+%%%%%%%%%
+
+% For quantum circuits.
+\usetikzlibrary{quantikz}
+
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+% Here you can configure the layout
+\usepackage{geometry}
+\geometry{top=1cm, bottom=1cm, left=1.25cm,right=1.25cm, includehead, includefoot}
+\setlength{\columnsep}{7mm} % Column separation width
+
+\usepackage{graphicx}
+
+%\usepackage{gensymb}
+\usepackage{float}
+
+% For bra-ket notation
+\usepackage{braket}
+
+% To have a good appendix
+\usepackage[toc,page]{appendix}
+
+\usepackage{abstract}
+\renewcommand{\abstractnamefont}{\normalfont\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%
+% Custom commands %
+%%%%%%%%%%%%%%%%%%%
+\newcommand{\bb}[1]{\mathbf{#1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Tr}[1]{\mathrm{Tr}\left[#1\right]}
+\newcommand{\Sp}[1]{\mathrm{Sp}\left[{#1}\right]}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{statement*}{Statement}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{problem}{Problem}
+\newtheorem{remark}{Remark}
+\newtheorem{statement}{Statement}
+
+%% COMMENTS
+\newcommand{\nd}[1]{\textcolor{Aquamarine}{\textbf{[Dani: #1]}}}
+
+% Hyperref should be generally the last package to load
+% Any configuration that should be done before the end of the preamble:
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    BEGIN    DOCUMENT                      % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\selectlanguage{english}
+\begin{center}
+\vspace*{5.0cm}
+\LARGE{Experimenting with machine learning algorithms on quantum computers}\\
+\vspace{2.0cm}
+\large{Nagy Dániel$^1$}\\
+\vspace{2.0cm}
+\large{
+    $^1$Institute for Physics, Eötvös Loránd University, H-1117, Pázmány Péter sétány 1/A. Budapest, Hungary\\%
+    \vspace{5.0cm}
+    Created on December 1, 2019\\
+    \vspace{1.0cm}
+    Last update: \today
+}
+\end{center}
+\thispagestyle{empty} %% No fancy
+\newpage
+
+\begin{center}
+    \textbf{Abstract}\\
+    \par A modern számítástechnika jelentős eredményei közé tartozik a gépi
+    tanulás és mesterséges intelligancia alapvető algoritmusainak kifejlesztése és ezek 
+    hasznosságának tesztelése különböző feladatokon. Ugyanakkor az elmúlt években a 
+    kvantumszámítás is jelentős fejlődésen ment keresztül, olyannyira, hogy 2019-ben a Google kísérleti
+    csapatának sikerült demonstrálnia a kvantumfölényt. A munka során megvizsgáljuk a két terület átfedéséből 
+    származó lehetőségeket: klasszikus adatok kvantumos feldolgozását illetve a klasszikus
+    gépi tanulás segítségével történő kvantumos hibajavítást.
+\end{center}
+\thispagestyle{empty} %% No fancy
+\newpage
+
+\selectlanguage{magyar}
+\begin{center}
+\vspace*{5.0cm}
+\LARGE{Gépi tanulási algoritmusok vizsgálata kvantumszámítógépeken}\\
+\vspace{2.0cm}
+\large{Nagy Dániel$^1$}\\
+\vspace{2.0cm}
+\large{
+    $^1$Eötvös Loránd Tudományegyetem, Fizika Intézet, H-1117, Pázmány Péter sétány 1/A. Budapest, Magyarország\\%
+    \vspace{5.0cm}
+    Elkezdve: December 1, 2019\\
+    \vspace{1.0cm}
+    Utolsó frissítés: \today
+}
+\end{center}
+\thispagestyle{empty} %% No fancy
+\newpage
+
+
+\begin{center}
+    \textbf{Kivonat}\\
+    \par A modern számítástechnika jelentős eredményei közé tartozik a gépi
+    tanulás és mesterséges intelligancia alapvető algoritmusainak kifejlesztése és ezek 
+    hasznosságának tesztelése különböző feladatokon. Ugyanakkor az elmúlt években a 
+    kvantumszámítás is jelentős fejlődésen ment keresztül, olyannyira, hogy 2019-ben a Google kísérleti
+    csapatának sikerült demonstrálnia a kvantumfölényt. A munka során megvizsgáljuk a két terület átfedéséből 
+    származó lehetőségeket: klasszikus adatok kvantumos feldolgozását illetve a klasszikus
+    gépi tanulás segítségével történő kvantumos hibajavítást.
+\end{center}
+\thispagestyle{empty} %% No fancy
+\newpage
+
+\selectlanguage{english}
+% Add a link target to the TOC itself
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\thispagestyle{empty}
+\listoffigures
+\newpage
+
+\section{Introduction}
+\section{Quantum computing}
+
+
+\section{Machine learning}
+\subsection{Reinforcement learning}
+\subsubsection{Proximal Policy optimization}
+\begin{equation}
+r_t(\theta) = \frac{\pi_{\theta}(a_t|s_t)}{\pi_{\theta_{\textrm{old}}}(a_t|s_t)}
+= \log\pi_{\theta}(a_t|s_t) - \log \pi_{\theta_{\textrm{old}}}(a_t|s_t)
+\end{equation}
+
+\begin{equation}
+    \delta_t = r_t + \gamma V^{\pi}(s_{t+1}) - V^{\pi}(s_t) 
+\end{equation}
+\begin{equation}
+    \hat A_t = \sum\limits_{l=0}^{T-t-1} (\gamma\lambda)^{l}\delta_{t+l}
+    = (\gamma\lambda)^0\delta_t + (\gamma\lambda)\delta_{t+1} + ... + (\gamma\lambda)^{T-t-1}\delta_{T-1}
+\end{equation}
+
+\begin{equation}
+L^{CLIP}(\theta) = \underset{t}{\LARGE{\mathbb E}}\left[\min\left(r_t(\theta)\hat A_t, \textrm{clip}(r_t(\theta),1-\epsilon,1+\epsilon)\hat A_t\right)\right]
+= \underset{t}{\LARGE{\mathbb E}} \left[
+    \min\left( r_t(\theta)\hat A_t, g(\epsilon,\hat A_t)
+    \right)
+\right]
+\end{equation}
+
+\begin{equation}
+g(\varepsilon, \hat A_t) = \begin{cases}
+(1+\epsilon) \hat A_t, ~\hat A_t \geq 0 \\
+(1-\epsilon) \hat A_t, ~\textrm{otherwise}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+V_{\textrm{targ}}^{\pi}(s_t) = \sum\limits_{l=0}^{T-t} \gamma^lr_{t+l}
+\end{equation}
+\begin{equation}
+L^{VF} = \underset{t}{\LARGE{\mathbb E}} \left[\left(V^{\pi}(s_t) - V_{\textrm{targ}}^{\pi}(s_t)\right)^2\right]
+\end{equation}
+
+
+
+
+
+\begin{equation}
+H[\pi] = \underset{t}{\LARGE{\mathbb E}}\left[
+-\sum\limits_{a\in \mathcal A}\pi_{\theta}(a|s_t)\log\pi_{\theta}(a|s_t)
+\right]
+\end{equation}
+
+\begin{equation}
+L = L^{CLIP} + c_1L^{VF} + c_2 H[\pi]
+\end{equation}
+
+\textbf{How to measure the entropy term for a quantum state $\rho$?}
+\textbf{How to measure the KL-divergence of two quantum states $\rho_1,\rho_2$?}
+\begin{algorithm}[H]
+    \caption{PPO-Clip}
+    \begin{algorithmic}[1]
+    \Procedure {PPOClip}{$\epsilon, E, N, T, K$}
+        \ForAll {$i \in \{1,...,E\}$}
+            \ForAll {$n \in \{1,...,N\}$}
+                \State Run the old policy $\pi_{\textrm{old}}$ in the environment for $T$ timesteps.
+                \ForAll{$t \in \{1,...,T\}$}
+                    \State Calculate the advantage estimate $\hat A_t$
+                \EndFor
+            \EndFor
+            \ForAll {$k \in \{1,...,K\}$}
+                \State Sample a batch of size $M\leq NT$ and optimize the surrogate loss $L$.
+            \EndFor
+        \EndFor
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\section{Quantum Machine Learning}
+\subsection{Parametric quantum circuits}
+\subsection{Calculating the gradients of the parameters}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\appendix
+\section{Mathematical preliminaries}
+
+\subsection{Hilbert spaces}
+\begin{definition}
+    \textbf{Hilbert-space}\\
+    Given a field $T$ (real or complex), a vector space $\mathcal H$ endowed with an inner product, is called a Hilbert-space, if
+    it is a complete metric space with respect to the distance function induced by the inner product.
+    \\
+    The inner product is a map $\braket{\cdot|\cdot}:\mathcal{H}\times\mathcal{H} \rightarrow T$, 
+    for which $\forall x,y,z \in \mathcal H$:
+    \begin{itemize}
+        \item $\braket{x|x} \geq 0$
+        \item $\braket{x|x} = 0 \Longleftrightarrow x = \bb 0 \in \mathcal H$
+        \item $\braket{x|y} = \braket{y|x}^*$, where $^*$ denotes complex conjugation.
+        \item $\braket{x|\alpha y + \beta z} = \alpha\braket{x|y} + \beta\braket{x|z}$, where $\alpha, \beta \in T$
+    \end{itemize}
+    The norm induced by this inner product is a map $||\cdot||:\mathcal H \rightarrow T$ defined as
+    \begin{equation*}
+        ||x||=\sqrt{\braket{x|x}},
+    \end{equation*}
+    And the metric induced by this norm is defined as
+    \begin{equation*}
+        d(x,y) = ||x - y|| = \sqrt{\braket{x - y|x - y}}.
+    \end{equation*}
+    The space $\mathcal H$ is said to be complete if every Cauchy-sequence is convergent with respect to the norm, and
+    the limit is in $\mathcal H$. That is, each sequence ${x_1, x_2, ... }$, for which 
+    \begin{equation*}
+        \forall \varepsilon > 0 ~ \exists N(\varepsilon) ~\textrm{so, that}~ n>m>N(\varepsilon) \implies ||x_n - x_m||<\varepsilon.
+    \end{equation*}
+\end{definition} 
+
+\begin{definition}
+    \textbf{Linear functional}\\
+    Let $\mathcal H$ be a Hilbert-space over the field $T$. Then, the map $\varphi:\mathcal H \rightarrow T$ is  
+    called a linear functional, if
+    \begin{equation*}
+        \varphi(\alpha x + \beta y) = \alpha \varphi(x) + \beta \varphi(y),~
+        \forall \alpha, \beta \in T,\, x, y \in \mathcal H.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+    \textbf{Dual space}\\
+    Given a Hilbert-space $\mathcal H$, its dual space, $\mathcal H^*$ is the space of all continuous linear
+    functionals from the space H into the base field.
+    The norm of an element in $\mathcal H^*$ is 
+    \begin{equation*}
+        ||\varphi||_{\mathcal H^*} \overset{def}{=} \underset{||x||=1,\, x \in \mathcal H}{\sup} |\varphi(x)|.
+    \end{equation*}
+\end{definition}
+
+\begin{theorem}
+    \textbf{Riesz representation theorem}\\
+    For every element $y \in \mathcal H$, there exists a unique element $\varphi_{y} \in \mathcal H^*$, defined by
+    \begin{equation*}
+        \varphi_{y}(x) = \braket{y| x},~\forall x \in \mathcal H.
+    \end{equation*}
+    The mapping $y \mapsto \varphi_{y}$ is an antilinear mapping i.e. $\alpha y_1 + \beta y_2 
+    \mapsto \alpha^* \varphi_{y_1} + \beta^* \varphi_{y_2}$, and the Riesz-representation theorem states 
+    that this mapping is an antilinear isomorphism. The inner product in $\mathcal H^*$ satisfies 
+    \begin{equation*}
+        \braket{\varphi_{x}|\varphi_{y}} = \braket{x|y}^* = \braket{y | x}.
+    \end{equation*}
+    Moreover, $||y||_{\mathcal H} = ||\varphi_{y}||_{\mathcal H^*}$.
+\end{theorem}
+
+\begin{definition}
+    \textbf{Dirac-notation}\\
+    From now on, the elements in $\mathcal H$ will be denoted by $\ket x$ and their corresponding
+    element in $\mathcal H^*$ as $\bra x$.
+\end{definition}
+
+\subsection{Linear operators on Hilbert spaces}
+
+\begin{definition}
+    \textbf{Linear operators}\\
+    A map $\hat A: \mathcal H_1 \rightarrow \mathcal H_2$ is a linear operator, if 
+    \begin{equation*}
+        \hat A (\alpha\ket x + \beta\ket y) = \alpha (\hat A \ket x) + \beta (\hat A \ket y).
+    \end{equation*}
+\end{definition}
+
+\begin{remark}
+    If not stated otherwise, we will assume that $\mathcal H_1 = \mathcal H_2 = \mathcal H$.
+\end{remark}
+
+\begin{remark}
+    Operators will be denoted with a hat ($\hat{\cdot}$).
+\end{remark}
+
+\begin{definition}
+    \textbf{Bounded linear operators}\\
+    A linear operator $\hat A: \mathcal H \rightarrow \mathcal H$ is bounded, if 
+    \begin{equation*}
+        \exists m \in \mathbb R : |\braket{v|\hat A | v}| \leq m\braket{v|v},\, \forall \ket v \in \mathcal H
+    \end{equation*}
+\end{definition}
+
+\begin{remark}
+    The set of all bounded operators on $\mathcal H$ is denoted $\mathcal{B(H)}$.
+\end{remark}
+
+
+\begin{definition}
+    \textbf{Commutators and anticommutators}\\
+    Since operators usually do not commute, its useful to define their commutator and anticommutator:
+    \begin{align*}
+        &[\hat A, \hat B] = \hat A\hat B - \hat B\hat A\\
+        &\{\hat A, \hat B\} = \hat A\hat B + \hat B\hat A
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    \textbf{Operator norm}\\
+    The operator norm of an operator $\hat A$ is defined as 
+    \begin{equation*}
+        ||\hat A|| \overset{def}{=} \inf\{c\geq 0 : ||\hat A\ket v || \leq c ||\ket v||,\,\forall \ket v \in \mathcal H \}
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+   \textbf{Trace-class operators}\\
+   An operator $\hat A$ is called trace-class if it admits a well defined and finite trace 
+   $\Tr{\hat A} = \sum\limits_j\braket{j|\hat A|j}$
+\end{definition}
+
+\begin{definition}
+    \textbf{Positive operators}\\
+    An operator $\hat A$ is called positive if $\braket{v|\hat A|v} \geq 0,\,\forall \ket v \in \mathcal{H}$.
+    If $\hat A = \sum\limits_j \lambda_j \ket j \bra j$ then $\hat A$ is positive if $\lambda_j \geq 0$.
+\end{definition}
+
+\begin{definition}
+    \textbf{Projections}
+    An operator $\Pi:\mathcal H \rightarrow \mathcal H$ is a projection if $\Pi^2=\Pi$.
+\end{definition}
+
+\subsection{Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma}
+\begin{definition}
+    \textbf{Hermitian adjoint}
+    \\Consider a \textbf{bounded} linear operator $\hat A: \mathcal H \rightarrow \mathcal H$. The hermitian adjoint of 
+    $\hat A$ is a bounded linear operator $\hat A^\dagger : \mathcal H \rightarrow \mathcal H$ which satisfies
+    \begin{equation}
+        \bra y \hat A \ket x = \left( \bra x \hat A^\dagger \ket y \right)^*, ~\forall \ket x, \ket y \in \mathcal H.
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    \textbf{Hermitian operators}
+    \\ A bounded linear operator $\hat H : \mathcal H\rightarrow \mathcal H$ is Hermitian if 
+    \begin{equation}
+        \hat H = \hat H^\dagger, \textrm{ i.e. } \hat H\ket x = \hat H^\dagger \ket x, ~\forall \ket x \in \mathcal H.
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    \textbf{Unitary operator}
+    \\A bounded linear operator $\hat U : \mathcal H\rightarrow \mathcal H$ is unitary if 
+    \begin{equation}
+        \hat U\hat U^\dagger = \hat U^\dagger \hat U = 1, \textrm{ in other words, } \hat U^{\dagger} = \hat U^{-1}. 
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    \textbf{Eigenvalues and eigenvectors}
+    \\Consider bounded linear operator $\hat A$. If exist a vectors $\ket k \in \mathcal H$ such that
+    \begin{equation}
+        \hat A \ket k = \lambda_k\ket k,
+    \end{equation}
+    then $\ket k$ is called an eigenvector of $\hat A$ and $\lambda k$ is the corresponding eigenvalue.
+\end{definition}
+
+An important property of Hermitian operators is that they can be diagonalized with real eigenvalues. 
+This is formally stated by the spectral theorem:
+\begin{theorem}
+    \textbf{The Spectral theorem}
+    \\Let $\hat A$ be a bounded Hermitian operator on some Hilbert-space $\mathcal H$. Then there exists an orthonormal
+    basis in $\mathcal H$ which consists of the eigenvectors of $\hat A$ and each eigenvalue of $\hat A$ is real.
+\end{theorem}
+This means that any bounded Hermitian operator $\hat H$ can be decomposed as 
+\begin{equation}
+    \hat H = \sum\limits_{k}\lambda_k \hat P_k = \sum\limits_{k}\lambda_k \ketbra{k}{k}
+\end{equation}
+where $\lambda_k$ and $\ket k$ are the eigenvalues and eigenvectors of $\hat H$.
+
+
+\begin{definition}
+    \textbf{Exponential of operators}
+    If $X$ is a linear operator, we can define the exponential of $X$:
+    \begin{equation*}
+        e^X = \sum\limits_{n=0}^\infty \frac{X^n}{n!} 
+    \end{equation*}
+\end{definition}
+\textbf{Important}:
+The product of exponentials of operators generally isn't equal to the exponential of their sum:
+\begin{equation*}
+    e^{X}e^{Y} = e^{Z(X,Y)}\neq e^{X+Y},
+\end{equation*}
+where $Z(X,Y)$ is given by the Baker-Campbell-Hausdorff formula:
+\begin{align*}
+    Z(X,Y) &= X + Y + \frac{1}{2}[X,Y] + \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]] -\frac{1}{24}[Y,[X,[X,Y]]] \\
+    & - \frac{1}{720}([[[[X,Y],Y],Y],Y] + [[[Y,X],X],X],X]) + ...
+\end{align*}
+It is however equal if $[X,Y]=0$:
+\begin{equation*}
+    \textrm{if}\,[X,Y]=0 \implies  e^{X}e^{Y} = e^{X+Y}
+\end{equation*}
+There are 2 important special cases:
+\begin{theorem}
+    \textbf{The Hadamard-lemma}
+    \begin{equation*}
+        e^XYe^{-X} = Y + [X,Y] + \frac{1}{2!}[X,[X,Y]] + \frac{1}{3!}[X,[X,[X,Y]]] + ...
+    \end{equation*}
+\end{theorem}
+
+\begin{theorem}
+    If $X$ and $Y$ commute with their commutator, i.e. $[X, [X,Y]] = [Y, [X,Y]] = 0$, then:
+    \begin{equation*}
+        e^Xe^Y = e^{X+Y+\frac{1}{2}[X,Y]}
+    \end{equation*}
+\end{theorem}
+
+\begin{theorem}
+    If $[X,Y] = sY$ with $s\in\mathbb{C}, s\neq 2i\pi n, n\in \mathbb Z$ then:
+    \begin{equation*}
+        e^Xe^Y = \exp\left(X + \frac{s}{1-e^{-s}}Y \right)
+    \end{equation*}
+\end{theorem}
+
+\subsection{Pure and mixed quantum states}
+\begin{definition}
+    \textbf{Quantum states}\\
+    A quantum state of a quantum system is a mathematical entity that provides a probability distribution 
+    for the outcomes of each possible measurement on the system.
+\end{definition}
+
+\begin{definition}
+    \textbf{Pure quantum states}\\
+    Pure quantum states are quantum states that can be described by a vector $\ket\psi$ of norm 1. 
+\end{definition}
+If one multiplies a pure quantum state by a complex scalar $e^{i\alpha}$, then the new state is 
+physically equivalent to the former, thus $\ket\psi$ and $e^{i\alpha}\ket\psi$ are 
+the same pure state.
+The transformation $\ket\psi\rightarrow e^{i\alpha}\ket\psi$ does not change the outcomes of measurements on the state,
+however the phase $\alpha$ is important in quantum algorithms.
+\begin{example*}
+    For example, the states $\frac{1}{\sqrt 2}(\ket 0 + e^{i\pi}\ket 1)$ and $\frac{1}{\sqrt 2}(\ket 0 + e^{i\frac{\pi}{2}}\ket 1)$
+    are not the same quantum state, but in both states there is 50-50 percent probability of measuring $\ket 0$ and $\ket 1$.
+\end{example*}
+
+\begin{definition}
+    \textbf{Density Matrix}\\
+    A quantum state $\hat\rho$ is a trace-1, self-adjoint, positive semidefinite operator.
+    The set of quantum states is
+    \begin{equation*}
+        \mathcal{S(H)} = \{ \hat\rho : \hat\rho \geq 0, \hat\rho=\hat\rho^{\dagger}, \Tr{\hat\rho} = 1 \}
+    \end{equation*}
+    A quantum state is pure if and only if $\hat\rho^2=\hat\rho$. 
+    Also, if $\rho$ is a pure state, then it can be written as $\hat\rho = \ketbra{\psi}{\psi}$.
+    The operator $\rho$ is called the \textit{density operator} or \textit{density matrix}.
+    \label{def:densityop}
+\end{definition}
+
+\end{document}

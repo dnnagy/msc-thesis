@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Quantum computing}{}% 2
+\BOOKMARK [1][-]{section.3}{Machine learning}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Reinforcement learning}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Proximal Policy optimization}{subsection.3.1}% 5
+\BOOKMARK [1][-]{section.4}{Quantum Machine Learning}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Parametric quantum circuits}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Calculating the gradients of the parameters}{section.4}% 8
+\BOOKMARK [1][-]{appendix.A}{Mathematical preliminaries}{}% 9
+\BOOKMARK [2][-]{subsection.A.1}{Hilbert spaces}{appendix.A}% 10
+\BOOKMARK [2][-]{subsection.A.2}{Linear operators on Hilbert spaces}{appendix.A}% 11
+\BOOKMARK [2][-]{subsection.A.3}{Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma}{appendix.A}% 12
+\BOOKMARK [2][-]{subsection.A.4}{Pure and mixed quantum states}{appendix.A}% 13
