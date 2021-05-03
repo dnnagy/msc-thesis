@@ -118,7 +118,7 @@
 \newtheorem{statement}{Statement}
 
 \usepackage[square,numbers]{natbib}
-\bibliographystyle{abbrvnat}
+\bibliographystyle{unsrtnat} %{abbrvnat}
 
 %% COMMENTS
 \newcommand{\nd}[1]{\textcolor{Aquamarine}{\textbf{[Dani: #1]}}}
@@ -241,20 +241,32 @@ With $H_k$ denoting the Hilbert-space of the $k$th mode, the Hilbert-space of th
 \end{equation}
 The Hamiltonian of mode $j$ can be described by introducing bosonic creation and annihilation operators $a_j^\dagger$ and $a_j$, obeying the following canonical commutation relations:
 \begin{align}
-    \left[a_j, a_k^\dagger \right] = \delta_{jk}, & \left[a_j^\dagger, a_k^\dagger\right] = \left[a_j, a_k\right] = 0.
+    \left[\op a_j, \op a_k^\dagger \right] = \delta_{jk}, & \left[\op a_j^\dagger, \op a_k^\dagger\right] = \left[\op a_j, \op a_k\right] = 0.
+\end{align}
+The effect of the creation and annihilation operators on the Fock space can be described by the 
+following identities:
+\begin{align}
+    \begin{split}
+    &\op a_k^{\dagger} \ket{n_1, \dots, n_k, \dots} = \sqrt{1+n_k}\ket{n_1, \dots, n_k + 1, \dots} \\
+    &\op a_k \ket{n_1, \dots, n_k, \dots} = \sqrt{n_k} \ket{n_1, \dots, n_k - 1, \dots} \\
+    \end{split}
+\end{align}
+We also introduce the number operator $\op n_j=\op a_j^\dagger \op a_k$:
+\begin{align}
+ &\op a_k^\dagger \op a_k |n_1, ..., n_k, ... \rangle = \op n_k |n_1, ..., n_k, ... \rangle = n_k |n_1, ..., n_k, ... \rangle
 \end{align}
 Each of the single-mode Hilbert-space $\mathcal H_k$ is an infinite-dimensional Fock-space spanned by the eigenvectors 
-of the number operator $n_k = a_k^\dagger a_k$ labeled $\{\ket{n}\}_k$.
+of the number operator $\op n_k = \op a_k^\dagger \op a_k$ labeled $\{\ket{n}\}_k$.
 It is often useful to introduce the canonical position operators $X_j$ and momentum operators $P_j$ which are related to the creation and annihilation operators
 by the following transformations:
 \begin{align}
-  X_j &= \frac{a_j+a_j^\dagger}{\sqrt{2}}  &  P_j &= \frac{a_j-a_j^\dagger}{i\sqrt{2}} \\ 
-  a_j &= \frac{X_j + iP_j}{\sqrt{2}}       & a_j^\dagger &= \frac{X_j - iP_j}{\sqrt{2}}
+  \op X_k &= \frac{\op a_k+\op a_k^\dagger}{\sqrt{2}}  & \op a_k &= \frac{\op X_k + i\op P_k}{\sqrt{2}}  \\ 
+  \op P_k &= \frac{\op a_k-\op a_k^\dagger}{i\sqrt{2}} & \op a_k^\dagger &= \frac{\op X_k - i\op P_k}{\sqrt{2}}
    \label{eq:jwtransform}
 \end{align}
-Operators $X_j$ and $P_j$ are called quadrature operators. Following the notation often used in literature, we group these operators into a vector 
+Operators $\op X_k$ and $\op P_k$ are called quadrature operators. Following the notation often used in literature, we group these operators into a vector 
 \begin{equation}
-    \pmb\xi^\top = (X_1, P_1, X_2, P_2, ..., X_j, P_j, ..., X_M, P_M)
+    \pmb\xi^\top = (\op X_1, \op P_1, \op X_2, \op P_2, ..., \op X_k, \op P_k, ..., \op X_M, \op P_M)
     \label{eq:xidef}
 \end{equation}
 We can calculate the commutators $\left[\pmb\xi_k,\pmb\xi_l\right]$ by introducing a symplectic form $\pmb\Omega$ as
@@ -270,6 +282,8 @@ Using this notation, we can write
     \left[\pmb\xi_k,\pmb\xi_l\right] = i\pmb\Omega_{kl}
 \end{equation}
 
+\nd{Write about homodyne measurements, heterodyne measurements and photon number-resolving measurements}
+\nd{Write about different quantum gates.}
 
 \section{Machine learning}
 \subsection{Classification and Regression}
@@ -354,22 +368,18 @@ Loss functions: regression, classification\\
 Regularization: keep trace close to zero, non-Gaussian\\
 }
 \subsection{Parametric quantum circuits}
-\subsection{Calculating the gradients of the parameters}
-In this section, we introduce the theory of calculating quantum gradients in the continuous variable setting. 
-We follow the notation of Shuld et. al. \cite{AnalyticGradientsSchuld}. A variational quantum circuit is 
-defined by a unitary $U(\pmb\theta),\, \pmb\theta\in\mathbb{R}^m$, an initial state $\ket{\psi_0}$ and a measurment 
-operator $B$. We can understand a variational citcuit as $f:\mathbb{R}^m \rightarrow \mathbb{R}$, \nd{The Schuld paper writes $f:\mathbb{R}^m \rightarrow \mathbb{R}^{\red n}$, maybe a typo???} 
-which maps the circuit parameters to the expectation value of operator $B$:
-\begin{equation}
-    f(\pmb\theta) = \bra{\psi_0}U^{\dagger}(\pmb\theta) B U(\pmb\theta)\ket{\psi_0}   
-\end{equation}
-In gradient-based optimizations, we need the gradient $\nabla_{\pmb\theta} f$, and this eventually means calculating the partial derivatives
-$\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observables are usually polynomials of the quadrature operators $X_j$ and $P_j$.
-
 \subsection{Variational Quantum Eigensolver}
+\label{sec:vqe}
 Variational Quantum Eigensolvers \cite{Peruzzo2014} are hybrid quantum-classical algorithms designed to find the lowest energy eigenvalue of some Hamiltonian $H$. VQEs are one of the most studied quantum algorithms because of their expected use cases in quantum chemistry and
-materials science \cite{Wei2020-QCHEM,VQE-HARTREE-FOCK,Kandala2017-VQE-QCHEM,PhysRevX-VQE-QCHEM}
-The basic idea behind the variational quantum eigensolver is as follows. First we fix the structure of a parametric quantum circuit called the ansatz, defined by a unitary $U(\pmb\theta)$, where $\pmb\theta\in\mathbb{R}^m$ are real parameters. Then we start by some initial state $\ket{\psi_0}$, which is usually $\ket 0^{\otimes M}$ in the qubit setting. For the continuous variable setting, the initial state can be a displaced, squeezed state, or a photon number eigenstate. In our work we used $\ket{\psi_0}=\ket{1}^{\otimes M}$ for our initial state i.e. we started with a single photon in each mode. After preparing the circuit, we evaluate the expectation value of the Hamiltonian which is eventually the cost, or loss:
+materials science \cite{Wei2020-QCHEM,VQE-HARTREE-FOCK,Kandala2017-VQE-QCHEM,PhysRevX-VQE-QCHEM}.
+The basic idea behind the variational quantum eigensolver is as follows. 
+First we fix the structure of a parametric quantum circuit called the ansatz, defined by a 
+unitary $U(\pmb\theta)$, where $\pmb\theta\in\mathbb{R}^m$ are real parameters. 
+Then we start by some initial state $\ket{\psi_0}$, which is usually $\ket 0^{\otimes M}$ 
+in the qubit setting. For the continuous variable setting, the initial state can be the vacuum state,
+a displaced state, a squeezed state, or a photon number eigenstate.
+After preparing the circuit, we evaluate the expectation value of the Hamiltonian
+which is eventually the cost, or loss:
 \begin{equation}
     \mathcal L(\pmb\theta) = \langle H \rangle = \bra{\psi_0}U^{\dagger}(\pmb\theta)HU(\pmb\theta)\ket{\psi_0}
 \end{equation}
@@ -392,6 +402,20 @@ the variational quantum eigensolver with a general gradient-based learning metho
     \end{algorithmic}
     \label{algo:vqe}
 \end{algorithm}
+\subsection{Calculating the gradients of the parameters}
+\label{sec:qgrad}
+In this section, we introduce the theory of calculating quantum gradients in the continuous variable setting. 
+We follow the notation of Shuld et. al. \cite{AnalyticGradientsSchuld}. A variational quantum circuit is 
+defined by a unitary $U(\pmb\theta),\, \pmb\theta\in\mathbb{R}^m$, an initial state $\ket{\psi_0}$ and a measurment 
+operator $B$. We can understand a variational citcuit as $f:\mathbb{R}^m \rightarrow \mathbb{R}$, \nd{The Schuld paper writes $f:\mathbb{R}^m \rightarrow \mathbb{R}^{\red n}$, maybe a typo???} 
+which maps the circuit parameters to the expectation value of operator $B$:
+\begin{equation}
+    f(\pmb\theta) = \bra{\psi_0}U^{\dagger}(\pmb\theta) B U(\pmb\theta)\ket{\psi_0}   
+\end{equation}
+In gradient-based optimizations, we need the gradient $\nabla_{\pmb\theta} f$, and this eventually means calculating the partial derivatives
+$\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observables are usually polynomials of the quadrature operators $X_j$ and $P_j$.
+
+
 
 \section{Results}
 \subsection{Regression}
@@ -425,7 +449,6 @@ the variational quantum eigensolver with a general gradient-based learning metho
 \end{figure}
 
 \subsection{CV-VQE for the Bose-Hubbard model}
-\nd{Analytic solution by diagonalization}
 The Bose-Hubbard model introduced first by Gersch and Knollman in 1963 for the description of interacting spinless bosons on a lattice, such as ultracold bosonic atoms on an optical lattice
 \cite{BoseHubbardOriginal,ColdAtomtHubbard}. This model has also gained popularity because it is found to be an adequate model for the description of the Superfluidity-Mott insulator (SF-MI) transition, which has been experimentally demonstrated \cite{SuperfluidityMottTransition,Greiner2002}.
 We chose this model, because an exact diagonalization of the Bose-Hubbard Hamiltonian with respect to a finite dimensional Fock-basis is possible and thus the model is numerically solvable. This enables the verification of the correctness of the results given by our variational quantum solver for small problem instances.
@@ -433,6 +456,7 @@ We chose this model, because an exact diagonalization of the Bose-Hubbard Hamilt
 The Bose Hubbard model which we used in our simulations is defined by the following Hamiltonian expressed with the bosonic creation and annihillation operators:
 \begin{equation}
      H = -t\sum\limits_{i=1}^{M-1}( a_{i}^\dagger  a_{i+1} +  a_{i+1}^\dagger  a_{i}) + \frac{U}{2}\sum\limits_{i=1}^{M} n_i^2 ,
+     \label{eq:bhhamiltonian}
 \end{equation}
 where $M$ is the number of bosonic modes in the system. If we restrict the total number of bosons in the system to be $N$, the dimension of the restricted Fock-space is
 \begin{equation}
@@ -440,6 +464,62 @@ where $M$ is the number of bosonic modes in the system. If we restrict the total
 \end{equation}
 which explosively grows with the system size. Therefore finding the groundstate of the Bose-Hubbard Hamiltonian for larger systems can be intractable even on classical supercomputers, making quantum computers, especially continuous-variable quantum computers a potential candidate for solving these problems in the future.
 Compared to the original definition of the Bose-Hubbard Hamiltonian, we omitted the term $-\mu\sum\limits_{i}^{M} n_i$, because it is not relevant in our particular experiments.
+
+\subsubsection{Solving the model by exact diagonalization}
+\nd{Analytic solution by diagonalization}
+If we want to calculate the groundstate of a Bose-Hubbard model, then we need to solve the 
+eigenvalue-problem of Hamiltonian \ref{eq:bhhamiltonian}.
+Of course a general Fock-space corresponding to a bosonic system is infinite-dimensional, therefore
+we have to restrict the system so that a maximum of $N$ particles are allowed in each mode:
+\begin{align*}
+|0,0, ..., 0\rangle, |0,0, ..., N\rangle, |0,0, ..., 1, N\rangle, ... |N,N,...,N\rangle.
+\end{align*}
+Then, we can relabel the Fock-states so that each Fock basis has its own unique label $j$:
+\begin{equation}
+|n_{M-1}, n_{M-2}, ... n_{1}, n_{0}\rangle = \left|\sum\limits_{k=0}^{M-1}n_{k}(N+1)^{k}\right\rangle.
+\end{equation}
+This is useful, because with these relabeled states we can calculate the matrix elements of the new 
+Hamiltonian:
+\begin{equation}
+    H_{jj'} = \bra{j}H\ket{j'} = \langle n_{M-1}, n_{M-2}, ... n_{1}, n_{0}| H |n'_{M-1}, n'_{M-2}, ... n'_{1}, n'_{0}\rangle
+\end{equation}
+We can further reduce the dimension of the Hilbert space if we prescribe that the total number of photons
+must be $N$:
+\begin{equation*}
+    \sum\limits_kn_k = N.
+\end{equation*}
+In this case for example if the number of modes is $M=4$ and the total number of particles is $N=4$,
+the dimension of the restricted Hilbert-space is only $35$.
+
+The resulting matrix $H_{jj'}$ is usually a sparse matrix (see fig. \ref{fig:exactdiagonalization}),
+and can be diagonalized using existing software.
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+      \includegraphics[height=0.2\textheight]{figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf} & \includegraphics[height=0.2\textheight]{figures/diagonalized_solutions_M=4_cutoff=4.pdf} \\
+      (a) & (b) \\[6pt]
+    \end{tabular}
+    \caption{(a) Visual representation of a sparse Hamiltonian matrix $H_{jj'}$ for a Bose-Hubbard model
+    with $\dim(\mathcal H)=35$.
+    Darker points show the non-zero elements in the matrix (b) Numerical solutions of the ground-state
+    energy for different $U$ and $t$ values.}
+    \label{fig:exactdiagonalization}
+\end{figure}
+
+\subsubsection{Variational solutions}
+VQEs introduced in section \ref{sec:vqe} are shown to be effective for simulating
+different fermionic quantum systems, like molecules or metals 
+\cite{Wei2020-QCHEM, VQE-HARTREE-FOCK, Kandala2017-VQE-QCHEM, PhysRevX-VQE-QCHEM}.
+In this chapter we demonstrate a photonic VQE for finding the ground-state energy of a Bose-Hubbard model.
+Furthermore, we show that stochastic gradient descent methods can be applied to the VQE to reduce
+the number of shots required, and thus reduce the overall cost of finding the ground state energy
+on a quantum hardware.
+\par
+The variational circuit $U(\pmb\theta)$ can be realized with sequences of quantum gates, in our case
+photonic quantum gates.
+Since we want the total number of particles in the system to be preserved during the simulations,
+we must use photon-number preserving gates only. We composed each quantum layer from 
+Beamsplitters, Kerr-gates and Cross-Kerr-gates (see fig. \ref{fig:single_layer_vqe}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.66\textwidth]{figures/BH-Ansatz.pdf}
@@ -448,7 +528,9 @@ Compared to the original definition of the Bose-Hubbard Hamiltonian, we omitted 
     total number of photons is preserved.}
     \label{fig:single_layer_vqe}
 \end{figure}
-
+Throughout the numerical experiments, we set initially one single photon in each of the four qumodes i.e.
+$\ket{\psi_0}=\ket{1}^{\otimes M}$, and applied a number of identical quantum layers 
+followed by quadrature measurements.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.66\textwidth]{figures/BH-layersearch-2.pdf}

@@ -1,7 +1,8 @@
 \select@language {english} \contentsline {figure}{\numberline {1}{\ignorespaces }}{11}{figure.1}%
-\select@language {english} \contentsline {figure}{\numberline {2}{\ignorespaces }}{11}{figure.2}%
+\select@language {english} \contentsline {figure}{\numberline {2}{\ignorespaces }}{12}{figure.2}%
 \select@language {english} \contentsline {figure}{\numberline {3}{\ignorespaces }}{12}{figure.3}%
 \select@language {english} \contentsline {figure}{\numberline {4}{\ignorespaces }}{12}{figure.4}%
-\select@language {english} \contentsline {figure}{\numberline {5}{\ignorespaces Illustration of a variational ansatz circuit with its first layer. Initially, each of the four qumodes contain a single photon. The layer is built up from Kerr-gates, CrossKerr gates and Beamsplitters, which are passive optical gates, so the total number of photons is preserved.}}{13}{figure.5}%
-\select@language {english} \contentsline {figure}{\numberline {6}{\ignorespaces }}{13}{figure.6}%
-\select@language {english} \contentsline {figure}{\numberline {7}{\ignorespaces caption}}{14}{figure.7}%
+\select@language {english} \contentsline {figure}{\numberline {5}{\ignorespaces (a) Visual representation of a sparse Hamiltonian matrix $H_{jj'}$ for a Bose-Hubbard model with $\qopname \relax o{dim}(\mathcal H)=35$. Darker points show the non-zero elements in the matrix (b) Numerical solutions of the ground-state energy for different $U$ and $t$ values.}}{14}{figure.5}%
+\select@language {english} \contentsline {figure}{\numberline {6}{\ignorespaces Illustration of a variational ansatz circuit with its first layer. Initially, each of the four qumodes contain a single photon. The layer is built up from Kerr-gates, CrossKerr gates and Beamsplitters, which are passive optical gates, so the total number of photons is preserved.}}{15}{figure.6}%
+\select@language {english} \contentsline {figure}{\numberline {7}{\ignorespaces }}{15}{figure.7}%
+\select@language {english} \contentsline {figure}{\numberline {8}{\ignorespaces caption}}{16}{figure.8}%
