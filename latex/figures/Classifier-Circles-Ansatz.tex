@@ -1,0 +1,19 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{tikz}
+\usetikzlibrary{quantikz}\begin{document}
+\[\begin{quantikz}[transparent]
+    \lstick{$\ket{0}$} & \gate[1]{D(x)} \gategroup[3,steps=1,style={dashed,
+        rounded corners, inner xsep=2pt},
+        background,label style={label position=below,anchor=
+        north,yshift=-0.2cm}]{{ \large{Encoding} }} & \gate[1]{D}  \gategroup[3,steps=9,style={dashed,
+        rounded corners, inner xsep=2pt},
+        background,label style={label position=below,anchor=
+        north,yshift=-0.2cm}]{{ \large{First layer} }} & \gate[2]{BS} &     \qw       & \gate[2]{BS} & \gate[1]{S} &     \qw      & \gate[2]{BS} &       \qw      & \gate[1]{K} & \qw \ldots \qw &\meter{$\langle X \rangle$} &\\
+    \lstick{$\ket{0}$} & \gate[1]{D(x)} & \gate[1]{D}  &              &  \gate[2]{BS} &              & \gate[1]{S} & \gate[2]{BS} &              &  \gate[2]{BS}  & \gate[1]{K} & \qw \ldots \qw &\meter{$\langle X \rangle$} &\\
+    \lstick{$\ket{0}$} & \gate[1]{I} & \gate[1]{D}  &      \qw     &               &     \qw      & \gate[1]{S} &              &      \qw     &                & \gate[1]{K} & \qw \ldots \qw &\meter{$\langle X \rangle$} &
+\end{quantikz}\]
+\end{document}

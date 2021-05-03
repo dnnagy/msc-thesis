@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.22)  6 MAR 2021 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.22)  3 MAY 2021 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,58 +23,6 @@ File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/allrunes.sty
-Package: allrunes 2004/01/06 v2.1 allrunes package.
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-LaTeX Info: Redefining \mdseries on input line 43.
-LaTeX Info: Redefining \bfseries on input line 55.
-
-
-! LaTeX Error: Command \swdefault already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.94 \newcommand{\swdefault}{t}
-                                % straight, low twigs
-? 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/arc.fd
-Now handling font encoding LRC ...
-... no UTF-8 mapping file for font encoding LRC
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/ara.fd
-Now handling font encoding LRA ...
-... no UTF-8 mapping file for font encoding LRA
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/arn.fd
-Now handling font encoding LRN ...
-... no UTF-8 mapping file for font encoding LRN
-LaTeX Info: Composite with undeclared \. in encoding LRN on input line 74.
-LaTeX Info: Composite with undeclared \" in encoding LRN on input line 78.
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/art.fd
-Now handling font encoding LRT ...
-... no UTF-8 mapping file for font encoding LRT
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/arl.fd
-Now handling font encoding LRL ...
-... no UTF-8 mapping file for font encoding LRL
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/allrunes/arm.fd
-Now handling font encoding LRM ...
-... no UTF-8 mapping file for font encoding LRM
-LaTeX Info: Composite with undeclared \. in encoding LRM on input line 122.
-LaTeX Info: Composite with undeclared \' in encoding LRM on input line 123.
-LaTeX Info: Composite with undeclared \^ in encoding LRM on input line 125.
-LaTeX Info: Composite with undeclared \~ in encoding LRM on input line 127.
-LaTeX Info: Composite with undeclared \= in encoding LRM on input line 128.
-LaTeX Info: Composite with undeclared \" in encoding LRM on input line 132.
-))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
@@ -244,6 +192,12 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -256,6 +210,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box48
 \@float@everytoks=\toks30
 \@floatcapt=\box49
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks31
 \c@algorithm=\count193
@@ -652,7 +609,7 @@ Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 60.
+less on input line 64.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/quantikz/tikzlibraryquantikz.code
@@ -920,6 +877,13 @@ File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 \c@remark=\count319
 \c@statement=\count320
 
+(/usr/local/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip81
+\bibsep=\skip82
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count321
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
@@ -959,8 +923,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen287
-\Hy@linkcounter=\count321
-\Hy@pagecounter=\count322
+\Hy@linkcounter=\count322
+\Hy@pagecounter=\count323
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
@@ -973,7 +937,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count323
+\Hy@SavedSpaceFactor=\count324
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -981,7 +945,7 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count324
+\c@Hy@tempcnt=\count325
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen288
 
@@ -992,7 +956,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count325
+\Fld@menulength=\count326
 \Field@Width=\dimen289
 \Fld@charsize=\dimen290
 Package hyperref Info: Hyper figures OFF on input line 6430.
@@ -1008,9 +972,9 @@ LaTeX Info: Redefining \pageref on input line 6504.
 (/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count326
-\c@Item=\count327
-\c@Hfootnote=\count328
+\Hy@abspage=\count327
+\c@Item=\count328
+\c@Hfootnote=\count329
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -1020,8 +984,8 @@ File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 (/usr/local/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
-\Fld@listcount=\count329
-\c@bookmark@seq@number=\count330
+\Fld@listcount=\count330
+\c@bookmark@seq@number=\count331
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -1032,53 +996,55 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip81
+\Hy@SectionHShift=\skip83
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 123.
- (./thesis.aux)
+Package hyperref Info: Option `colorlinks' set `true' on input line 130.
+
+
+LaTeX Warning: Unused global option(s):
+    [nobibnotes].
+
+(./thesis.aux
+
+LaTeX Warning: Label `fig:single_layer_regression' multiply defined.
+
+
+LaTeX Warning: Label `fig:single_layer_regression' multiply defined.
+
+
+LaTeX Warning: Label `fig:single_layer_vqe' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for LRC/fruc/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for LRA/frua/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for LRN/frun/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for LRT/frut/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for LRL/frul/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for LRM/frum/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-
-(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+ (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count331
+\scratchcounter=\count332
 \scratchdimen=\dimen291
 \scratchbox=\box86
-\nofMPsegments=\count332
-\nofMParguments=\count333
+\nofMPsegments=\count333
+\nofMParguments=\count334
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count334
+\MPscratchCnt=\count335
 \MPscratchDim=\dimen292
-\MPnumerator=\count335
-\makeMPintoPDFobject=\count336
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
 \everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1129,7 +1095,7 @@ ABD: EveryShipout initializing macros
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring ON on input line 129.
+Package hyperref Info: Link coloring ON on input line 136.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1140,29 +1106,29 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count337
+\c@section@level=\count338
 LaTeX Info: Redefining \Ref on input line 520.
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 136.
+LaTeX Info: Redefining \pageref on input line 136.
+LaTeX Info: Redefining \nameref on input line 136.
  (./thesis.out) (./thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
 
-LaTeX Info: Redefining \Ref on input line 129.
+LaTeX Info: Redefining \Ref on input line 136.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 135
+LaTeX Font Info:    Trying to load font information for U+msa on input line 142
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 135
+LaTeX Font Info:    Trying to load font information for U+msb on input line 142
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1182,194 +1148,218 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [6]
 
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 225.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 225.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 225.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 226.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 226.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 226.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 243.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 243.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 243.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 251.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 251.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 251.
-
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 263.
-
 Package Fancyhdr Warning: \headheight is too small (4.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [7]
-No file thesis.bbl.
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 293.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 292.
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 321.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 292.
+
+
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 292.
+
+
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 293.
+
+
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 293.
+
+
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 293.
 
 [8]
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 331.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 310.
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 341.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 310.
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 356.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 310.
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 364.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 315.
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 380.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 315.
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 393.
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 315.
 
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 402.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 410.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 416.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 422.
-
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 327.
 [9]
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 428.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 429.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 437.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 445.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 453.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 464.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 476.
+LaTeX Warning: Reference `sec:qgrad' on page 10 undefined on input line 377.
 
 [10]
+<figures/BasicTwoModeRegressor-circuit.pdf, id=266, 1242.6425pt x 331.59883pt>
+File: figures/BasicTwoModeRegressor-circuit.pdf Graphic file (type pdf)
+<use figures/BasicTwoModeRegressor-circuit.pdf>
+Package pdftex.def Info: figures/BasicTwoModeRegressor-circuit.pdf  used on inp
+ut line 400.
+(pdftex.def)             Requested size: 394.782pt x 105.3447pt.
+<figures/Classifier-Circles-Ansatz.pdf, id=267, 1576.89125pt x 483.16508pt>
+File: figures/Classifier-Circles-Ansatz.pdf Graphic file (type pdf)
+<use figures/Classifier-Circles-Ansatz.pdf>
+Package pdftex.def Info: figures/Classifier-Circles-Ansatz.pdf  used on input l
+ine 408.
+(pdftex.def)             Requested size: 394.782pt x 120.96054pt.
+<figures/test_acc_circles.png, id=268, 425.59pt x 281.05pt>
+File: figures/test_acc_circles.png Graphic file (type png)
+<use figures/test_acc_circles.png>
+Package pdftex.def Info: figures/test_acc_circles.png  used on input line 415.
+(pdftex.def)             Requested size: 263.188pt x 173.81177pt.
+ [11 <./figures/BasicTwoModeRegressor-circuit.pdf> <./figures/Classifier-Circle
+s-Ansatz.pdf>]
+<figures/classifier-test-acc-shots.png, id=326, 425.59pt x 281.05pt>
+File: figures/classifier-test-acc-shots.png Graphic file (type png)
+<use figures/classifier-test-acc-shots.png>
+Package pdftex.def Info: figures/classifier-test-acc-shots.png  used on input l
+ine 422.
+(pdftex.def)             Requested size: 263.188pt x 173.81177pt.
+ [12 <./figures/test_acc_circles.png> <./figures/classifier-test-acc-shots.png>
+]
+<figures/BH-Ansatz.pdf, id=342, 1146.2825pt x 515.28508pt>
+File: figures/BH-Ansatz.pdf Graphic file (type pdf)
+<use figures/BH-Ansatz.pdf>
+Package pdftex.def Info: figures/BH-Ansatz.pdf  used on input line 445.
+(pdftex.def)             Requested size: 347.41008pt x 156.1671pt.
+<figures/BH-layersearch-2.pdf, id=343, 578.16pt x 433.62pt>
+File: figures/BH-layersearch-2.pdf Graphic file (type pdf)
+<use figures/BH-layersearch-2.pdf>
+Package pdftex.def Info: figures/BH-layersearch-2.pdf  used on input line 454.
+(pdftex.def)             Requested size: 347.41008pt x 260.55775pt.
+<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=344, 578.16pt x
+ 433.62pt>
+File: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf Graphic file (
+type pdf)
+<use figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf>
+Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50
+.pdf  used on input line 462.
+(pdftex.def)             Requested size: 263.188pt x 197.39003pt.
+<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=345, 578.16
+pt x 433.62pt>
+File: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf Graphic fi
+le (type pdf)
+<use figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf>
+Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-
+5000.pdf  used on input line 462.
+(pdftex.def)             Requested size: 263.188pt x 197.39003pt.
+<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=346
+, 578.16pt x 433.62pt>
+File: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf Gr
+aphic file (type pdf)
+<use figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf>
+Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_00
+1-shots=5-50.pdf  used on input line 464.
+(pdftex.def)             Requested size: 263.188pt x 197.39003pt.
+<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id
+=347, 578.16pt x 433.62pt>
+File: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pd
+f Graphic file (type pdf)
+<use figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
+>
+Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_00
+1-shots=100-5000.pdf  used on input line 464.
+(pdftex.def)             Requested size: 263.188pt x 197.39003pt.
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 498.
+Overfull \hbox (24.00003pt too wide) in paragraph at lines 461--467
+ [][] 
+ []
+
+[13 <./figures/BH-Ansatz.pdf> <./figures/BH-layersearch-2.pdf>] (./thesis.bbl
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
+2.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [14 <./figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf> <./figures
+/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
+
+pdfTeX warning: pdflatex (file ./figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-sh
+ots=100-5000.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+> <./figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf
+
+pdfTeX warning: pdflatex (file ./figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5
+-lr=0_001-shots=5-50.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <./figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
 
 
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 520.
+pdfTeX warning: pdflatex (file ./figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5
+-lr=0_001-shots=100-5000.pdf): PDF inclusion: multiple pdfs with page group inc
+luded in a single page
+>] [15]) [16] [17] [18]
+Overfull \hbox (4.71596pt too wide) in paragraph at lines 618--618
+[]\T1/cmr/bx/n/14.4 Hermitian Op-er-a-tors, Uni-tary Op-er-a-tors, Spec-tral th
+e-o-rem, Hadamard-
+ []
 
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 526.
-
-
-LaTeX Font Warning: Font shape `T1/cmr/b/it' undefined
-(Font)              using `T1/cmr/bx/it' instead on input line 540.
-
-[11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 552.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 552.
+[19] [20] [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 745.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 745.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 552.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 552.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 745.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 745.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B7477F99784D465144398D9253A15083;950.
+(rerunfilecheck)             Checksum: 7EFCAF1B3E2DADC034E374DF927C2ADA;1386.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 28174 strings out of 480608
- 567086 string characters out of 5903630
- 949193 words of memory out of 5000000
- 43362 multiletter control sequences out of 15000+600000
- 551976 words of font info for 72 fonts, out of 8000000 for 9000
+ 27298 strings out of 480608
+ 547228 string characters out of 5903630
+ 955881 words of memory out of 5000000
+ 42426 multiletter control sequences out of 15000+600000
+ 552284 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,91p,1170b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,91p,1170b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
 usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/cm-super/sfrb1200.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/local/texlive/2020/te
-xmf-dist/fonts/type1/public/cm-super/sfrb1728.pfb></usr/local/texlive/2020/texm
-f-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2020/texmf-
-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-di
-st/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist
-/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/f
-onts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2020/texmf-dist/fonts
-/type1/public/cm-super/sfti1200.pfb>
-Output written on thesis.pdf (11 pages, 374605 bytes).
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texm
+f-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-dist/f
+onts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fon
+ts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts
+/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
+e1/public/cm-super/sfti1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
+/public/cm-super/sftt1200.pfb>
+Output written on thesis.pdf (21 pages, 1589836 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 798 PDF objects out of 1000 (max. 8388607)
+ 535 compressed objects within 6 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 311 words of extra memory for PDF output out of 10000 (max. 10000000)
 

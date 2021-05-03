@@ -1,12 +1,10 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, a4paper,  nobibnotes]{article}
 
 %%%%%%%%%%%%%%%%%
 % Configuration %
 %%%%%%%%%%%%%%%%%
-\usepackage{allrunes}
 \usepackage{amsmath}
 % If magyar is wanted
-% \usepackage[magyar]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{fixltx2e}
@@ -16,7 +14,12 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{amssymb}
-\usepackage{xcolor}
+
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\usepackage{setspace}
+\onehalfspacing
 
 % Nice algorithms
 \usepackage{algorithm}
@@ -37,6 +40,7 @@
     }
 }
 
+\newcommand{\op}[1]{\hat{#1}}
 \newcommand{\ketbra}[2]{|#1\rangle\langle#2|}
 \newcommand{\Ketbra}[2]{\left|#1\right\rangle \left\langle#2\right|}
 
@@ -112,6 +116,9 @@
 \newtheorem{problem}{Problem}
 \newtheorem{remark}{Remark}
 \newtheorem{statement}{Statement}
+
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat}
 
 %% COMMENTS
 \newcommand{\nd}[1]{\textcolor{Aquamarine}{\textbf{[Dani: #1]}}}
@@ -202,10 +209,70 @@
 \newpage
 
 \section{Introduction}
-\section{Quantum computing}
+Quantum computing is probably the most promising emerging technology with many possible applications across
+all domains of science and business. The idea of quantum computing was first proposed by Richard P. Feynman
+as a method to simulate quantum mechanics. Since the size of the Hilbert-space grows exponentially with
+the complexity of the quantum system, and thus the calculations become intractable on any classical
+computer, Feynmans idea was to simulate quantum physics on devices that behave themselfs according to 
+the rules of quantum physics.
+\par
+Soon after Feynmans proposal, scientists became to establish the theoretical background of quantum
+information and quantum computing. Some of the quantum algorithms are proven to have an 
+advantage over any known classical algorithm. One of the first such quantum algorithm is 
+the Deutsch-Jozsa algorithm \cite{DeutschJozsa1992}, which decides if a binary function $f$ 
+is balanced or constant. Probably the most notable quantum algorithm was proposed by Peter W. Shor 
+in 1994, which is a polynomial-time quantum algorithm for factoring large integers \cite{Shor1994}.
+This is the first quantum algorithm with a real-life application, because most of the public-key
+cryptosystems could be broken with an efficient algorithm for integer factoring. 
+Another important quantum algorithm is the Grover's algorithm proposed by Lov K. Grover in 1996 for
+searching an unordered database \cite{Grover1996}. While the best known classical algorithm 
+for searching unordered databases runs in $O(N)$ time, Grover's algorithm solves this problem
+with $O(\sqrt N)$ oracle queries. Beyond quantum algorithms, many quantum-inspired algorithms were 
+discovered \cite{Tang2019,Ding2019QuantumInspiredSVM,ArrazolaQuantumInspired2019}.
+
+\section{Quantum Computing with continuous variables}
+\nd{cite: Xanadu paper, Photonic Supremacy paper, PsiQuantum Fusion-Based QC}
+Continuous variable (CV) systems have infinite degrees of freedom, and therefore the corresponding Hilbert-space is of infinite dimensions. 
+Such systems can be modeled by $M$ harmonic oscillators, which are usually called \textit{modes}. 
+% each having a Hilbert-space $\mathcal H_k$. 
+With $H_k$ denoting the Hilbert-space of the $k$th mode, the Hilbert-space of the full CV system is their direct sum:
+\begin{equation}
+    \mathcal H = \bigoplus\limits_{k=1}^M\mathcal H_k.
+\end{equation}
+The Hamiltonian of mode $j$ can be described by introducing bosonic creation and annihilation operators $a_j^\dagger$ and $a_j$, obeying the following canonical commutation relations:
+\begin{align}
+    \left[a_j, a_k^\dagger \right] = \delta_{jk}, & \left[a_j^\dagger, a_k^\dagger\right] = \left[a_j, a_k\right] = 0.
+\end{align}
+Each of the single-mode Hilbert-space $\mathcal H_k$ is an infinite-dimensional Fock-space spanned by the eigenvectors 
+of the number operator $n_k = a_k^\dagger a_k$ labeled $\{\ket{n}\}_k$.
+It is often useful to introduce the canonical position operators $X_j$ and momentum operators $P_j$ which are related to the creation and annihilation operators
+by the following transformations:
+\begin{align}
+  X_j &= \frac{a_j+a_j^\dagger}{\sqrt{2}}  &  P_j &= \frac{a_j-a_j^\dagger}{i\sqrt{2}} \\ 
+  a_j &= \frac{X_j + iP_j}{\sqrt{2}}       & a_j^\dagger &= \frac{X_j - iP_j}{\sqrt{2}}
+   \label{eq:jwtransform}
+\end{align}
+Operators $X_j$ and $P_j$ are called quadrature operators. Following the notation often used in literature, we group these operators into a vector 
+\begin{equation}
+    \pmb\xi^\top = (X_1, P_1, X_2, P_2, ..., X_j, P_j, ..., X_M, P_M)
+    \label{eq:xidef}
+\end{equation}
+We can calculate the commutators $\left[\pmb\xi_k,\pmb\xi_l\right]$ by introducing a symplectic form $\pmb\Omega$ as
+\begin{equation}
+    \pmb\Omega = \bigoplus\limits_{j=1}^{M}\pmb\omega,~\pmb\omega = 
+    \begin{pmatrix}
+    0 & 1 \\
+    -1 & 0
+    \end{pmatrix}.
+\end{equation}
+Using this notation, we can write
+\begin{equation}
+    \left[\pmb\xi_k,\pmb\xi_l\right] = i\pmb\Omega_{kl}
+\end{equation}
 
 
 \section{Machine learning}
+\subsection{Classification and Regression}
 \subsection{Reinforcement learning}
 \subsubsection{Proximal Policy optimization}
 \begin{equation}
@@ -244,9 +311,6 @@ L^{VF} = \underset{t}{\LARGE{\mathbb E}} \left[\left(V^{\pi}(s_t) - V_{\textrm{t
 \end{equation}
 
 
-
-
-
 \begin{equation}
 H[\pi] = \underset{t}{\LARGE{\mathbb E}}\left[
 -\sum\limits_{a\in \mathcal A}\pi_{\theta}(a|s_t)\log\pi_{\theta}(a|s_t)
@@ -279,11 +343,139 @@ L = L^{CLIP} + c_1L^{VF} + c_2 H[\pi]
 \end{algorithm}
 
 \section{Quantum Machine Learning}
+QSVM paper = \cite{QSVMPaper}
+HHL paper = \cite{HHLPaper}
+Feature Hilbert Spaces = \cite{FeatureHilbertSpaces}
+Cv-Qnns -LLoyd = \cite{CVQNNLLoyd}
+\nd{related papers: quantum svm, Kernel methods, HHL algorithm for matrix inversion, quantum-inspired classical algos\\
+motivation: summary from Lloyd paper, regression, classification, hybrid traning, encoding, inference\\
+General structure: encoding, rotations and beamsplitter = interferometer, squeezing, interferometer, displacement, all = affine transformation + at the end non-linear, e.g., cubic phase operation (numeric instability switch to Kerr gates --> write at the performance test)  \\
+Loss functions: regression, classification\\
+Regularization: keep trace close to zero, non-Gaussian\\
+}
 \subsection{Parametric quantum circuits}
 \subsection{Calculating the gradients of the parameters}
+In this section, we introduce the theory of calculating quantum gradients in the continuous variable setting. 
+We follow the notation of Shuld et. al. \cite{AnalyticGradientsSchuld}. A variational quantum circuit is 
+defined by a unitary $U(\pmb\theta),\, \pmb\theta\in\mathbb{R}^m$, an initial state $\ket{\psi_0}$ and a measurment 
+operator $B$. We can understand a variational citcuit as $f:\mathbb{R}^m \rightarrow \mathbb{R}$, \nd{The Schuld paper writes $f:\mathbb{R}^m \rightarrow \mathbb{R}^{\red n}$, maybe a typo???} 
+which maps the circuit parameters to the expectation value of operator $B$:
+\begin{equation}
+    f(\pmb\theta) = \bra{\psi_0}U^{\dagger}(\pmb\theta) B U(\pmb\theta)\ket{\psi_0}   
+\end{equation}
+In gradient-based optimizations, we need the gradient $\nabla_{\pmb\theta} f$, and this eventually means calculating the partial derivatives
+$\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observables are usually polynomials of the quadrature operators $X_j$ and $P_j$.
 
-\bibliographystyle{unsrt}
+\subsection{Variational Quantum Eigensolver}
+Variational Quantum Eigensolvers \cite{Peruzzo2014} are hybrid quantum-classical algorithms designed to find the lowest energy eigenvalue of some Hamiltonian $H$. VQEs are one of the most studied quantum algorithms because of their expected use cases in quantum chemistry and
+materials science \cite{Wei2020-QCHEM,VQE-HARTREE-FOCK,Kandala2017-VQE-QCHEM,PhysRevX-VQE-QCHEM}
+The basic idea behind the variational quantum eigensolver is as follows. First we fix the structure of a parametric quantum circuit called the ansatz, defined by a unitary $U(\pmb\theta)$, where $\pmb\theta\in\mathbb{R}^m$ are real parameters. Then we start by some initial state $\ket{\psi_0}$, which is usually $\ket 0^{\otimes M}$ in the qubit setting. For the continuous variable setting, the initial state can be a displaced, squeezed state, or a photon number eigenstate. In our work we used $\ket{\psi_0}=\ket{1}^{\otimes M}$ for our initial state i.e. we started with a single photon in each mode. After preparing the circuit, we evaluate the expectation value of the Hamiltonian which is eventually the cost, or loss:
+\begin{equation}
+    \mathcal L(\pmb\theta) = \langle H \rangle = \bra{\psi_0}U^{\dagger}(\pmb\theta)HU(\pmb\theta)\ket{\psi_0}
+\end{equation}
+The goal is to minimize the loss $\mathcal L$ by iteratively updating the parameters $\pmb\theta$ with some update rule. This update rule can be any gradient-free \cite{Zhu2019} or gradient-based method \nd{idezet}. To use gradient descent optimization in the VQE setting, we need to evaluate the gradient
+$\nabla_{\pmb\theta}\mathcal L$, which can be challenging, and is described in details in chapter \ref{sec:qgrad}. Algorithm \ref{algo:vqe} describes 
+the variational quantum eigensolver with a general gradient-based learning method. Notice that we wrote $\alpha_j^{(t)}$ for the learning rate, since in most modern optimizers like Adam \cite{Kingma2015AdamAM}, each parameter has its own learning rate and it may depend on the number of iterations already done.
+\begin{algorithm}[H]
+    \caption{VQE}
+    \begin{algorithmic}[1]
+    \Procedure {VQE}{$H,K,T,\alpha$}
+        \ForAll {$t \in \{1,...,T\}$}
+            \State Prepare the ansatz $U(\pmb\theta)$
+            \State Estimate the loss $\mathcal L = \bra{\psi_0}U^{\dagger}(\pmb\theta)HU(\pmb\theta)\ket{\psi_0}$ by averaging $K$ shots
+            \ForAll{$\theta_j \in \pmb\theta$}
+                \State Calculate the quantum gradient $\partial_{\theta_j}\mathcal L$
+                \State Update the parameter $\theta_j \leftarrow \theta_j - \alpha_j^{(t)}\partial_{\theta_j}\mathcal L$
+            \EndFor
+        \EndFor
+    \EndProcedure
+    \end{algorithmic}
+    \label{algo:vqe}
+\end{algorithm}
+
+\section{Results}
+\subsection{Regression}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/BasicTwoModeRegressor-circuit.pdf}
+    \caption{}
+    \label{fig:single_layer_regression}
+\end{figure}
+
+\subsection{Classification}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/Classifier-Circles-Ansatz.pdf}
+    \caption{}
+    \label{fig:single_layer_classification}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/test_acc_circles.png}
+    \caption{}
+    \label{fig:single_layer_regression}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/classifier-test-acc-shots.png}
+    \caption{}
+    \label{fig:single_layer_regression}
+\end{figure}
+
+\subsection{CV-VQE for the Bose-Hubbard model}
+\nd{Analytic solution by diagonalization}
+The Bose-Hubbard model introduced first by Gersch and Knollman in 1963 for the description of interacting spinless bosons on a lattice, such as ultracold bosonic atoms on an optical lattice
+\cite{BoseHubbardOriginal,ColdAtomtHubbard}. This model has also gained popularity because it is found to be an adequate model for the description of the Superfluidity-Mott insulator (SF-MI) transition, which has been experimentally demonstrated \cite{SuperfluidityMottTransition,Greiner2002}.
+We chose this model, because an exact diagonalization of the Bose-Hubbard Hamiltonian with respect to a finite dimensional Fock-basis is possible and thus the model is numerically solvable. This enables the verification of the correctness of the results given by our variational quantum solver for small problem instances.
+\par
+The Bose Hubbard model which we used in our simulations is defined by the following Hamiltonian expressed with the bosonic creation and annihillation operators:
+\begin{equation}
+     H = -t\sum\limits_{i=1}^{M-1}( a_{i}^\dagger  a_{i+1} +  a_{i+1}^\dagger  a_{i}) + \frac{U}{2}\sum\limits_{i=1}^{M} n_i^2 ,
+\end{equation}
+where $M$ is the number of bosonic modes in the system. If we restrict the total number of bosons in the system to be $N$, the dimension of the restricted Fock-space is
+\begin{equation}
+    D = \frac{(N+M-1)!}{N!(M-1)!},
+\end{equation}
+which explosively grows with the system size. Therefore finding the groundstate of the Bose-Hubbard Hamiltonian for larger systems can be intractable even on classical supercomputers, making quantum computers, especially continuous-variable quantum computers a potential candidate for solving these problems in the future.
+Compared to the original definition of the Bose-Hubbard Hamiltonian, we omitted the term $-\mu\sum\limits_{i}^{M} n_i$, because it is not relevant in our particular experiments.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.66\textwidth]{figures/BH-Ansatz.pdf}
+    \caption{Illustration of a variational ansatz circuit with its first layer. Initially, each of the four qumodes contain a
+    single photon. The layer is built up from Kerr-gates, CrossKerr gates and Beamsplitters, which are passive optical gates, so the
+    total number of photons is preserved.}
+    \label{fig:single_layer_vqe}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.66\textwidth]{figures/BH-layersearch-2.pdf}
+    \caption{}
+    \label{fig:single_layer_vqe}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+      \includegraphics[width=0.5\textwidth]{figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf} &   \includegraphics[width=0.5\textwidth]{figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf} \\
+    (a) first & (b) second \\[6pt]
+     \includegraphics[width=0.5\textwidth]{figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf} &   \includegraphics[width=0.5\textwidth]{figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf} \\
+    (c) third & (d) fourth \\[6pt]
+    \end{tabular}
+    \caption{caption}
+\end{figure}
+
 \bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                    APPENDIX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \appendix
 \section{Mathematical preliminaries}
@@ -548,5 +740,6 @@ however the phase $\alpha$ is important in quantum algorithms.
     The operator $\rho$ is called the \textit{density operator} or \textit{density matrix}.
     \label{def:densityop}
 \end{definition}
+
 
 \end{document}

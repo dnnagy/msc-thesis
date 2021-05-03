@@ -1,14 +1,20 @@
 \select@language {english} \hypertarget {toc}{}
 \select@language {english} \contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
-\select@language {english} \contentsline {section}{\numberline {2}Quantum computing}{7}{section.2}%
-\select@language {english} \contentsline {section}{\numberline {3}Machine learning}{7}{section.3}%
-\select@language {english} \contentsline {subsection}{\numberline {3.1}Reinforcement learning}{7}{subsection.3.1}%
-\select@language {english} \contentsline {subsubsection}{\numberline {3.1.1}Proximal Policy optimization}{7}{subsubsection.3.1.1}%
-\select@language {english} \contentsline {section}{\numberline {4}Quantum Machine Learning}{8}{section.4}%
-\select@language {english} \contentsline {subsection}{\numberline {4.1}Parametric quantum circuits}{8}{subsection.4.1}%
-\select@language {english} \contentsline {subsection}{\numberline {4.2}Calculating the gradients of the parameters}{8}{subsection.4.2}%
-\select@language {english} \contentsline {section}{\numberline {A}Mathematical preliminaries}{8}{appendix.A}%
-\select@language {english} \contentsline {subsection}{\numberline {A.1}Hilbert spaces}{8}{subsection.A.1}%
-\select@language {english} \contentsline {subsection}{\numberline {A.2}Linear operators on Hilbert spaces}{9}{subsection.A.2}%
-\select@language {english} \contentsline {subsection}{\numberline {A.3}Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma}{10}{subsection.A.3}%
-\select@language {english} \contentsline {subsection}{\numberline {A.4}Pure and mixed quantum states}{11}{subsection.A.4}%
+\select@language {english} \contentsline {section}{\numberline {2}Quantum Computing with continuous variables}{7}{section.2}%
+\select@language {english} \contentsline {section}{\numberline {3}Machine learning}{8}{section.3}%
+\select@language {english} \contentsline {subsection}{\numberline {3.1}Classification and Regression}{8}{subsection.3.1}%
+\select@language {english} \contentsline {subsection}{\numberline {3.2}Reinforcement learning}{8}{subsection.3.2}%
+\select@language {english} \contentsline {subsubsection}{\numberline {3.2.1}Proximal Policy optimization}{8}{subsubsection.3.2.1}%
+\select@language {english} \contentsline {section}{\numberline {4}Quantum Machine Learning}{9}{section.4}%
+\select@language {english} \contentsline {subsection}{\numberline {4.1}Parametric quantum circuits}{10}{subsection.4.1}%
+\select@language {english} \contentsline {subsection}{\numberline {4.2}Calculating the gradients of the parameters}{10}{subsection.4.2}%
+\select@language {english} \contentsline {subsection}{\numberline {4.3}Variational Quantum Eigensolver}{10}{subsection.4.3}%
+\select@language {english} \contentsline {section}{\numberline {5}Results}{11}{section.5}%
+\select@language {english} \contentsline {subsection}{\numberline {5.1}Regression}{11}{subsection.5.1}%
+\select@language {english} \contentsline {subsection}{\numberline {5.2}Classification}{11}{subsection.5.2}%
+\select@language {english} \contentsline {subsection}{\numberline {5.3}CV-VQE for the Bose-Hubbard model}{12}{subsection.5.3}%
+\select@language {english} \contentsline {section}{\numberline {A}Mathematical preliminaries}{17}{appendix.A}%
+\select@language {english} \contentsline {subsection}{\numberline {A.1}Hilbert spaces}{17}{subsection.A.1}%
+\select@language {english} \contentsline {subsection}{\numberline {A.2}Linear operators on Hilbert spaces}{18}{subsection.A.2}%
+\select@language {english} \contentsline {subsection}{\numberline {A.3}Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma}{19}{subsection.A.3}%
+\select@language {english} \contentsline {subsection}{\numberline {A.4}Pure and mixed quantum states}{20}{subsection.A.4}%

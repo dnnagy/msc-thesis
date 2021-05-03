@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: abbrvnat.bst
+Database file #1: references.bib
+Warning--empty year in Shor1994
+Warning--empty year in Shor1994
+You've used 22 entries,
+            2773 wiz_defined-function locations,
+            798 strings with 11852 characters,
+and the built_in function-call counts, 16299 in all, are:
+= -- 1338
+> -- 1608
+< -- 10
++ -- 538
+- -- 516
+* -- 1638
+:= -- 2698
+add.period$ -- 107
+call.type$ -- 22
+change.case$ -- 238
+chr.to.int$ -- 22
+cite$ -- 46
+duplicate$ -- 463
+empty$ -- 843
+format.name$ -- 548
+if$ -- 3226
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 22
+newline$ -- 156
+num.names$ -- 88
+pop$ -- 420
+preamble$ -- 1
+purify$ -- 216
+quote$ -- 0
+skip$ -- 423
+stack$ -- 0
+substring$ -- 363
+swap$ -- 45
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 242
+warning$ -- 2
+while$ -- 88
+width$ -- 0
+write$ -- 368
+(There were 2 warnings)
