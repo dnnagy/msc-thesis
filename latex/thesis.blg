@@ -5,45 +5,45 @@ The style file: unsrtnat.bst
 Database file #1: references.bib
 Warning--empty year in Shor1994
 Warning--empty year in Shor1994
-You've used 22 entries,
+You've used 27 entries,
             2481 wiz_defined-function locations,
-            756 strings with 11726 characters,
-and the built_in function-call counts, 11736 in all, are:
-= -- 800
-> -- 1092
-< -- 10
-+ -- 388
-- -- 344
-* -- 1208
-:= -- 2117
-add.period$ -- 107
-call.type$ -- 22
-change.case$ -- 44
-chr.to.int$ -- 22
-cite$ -- 24
-duplicate$ -- 427
-empty$ -- 785
-format.name$ -- 376
-if$ -- 2308
+            796 strings with 13015 characters,
+and the built_in function-call counts, 14262 in all, are:
+= -- 977
+> -- 1317
+< -- 13
++ -- 468
+- -- 414
+* -- 1471
+:= -- 2562
+add.period$ -- 128
+call.type$ -- 27
+change.case$ -- 54
+chr.to.int$ -- 27
+cite$ -- 29
+duplicate$ -- 524
+empty$ -- 959
+format.name$ -- 453
+if$ -- 2806
 int.to.chr$ -- 1
-int.to.str$ -- 23
-missing$ -- 22
-newline$ -- 156
-num.names$ -- 66
-pop$ -- 138
+int.to.str$ -- 28
+missing$ -- 27
+newline$ -- 187
+num.names$ -- 81
+pop$ -- 171
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 27
 quote$ -- 0
-skip$ -- 211
+skip$ -- 256
 stack$ -- 0
-substring$ -- 363
-swap$ -- 67
-text.length$ -- 2
+substring$ -- 448
+swap$ -- 84
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 154
+type$ -- 189
 warning$ -- 2
-while$ -- 66
+while$ -- 82
 width$ -- 0
-write$ -- 368
+write$ -- 445
 (There were 2 warnings)

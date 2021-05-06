@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -51,6 +51,46 @@ Juan~Miguel {Arrazola}, Alain {Delgado}, Bhaskar~Roy {Bardhan}, and Seth
   {Lloyd}.
 \newblock {Quantum-inspired algorithms in practice}.
 \newblock \emph{arXiv e-prints}, art. arXiv:1905.10415, May 2019.
+
+\bibitem[{Kingma} and {Welling}(2013)]{VAEPaper}
+Diederik~P {Kingma} and Max {Welling}.
+\newblock {Auto-Encoding Variational Bayes}.
+\newblock \emph{arXiv e-prints}, art. arXiv:1312.6114, December 2013.
+
+\bibitem[{Mnih} et~al.(2013){Mnih}, {Kavukcuoglu}, {Silver}, {Graves},
+  {Antonoglou}, {Wierstra}, and {Riedmiller}]{RLAtariDQN}
+Volodymyr {Mnih}, Koray {Kavukcuoglu}, David {Silver}, Alex {Graves}, Ioannis
+  {Antonoglou}, Daan {Wierstra}, and Martin {Riedmiller}.
+\newblock {Playing Atari with Deep Reinforcement Learning}.
+\newblock \emph{arXiv e-prints}, art. arXiv:1312.5602, December 2013.
+
+\bibitem[Silver et~al.(2016)Silver, Huang, Maddison, Guez, Sifre, van~den
+  Driessche, Schrittwieser, Antonoglou, Panneershelvam, Lanctot, Dieleman,
+  Grewe, Nham, Kalchbrenner, Sutskever, Lillicrap, Leach, Kavukcuoglu, Graepel,
+  and Hassabis]{Silver2016AlphaGo}
+David Silver, Aja Huang, Chris~J. Maddison, Arthur Guez, Laurent Sifre, George
+  van~den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda
+  Panneershelvam, Marc Lanctot, Sander Dieleman, Dominik Grewe, John Nham, Nal
+  Kalchbrenner, Ilya Sutskever, Timothy Lillicrap, Madeleine Leach, Koray
+  Kavukcuoglu, Thore Graepel, and Demis Hassabis.
+\newblock Mastering the game of go with deep neural networks and tree search.
+\newblock \emph{Nature}, 529\penalty0 (7587):\penalty0 484--489, January 2016.
+\newblock \doi{10.1038/nature16961}.
+\newblock URL \url{https://doi.org/10.1038/nature16961}.
+
+\bibitem[LeCun et~al.(2015)LeCun, Bengio, and Hinton]{LeCun2015DeepLearning}
+Yann LeCun, Yoshua Bengio, and Geoffrey Hinton.
+\newblock Deep learning.
+\newblock \emph{Nature}, 521\penalty0 (7553):\penalty0 436--444, May 2015.
+\newblock \doi{10.1038/nature14539}.
+\newblock URL \url{https://doi.org/10.1038/nature14539}.
+
+\bibitem[Rumelhart et~al.(1986)Rumelhart, Hinton, and Williams]{BackpropPaper}
+David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock \emph{Nature}, 323\penalty0 (6088):\penalty0 533--536, October 1986.
+\newblock \doi{10.1038/323533a0}.
+\newblock URL \url{https://doi.org/10.1038/323533a0}.
 
 \bibitem[Rebentrost et~al.(2014)Rebentrost, Mohseni, and Lloyd]{QSVMPaper}
 Patrick Rebentrost, Masoud Mohseni, and Seth Lloyd.

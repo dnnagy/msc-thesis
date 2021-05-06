@@ -213,7 +213,7 @@ Quantum computing is probably the most promising emerging technology with many p
 all domains of science and business. The idea of quantum computing was first proposed by Richard P. Feynman
 as a method to simulate quantum mechanics. Since the size of the Hilbert-space grows exponentially with
 the complexity of the quantum system, and thus the calculations become intractable on any classical
-computer, Feynmans idea was to simulate quantum physics on devices that behave themselfs according to 
+computer, Feynmans idea was to simulate quantum physics on devices that behave themselves according to 
 the rules of quantum physics.
 \par
 Soon after Feynmans proposal, scientists became to establish the theoretical background of quantum
@@ -266,10 +266,10 @@ by the following transformations:
 \end{align}
 Operators $\op X_k$ and $\op P_k$ are called quadrature operators. Following the notation often used in literature, we group these operators into a vector 
 \begin{equation}
-    \pmb\xi^\top = (\op X_1, \op P_1, \op X_2, \op P_2, ..., \op X_k, \op P_k, ..., \op X_M, \op P_M)
+    \mathbf R^\top = (\op X_1, \op P_1, \op X_2, \op P_2, ..., \op X_k, \op P_k, ..., \op X_M, \op P_M)
     \label{eq:xidef}
 \end{equation}
-We can calculate the commutators $\left[\pmb\xi_k,\pmb\xi_l\right]$ by introducing a symplectic form $\pmb\Omega$ as
+We can calculate the commutators $\left[\mathbf R_k,\mathbf R_l\right]$ by introducing a symplectic form $\pmb\Omega$ as
 \begin{equation}
     \pmb\Omega = \bigoplus\limits_{j=1}^{M}\pmb\omega,~\pmb\omega = 
     \begin{pmatrix}
@@ -279,83 +279,193 @@ We can calculate the commutators $\left[\pmb\xi_k,\pmb\xi_l\right]$ by introduci
 \end{equation}
 Using this notation, we can write
 \begin{equation}
-    \left[\pmb\xi_k,\pmb\xi_l\right] = i\pmb\Omega_{kl}
+    \left[\mathbf R_k,\mathbf R_l\right] = i\pmb\Omega_{kl}
 \end{equation}
 
-\nd{Write about homodyne measurements, heterodyne measurements and photon number-resolving measurements}
+Apart from the Fock-basis, there is another useful alternative basis, the basis of \textit{coherent states},
+which are eigenstates of the annihillation operator $\op a_k$:
+\begin{equation}
+    \op a_k \ket{\alpha}_k = \alpha\ket{\alpha}_k,
+\end{equation}
+with $\alpha\in\mathbb C$. From definition this, we can derive that the Fock-basis expansion of 
+the coherent state $\ket\alpha_k$ is
+\begin{equation}
+    \ket\alpha_k = e^{-\frac{1}{2}|\alpha|^2}\sum\limits_{n=1}^\infty \frac{\alpha^n}{\sqrt{n!}}\ket n_k.
+\end{equation}
+The derivation of the above formula is explained in detail in appendix \ref{appendix:coherent}. By introducing 
+the single-mode Weyl-displacement operator 
+\begin{equation}
+    \op D_k(\alpha) = e^{\alpha\op a^\dagger_k - \alpha^*\op a_k},
+\end{equation}
+we can create coherent states from the vacuum state: $\ket\alpha_k = \op D_k(\alpha)\ket 0_k$. Of 
+course, we can define multimode coherent states 
+\begin{equation}
+    \ket{\alpha_1}_1 \otimes \ket{\alpha_2}_2 \otimes \cdots \otimes \ket{\alpha_N}_N \equiv \ket{\pmb\xi} = \op D(\pmb\xi) \ket 0,
+\end{equation}
+where $\op D(\pmb\xi)$ is the multi-mode Weyl-displacement operator defined as
+\begin{equation}
+    \op D(\pmb\xi) = e^{i\mathbf R^\top\pmb\Omega\pmb\xi}, ~ \pmb\xi \in \mathbb R^{2N}.
+\end{equation}
+For a single mode, 
+\begin{equation}
+    \op D_k(\pmb\xi) = \op D_k\left(\begin{matrix}
+        \xi_1 \\ \xi_2
+    \end{matrix}\right)
+    = e^{i(\xi_2 \op X_k - \xi_1 \op P_k)},\,\textrm{if we set}\,\left(\begin{matrix}
+        \xi_1 \\ \xi_2
+    \end{matrix}\right) = \frac{1}{\sqrt 2}\left(\begin{matrix}
+        \textrm{Re}(\alpha_k) \\ \textrm{Im}(\alpha_k)
+    \end{matrix}\right)
+\end{equation}
+
+\nd{Write about phase-space, quasiprobability}
 \nd{Write about different quantum gates.}
+\nd{Write about homodyne measurements, heterodyne measurements and photon number-resolving measurements}
+
 
 \section{Machine learning}
-\subsection{Classification and Regression}
-\subsection{Reinforcement learning}
-\subsubsection{Proximal Policy optimization}
+
+Machine learning is simply said, a new paradigm in software development. Traditional software have
+a predefined behaviour, which does not change over time. In contrast, machine learning models
+are iteratively "trained" i.e. updated to achieve better performance by the use of data. These algorithms
+are designed to learn patterns from the data available and update themselves with new experience.
+Although, there are a lot of machine learning algorithms, they usually fit into one of the following three 
+main classes:
+\begin{itemize}
+    \item \textbf{Supervised Learning}. Supervised Learning (SL) algorithms need labeled data, and
+    based on the input-output pairs previously seen by the algorithm, it learns to produce
+    correct outputs for previously unseen inputs. A very basic example of supervised learning 
+    is the linear regression or support vector machines \nd{ref?} for classification, but there are a lot of complex models like CNNs for image classification
+    \nd{ref?}, which are trained in a supervised manner.  
+    \item \textbf{Unsupervised Learning}. Unsupervised Learning (UL) does not require labeled data, instead
+    of that, it is trying to learn from a lot of unlabeled data points. These algorithms include a bunch
+    of clustering methods, like k-means \nd{ref?}, or mixture models \nd{ref?}. Another example of unsupervised
+    learning is latent variables or distributions for feature extraction or data denoising. A great example 
+    of latent distribution learning are Variational Autencoders \cite{VAEPaper} which have bean adobted 
+    for a variety of tasks.
+    \item \textbf{Reinforcement Learning}. Reinforcement Learning (RL) is very different from the previously
+    mentioned two classes of machine learning method. In RL the goal is not to learn from a given set of 
+    data, but rather to solve a specific task in an environment. In RL, an \textit{agent} learns to 
+    perform a task by observing the state (or some subspace of the state) of the surrounding environment,
+    and executing actions in order to maximize an objective. RL is inspired by the process of learning from 
+    mistakes or rewards. The environment in RL can be any type of physical simulation, or even a computer game.
+    Examples for RL algorithms include Deep Q-networks \cite{RLAtariDQN} or AlphaGo \cite{Silver2016AlphaGo}
+\end{itemize}
+
+\subsection{Supervised Classification and Regression}
+The two most common SL tasks are \textbf{classification} and \textbf{regression}. Both classification
+and regression can be performed with traditional algorithms or deep neural networks. In this
+chapter we present the basic ideas and formalisms of classification and regression which will be 
+useful in the following chapters.
+
+In supervised learning the data points consist of pairs $(\mathbf x_i, \mathbf y_i)$, where
+$\mathbf x_i$ are called feature vectors and $\mathbf y_i$ are called labels. Both the feature vectors
+and the labels are real-valued vectors of any dimension. Feature vectors can be pre-processed to 
+achieve better performance. A dataset is usually split into two or three parts. The first part is usually the largest,
+which is called the training set, and this is used to train the model. The second dataset 
+is called testing or evaluation set and is used to evaluate how the model performs when it is 
+fed with previously unseen data. There might be an additional set called the validation set,
+which is used to verify the model's performance after training is finished. While the testing 
+set is used to monitor the learning process during training, the validation set is used only after
+the full training process is finished.
+
+\subsubsection{Classification}
+In classification, each point $\mathbf x$ is in one of $K$ predefined categories. That is, 
+the labels are integers less or equal to $K$: $y_i \in \{1, ..., K\}$. The goal of a classifier 
+is to learn the connection between $\mathbf x_i$ and $y_i$, in other words, to learn, how to 
+put each vector $\mathbf x_i$ into the right category. The performance of a classifier is usually measured
+with categorical accuracy i.e. what percentage of the predicted labels are in the right category.
+Apart from accuracy, it is often useful to introduce the categorical cross-entropy. In general, the 
+crossentropy of two probability distributions $p$ and $q$ is defined as 
 \begin{equation}
-r_t(\theta) = \frac{\pi_{\theta}(a_t|s_t)}{\pi_{\theta_{\textrm{old}}}(a_t|s_t)}
-= \log\pi_{\theta}(a_t|s_t) - \log \pi_{\theta_{\textrm{old}}}(a_t|s_t)
+    H(p,q) = -\int p(x)\log q(x)\dd x
+\end{equation}
+\nd{Explain the intuition behind entropy, cross-entropy etc.}
+To transform this general formula of cross-entropy to the case of classification, we need to introduce
+one-hot encoding. One-hot encoding maps integer labels to binary vectors in a way that vector 
+corresponding to the label $j$ will contain $1$ at the $j$th position and $0$ everywhere else. The
+length of the resulting vectors is $K$. For example the one-hot encoding of labels $1$ and $3$ in case of 
+three categories would look like
+\begin{align}
+    \textrm{OneHot}(1,3) = \begin{bmatrix}
+        1\\0\\0
+    \end{bmatrix}
+    &&\textrm{OneHot}(3,3) = \begin{bmatrix}
+        0\\0\\1
+    \end{bmatrix}
+\end{align}
+
+In machine learning, especially in deep learning one-hot encoding of categorical features or labels
+is proven to be very useful. Now, with one-hot encoded labels, we can easily define the categorical
+crossentropy:
+\begin{equation}
+    \textrm{CrossEntropy}(\mathbf y^{\textrm{pred}}, \mathbf y^{\textrm{true}})
+    = -\sum\limits_{i=1}^K y_i^{\textrm{true}} \log y_i^{\textrm{pred}} 
+\end{equation}
+The crossentropy essentially measures how the predicted distribution of labels differs from the 
+true distribution, hence it is widely used in machine learning.
+Applications of classification include image recognition, image segmentation, speech and voice recognition,
+fraud detection and a lot more. 
+\subsubsection{Regression}
+Regression models are usually used 
+for forecasting and prediction, or simply to uncover the relationships between two or more features.
+Opposed to classification, in regression, the output of the model is not restricted to 
+a discrete set of predefined classes, instead the set of possible outputs is a 
+bounded or unbounded subset of $\mathbb R^d$. Therefore, classification is a
+special case of regression where the set of possible values of the outcomes is 
+a finite set of integers.
+Apart from this difference, the purpose of regression is the same: to find a connection 
+between the features $\mathbf x$ and labels $\mathbf y$. 
+The elements of feature vectors $x_i$ are usually called independent variables or predictors, 
+while the elements of the label vectors $y_i$ are called dependent variables.
+Formally the regression model is a function approximator, which is itself a function that can be 
+parametrized by a set of real parameters $\pmb \theta\in \mathbb R^m$. Given a set of observations 
+$\{(\mathbf x_1, y_1), (\mathbf x_2, y_2), ... (\mathbf x_N, y_N)\}$ a function approximator $f(\cdot;\pmb\theta)$,
+we can write
+\begin{equation}
+    y_i = f(\mathbf x_i; \pmb\theta) + \epsilon_i,
+\end{equation}
+Where $\epsilon_i$ denotes a random statistical noise, usually assumed to follow Gaussian distribution.
+The goal is to find an optimal set of parameters $\pmb\theta^*$ which minimizes the mean squared 
+error:
+\begin{equation}
+    \pmb\theta^* = \underset{\pmb\theta}{\arg\min}\sum\limits_{k=1}^N(y_k - f(\mathbf x_k;\pmb\theta))^2
+\end{equation}
+The mean squared error is itself a good measure of the performance of the regression model and
+is often used in machine learning and deep learning. Another scalar value for 
+getting some information about the 
+goodness of fit is the coefficient of determination or often called $R^2$-score.
+The $R^2$-score is a real value usually falling between zero and one (the latter meaning 
+perfect fit), although sometimes it can be negative.
+The $R^2$-score measures the proportion of variance in the predictions that can be 
+explained by the data.
+To calculate the $R^2$-score, we first introduce the total sum of squares
+\begin{equation}
+    SS_{\textrm{tot}} = \sum\limits_{i}(y^{\textrm{true}}_i-\langle y^{\textrm{true}} \rangle)^2,
+\end{equation}
+where $\langle y^{\textrm{true}} \rangle =\frac{1}{N} \sum\limits_{k}y_k^{\textrm{true}}$ is the
+mean of the dependent variable in the dataset. Then we calculate the sum of squared residuals,
+or sum of squared errors:
+\begin{equation}
+    SS_{\textrm{res}} = \sum\limits_{i}(y^{\textrm{true}}_i-y^{\textrm{pred}}_i)^2.
+\end{equation}
+With these two quantities, we can now define the $R^2$-score as follows:
+\begin{equation}
+    R^2 = 1-\frac{SS_{\textrm{res}}}{SS_{\textrm{tot}}}.
 \end{equation}
 
-\begin{equation}
-    \delta_t = r_t + \gamma V^{\pi}(s_{t+1}) - V^{\pi}(s_t) 
-\end{equation}
-\begin{equation}
-    \hat A_t = \sum\limits_{l=0}^{T-t-1} (\gamma\lambda)^{l}\delta_{t+l}
-    = (\gamma\lambda)^0\delta_t + (\gamma\lambda)\delta_{t+1} + ... + (\gamma\lambda)^{T-t-1}\delta_{T-1}
-\end{equation}
-
-\begin{equation}
-L^{CLIP}(\theta) = \underset{t}{\LARGE{\mathbb E}}\left[\min\left(r_t(\theta)\hat A_t, \textrm{clip}(r_t(\theta),1-\epsilon,1+\epsilon)\hat A_t\right)\right]
-= \underset{t}{\LARGE{\mathbb E}} \left[
-    \min\left( r_t(\theta)\hat A_t, g(\epsilon,\hat A_t)
-    \right)
-\right]
-\end{equation}
-
-\begin{equation}
-g(\varepsilon, \hat A_t) = \begin{cases}
-(1+\epsilon) \hat A_t, ~\hat A_t \geq 0 \\
-(1-\epsilon) \hat A_t, ~\textrm{otherwise}
-\end{cases}
-\end{equation}
-
-\begin{equation}
-V_{\textrm{targ}}^{\pi}(s_t) = \sum\limits_{l=0}^{T-t} \gamma^lr_{t+l}
-\end{equation}
-\begin{equation}
-L^{VF} = \underset{t}{\LARGE{\mathbb E}} \left[\left(V^{\pi}(s_t) - V_{\textrm{targ}}^{\pi}(s_t)\right)^2\right]
-\end{equation}
+\subsection{Deep Neural Networks and backpropagation}
+Probably the most successful machine learning models are deep neural networks, which enjoy a great 
+popularity in the recent years because of their flexibility and expressive power \cite{LeCun2015DeepLearning}.
+The training of deep neural networks for various machine learning task
+became possible after the proposal of back-propagation algorithm in 1986 by 
+Geoffrey Hinton et. al. \cite{BackpropPaper}.
 
 
-\begin{equation}
-H[\pi] = \underset{t}{\LARGE{\mathbb E}}\left[
--\sum\limits_{a\in \mathcal A}\pi_{\theta}(a|s_t)\log\pi_{\theta}(a|s_t)
-\right]
-\end{equation}
-
-\begin{equation}
-L = L^{CLIP} + c_1L^{VF} + c_2 H[\pi]
-\end{equation}
-
-\textbf{How to measure the entropy term for a quantum state $\rho$?}
-\textbf{How to measure the KL-divergence of two quantum states $\rho_1,\rho_2$?}
-\begin{algorithm}[H]
-    \caption{PPO-Clip}
-    \begin{algorithmic}[1]
-    \Procedure {PPOClip}{$\epsilon, E, N, T, K$}
-        \ForAll {$i \in \{1,...,E\}$}
-            \ForAll {$n \in \{1,...,N\}$}
-                \State Run the old policy $\pi_{\textrm{old}}$ in the environment for $T$ timesteps.
-                \ForAll{$t \in \{1,...,T\}$}
-                    \State Calculate the advantage estimate $\hat A_t$
-                \EndFor
-            \EndFor
-            \ForAll {$k \in \{1,...,K\}$}
-                \State Sample a batch of size $M\leq NT$ and optimize the surrogate loss $L$.
-            \EndFor
-        \EndFor
-    \EndProcedure
-    \end{algorithmic}
-\end{algorithm}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/MLP.pdf}
+\end{figure}
 \section{Quantum Machine Learning}
 QSVM paper = \cite{QSVMPaper}
 HHL paper = \cite{HHLPaper}
@@ -402,6 +512,7 @@ the variational quantum eigensolver with a general gradient-based learning metho
     \end{algorithmic}
     \label{algo:vqe}
 \end{algorithm}
+
 \subsection{Calculating the gradients of the parameters}
 \label{sec:qgrad}
 In this section, we introduce the theory of calculating quantum gradients in the continuous variable setting. 
@@ -419,6 +530,11 @@ $\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observ
 
 \section{Results}
 \subsection{Regression}
+
+\begin{equation}
+    \mathcal L = \frac{1}{|\mathcal B|}\sum\limits_{(x,y)\in\mathcal B}({y - \bra{\psi_0}\op U^{\dagger}(x;\pmb\theta)\op X_2 \op U(x;\pmb\theta)\ket{\psi_0}})^2 + \frac{\lambda}{|\mathcal B|}\sum||W^{\textrm{active}}||^2 
+\end{equation}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/BasicTwoModeRegressor-circuit.pdf}
@@ -434,11 +550,26 @@ $\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observ
     \label{fig:single_layer_classification}
 \end{figure}
 
+
+\newcommand{\thisfigurewidth}{0.31}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/test_acc_circles.png}
-    \caption{}
-    \label{fig:single_layer_regression}
+    \begin{tabular}{ccc}
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/fig_dataset_blobs.png} & 
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/fig_dataset_circles.png} &
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/fig_dataset_moons.png} \\
+      (a) & (b) & (c) \\[6.5pt]
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/test_acc_blobs_lr=0_1.png} & 
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/test_acc_circles_lr=0_1.png} &
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/test_acc_moons_lr=0_001.png} \\
+      (d) & (e) & (f) \\[6.5pt]
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/test_loss_blobs_lr=0_001.png} & 
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/test_loss_circles_lr=0_1.png} &
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/test_loss_moons_lr=0_001.png} \\
+      (g) & (h) & (i) \\[6.5pt]
+    \end{tabular}
+    \caption{leiras}
+    \label{fig:exactdiagonalization}
 \end{figure}
 
 \begin{figure}[H]
@@ -560,6 +691,54 @@ followed by quadrature measurements.
 
 
 \appendix
+\section{Coherent states}
+\label{appendix:coherent}
+A coherent state is the eigenstate of $\hat a$:
+\begin{equation*}
+    \hat a \ket{\alpha} = \alpha\ket{\alpha}
+\end{equation*}
+\begin{align*}
+    \ket\alpha = \sum\limits_{n=0}^{\infty}\ket n\braket{n|\alpha}
+\end{align*}
+we have
+\begin{align*}
+    &\hat a\ket\alpha = \alpha\ket\alpha \implies \braket{n|\hat a|\alpha}=\alpha\braket{n|\alpha}
+\end{align*}
+and 
+\begin{align*}
+    &\hat a^{\dagger}\ket n = \sqrt{n+1}\ket{n+1} \implies \bra n \hat a = \sqrt{n+1}\bra{n+1}\\
+    &\implies \braket{n|\hat a|\alpha} = \sqrt{n+1}\braket{n+1|\alpha} = \alpha\braket{n|\alpha}\\
+    &\implies \braket{n|\alpha} = \frac{\alpha}{\sqrt n}\braket{n-1|\alpha} = \dots = \frac{\alpha^n}{\sqrt{n!}}
+    \braket{0|\alpha}
+\end{align*}
+therefore,
+\begin{align*}
+    \ket\alpha = \sum\limits_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\braket{0|\alpha}\ket n
+\end{align*},
+The value of $\braket{0|\alpha}$ can be calculated from the normalization condition
+$\braket{\alpha|\alpha}\overset{!}{=}1$. Since
+\begin{align*}
+    &\ket\alpha = \braket{0|\alpha}\sum\limits_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\ket n \\ 
+    &\bra\alpha = \braket{\alpha|0}\sum\limits_{k=0}^{\infty}\frac{(\alpha^*)^k}{\sqrt{k!}}\bra k,
+\end{align*}
+we have 
+\begin{align*}
+    1\overset{!}{=} \braket{\alpha|\alpha} & = 
+    \left(\braket{\alpha|0}\sum\limits_{k=0}^{\infty}\frac{(\alpha^*)^k}{\sqrt{k!}}\bra k\right)
+    \left(\braket{0|\alpha}\sum\limits_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\ket n\right)\\
+    &=\braket{\alpha|0}\braket{0|\alpha}\sum\limits_{k=0}^{\infty} \sum\limits_{n=0}^{\infty}
+    \frac{(\alpha^*)^k\alpha^n}{\sqrt{k!n!}}\braket{k|n} \\
+    &=\braket{\alpha|0}\braket{0|\alpha}\sum\limits_{k=0}^{\infty} \sum\limits_{n=0}^{\infty}
+    \frac{(\alpha^*)^k\alpha^n}{\sqrt{k!n!}}\delta_{kn}\\
+    &= |\braket{0|\alpha}|^2 \sum\limits_{n=0}^{\infty} \frac{(|\alpha|^2)^n}{n!} = |\braket{0|\alpha}|^2e^{|\alpha|^2}.
+\end{align*}
+\begin{equation*}
+    \implies \braket{0|\alpha} = e^{i\varphi}e^{-\frac{|\alpha|^2}{2}}
+\end{equation*}
+And so, a coherent state can be written as 
+\begin{equation*}
+    \ket\alpha = e^{i\varphi}e^{\frac{-|\alpha|^2}{2}}\sum\limits_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\ket n
+\end{equation*}
 \section{Mathematical preliminaries}
 
 \subsection{Hilbert spaces}

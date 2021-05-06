@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.22)  3 MAY 2021 23:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.22)  6 MAY 2021 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -750,7 +750,7 @@ LaTeX Warning: Unused global option(s):
 LaTeX Warning: Label `fig:single_layer_regression' multiply defined.
 
 
-LaTeX Warning: Label `fig:single_layer_regression' multiply defined.
+LaTeX Warning: Label `fig:exactdiagonalization' multiply defined.
 
 
 LaTeX Warning: Label `fig:single_layer_vqe' multiply defined.
@@ -870,132 +870,142 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [5] (/Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.lof)
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
-
- [6]
+ [5]
 
 Package Fancyhdr Warning: \headheight is too small (4.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[7] [8]
+[6] (/Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.lof)
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
 
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 306.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 306.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 306.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 307.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 307.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 307.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 324.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 324.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 324.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 329.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 329.
-
-
-LaTeX Font Warning: Command \LARGE invalid in math mode on input line 329.
-
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 341.
-[9] [10]
-<figures/BasicTwoModeRegressor-circuit.pdf, id=282, 1242.6425pt x 331.59883pt>
+ [7] [8] [9] [10] [11] [12]
+<figures/MLP.pdf, id=287, 666.99188pt x 265.74281pt>
+File: figures/MLP.pdf Graphic file (type pdf)
+<use figures/MLP.pdf>
+Package pdftex.def Info: figures/MLP.pdf  used on input line 467.
+(pdftex.def)             Requested size: 368.4616pt x 146.80373pt.
+ [13 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/MLP.pdf>]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 500.
+ [14]
+<figures/BasicTwoModeRegressor-circuit.pdf, id=387, 1242.6425pt x 331.59883pt>
 File: figures/BasicTwoModeRegressor-circuit.pdf Graphic file (type pdf)
 <use figures/BasicTwoModeRegressor-circuit.pdf>
-Package pdftex.def Info: figures/BasicTwoModeRegressor-circuit.pdf  used on input line 424.
+Package pdftex.def Info: figures/BasicTwoModeRegressor-circuit.pdf  used on input line 540.
 (pdftex.def)             Requested size: 394.782pt x 105.3447pt.
-<figures/Classifier-Circles-Ansatz.pdf, id=283, 1576.89125pt x 483.16508pt>
+<figures/Classifier-Circles-Ansatz.pdf, id=388, 1576.89125pt x 483.16508pt>
 File: figures/Classifier-Circles-Ansatz.pdf Graphic file (type pdf)
 <use figures/Classifier-Circles-Ansatz.pdf>
-Package pdftex.def Info: figures/Classifier-Circles-Ansatz.pdf  used on input line 432.
+Package pdftex.def Info: figures/Classifier-Circles-Ansatz.pdf  used on input line 548.
 (pdftex.def)             Requested size: 394.782pt x 120.96054pt.
- [11 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BasicTwoModeRegressor-circuit.pdf>]
-<figures/test_acc_circles.png, id=318, 425.59pt x 281.05pt>
-File: figures/test_acc_circles.png Graphic file (type png)
-<use figures/test_acc_circles.png>
-Package pdftex.def Info: figures/test_acc_circles.png  used on input line 439.
-(pdftex.def)             Requested size: 263.188pt x 173.81177pt.
-<figures/classifier-test-acc-shots.png, id=320, 425.59pt x 281.05pt>
+<figures/fig_dataset_blobs.png, id=389, 462.528pt x 346.896pt>
+File: figures/fig_dataset_blobs.png Graphic file (type png)
+<use figures/fig_dataset_blobs.png>
+Package pdftex.def Info: figures/fig_dataset_blobs.png  used on input line 558.
+(pdftex.def)             Requested size: 163.17526pt x 122.38406pt.
+<figures/fig_dataset_circles.png, id=391, 462.528pt x 346.896pt>
+File: figures/fig_dataset_circles.png Graphic file (type png)
+<use figures/fig_dataset_circles.png>
+Package pdftex.def Info: figures/fig_dataset_circles.png  used on input line 559.
+(pdftex.def)             Requested size: 163.17526pt x 122.38406pt.
+<figures/fig_dataset_moons.png, id=392, 462.528pt x 346.896pt>
+File: figures/fig_dataset_moons.png Graphic file (type png)
+<use figures/fig_dataset_moons.png>
+Package pdftex.def Info: figures/fig_dataset_moons.png  used on input line 560.
+(pdftex.def)             Requested size: 163.17526pt x 122.38406pt.
+<figures/test_acc_blobs_lr=0_1.png, id=393, 425.59pt x 281.05pt>
+File: figures/test_acc_blobs_lr=0_1.png Graphic file (type png)
+<use figures/test_acc_blobs_lr=0_1.png>
+Package pdftex.def Info: figures/test_acc_blobs_lr=0_1.png  used on input line 562.
+(pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
+<figures/test_acc_circles_lr=0_1.png, id=394, 425.59pt x 281.05pt>
+File: figures/test_acc_circles_lr=0_1.png Graphic file (type png)
+<use figures/test_acc_circles_lr=0_1.png>
+Package pdftex.def Info: figures/test_acc_circles_lr=0_1.png  used on input line 563.
+(pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
+<figures/test_acc_moons_lr=0_001.png, id=395, 425.59pt x 281.05pt>
+File: figures/test_acc_moons_lr=0_001.png Graphic file (type png)
+<use figures/test_acc_moons_lr=0_001.png>
+Package pdftex.def Info: figures/test_acc_moons_lr=0_001.png  used on input line 564.
+(pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
+<figures/test_loss_blobs_lr=0_001.png, id=396, 425.59pt x 281.05pt>
+File: figures/test_loss_blobs_lr=0_001.png Graphic file (type png)
+<use figures/test_loss_blobs_lr=0_001.png>
+Package pdftex.def Info: figures/test_loss_blobs_lr=0_001.png  used on input line 566.
+(pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
+<figures/test_loss_circles_lr=0_1.png, id=397, 425.59pt x 281.05pt>
+File: figures/test_loss_circles_lr=0_1.png Graphic file (type png)
+<use figures/test_loss_circles_lr=0_1.png>
+Package pdftex.def Info: figures/test_loss_circles_lr=0_1.png  used on input line 567.
+(pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
+<figures/test_loss_moons_lr=0_001.png, id=398, 425.59pt x 281.05pt>
+File: figures/test_loss_moons_lr=0_001.png Graphic file (type png)
+<use figures/test_loss_moons_lr=0_001.png>
+Package pdftex.def Info: figures/test_loss_moons_lr=0_001.png  used on input line 568.
+(pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
+ [15 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BasicTwoModeRegressor-circuit.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/Classifier-Circles-Ansatz.pdf>]
+<figures/classifier-test-acc-shots.png, id=455, 425.59pt x 281.05pt>
 File: figures/classifier-test-acc-shots.png Graphic file (type png)
 <use figures/classifier-test-acc-shots.png>
-Package pdftex.def Info: figures/classifier-test-acc-shots.png  used on input line 446.
+Package pdftex.def Info: figures/classifier-test-acc-shots.png  used on input line 577.
 (pdftex.def)             Requested size: 263.188pt x 173.81177pt.
- [12 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/Classifier-Circles-Ansatz.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_acc_circles.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/classifier-test-acc-shots.png>] [13]
-<figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf, id=370, 433.62pt x 289.08pt>
+ [16 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/fig_dataset_blobs.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/fig_dataset_circles.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/fig_dataset_moons.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_acc_blobs_lr=0_1.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_acc_circles_lr=0_1.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_acc_moons_lr=0_001.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_loss_blobs_lr=0_001.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_loss_circles_lr=0_1.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/test_loss_moons_lr=0_001.png> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/classifier-test-acc-shots.png>] [17]
+<figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf, id=487, 433.62pt x 289.08pt>
 File: figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf Graphic file (type pdf)
 <use figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf>
-Package pdftex.def Info: figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf  used on input line 499.
+Package pdftex.def Info: figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf  used on input line 630.
 (pdftex.def)             Requested size: 222.82387pt x 148.54982pt.
-<figures/diagonalized_solutions_M=4_cutoff=4.pdf, id=371, 505.89pt x 289.08pt>
+<figures/diagonalized_solutions_M=4_cutoff=4.pdf, id=488, 505.89pt x 289.08pt>
 File: figures/diagonalized_solutions_M=4_cutoff=4.pdf Graphic file (type pdf)
 <use figures/diagonalized_solutions_M=4_cutoff=4.pdf>
-Package pdftex.def Info: figures/diagonalized_solutions_M=4_cutoff=4.pdf  used on input line 499.
+Package pdftex.def Info: figures/diagonalized_solutions_M=4_cutoff=4.pdf  used on input line 630.
 (pdftex.def)             Requested size: 259.96117pt x 148.54982pt.
-<figures/BH-Ansatz.pdf, id=378, 1146.2825pt x 515.28508pt>
+<figures/BH-Ansatz.pdf, id=495, 1146.2825pt x 515.28508pt>
 File: figures/BH-Ansatz.pdf Graphic file (type pdf)
 <use figures/BH-Ansatz.pdf>
-Package pdftex.def Info: figures/BH-Ansatz.pdf  used on input line 525.
+Package pdftex.def Info: figures/BH-Ansatz.pdf  used on input line 656.
 (pdftex.def)             Requested size: 347.41008pt x 156.1671pt.
- [14 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/diagonalized_solutions_M=4_cutoff=4.pdf
+ [18 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/diagonalized_solutions_M=4_cutoff=4.pdf
 
 pdfTeX warning: pdflatex (file /Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/diagonalized_solutions_M=4_cutoff=4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<figures/BH-layersearch-2.pdf, id=430, 578.16pt x 433.62pt>
+<figures/BH-layersearch-2.pdf, id=549, 578.16pt x 433.62pt>
 File: figures/BH-layersearch-2.pdf Graphic file (type pdf)
 <use figures/BH-layersearch-2.pdf>
-Package pdftex.def Info: figures/BH-layersearch-2.pdf  used on input line 536.
+Package pdftex.def Info: figures/BH-layersearch-2.pdf  used on input line 667.
 (pdftex.def)             Requested size: 347.41008pt x 260.55775pt.
-<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=431, 578.16pt x 433.62pt>
+<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=550, 578.16pt x 433.62pt>
 File: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf Graphic file (type pdf)
 <use figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf>
-Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf  used on input line 544.
+Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf  used on input line 675.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
-<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=432, 578.16pt x 433.62pt>
+<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=551, 578.16pt x 433.62pt>
 File: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf Graphic file (type pdf)
 <use figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf>
-Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf  used on input line 544.
+Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf  used on input line 675.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
-<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=433, 578.16pt x 433.62pt>
+<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=552, 578.16pt x 433.62pt>
 File: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf Graphic file (type pdf)
 <use figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf>
-Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf  used on input line 546.
+Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf  used on input line 677.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
-<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=434, 578.16pt x 433.62pt>
+<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=553, 578.16pt x 433.62pt>
 File: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf Graphic file (type pdf)
 <use figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf>
-Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf  used on input line 546.
+Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf  used on input line 677.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
 
-Overfull \hbox (24.00003pt too wide) in paragraph at lines 543--549
+Overfull \hbox (24.00003pt too wide) in paragraph at lines 674--680
  [][] 
  []
 
-[15 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-Ansatz.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-layersearch-2.pdf>] (/Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.bbl
+[19 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-Ansatz.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-layersearch-2.pdf>] (/Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.bbl
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 15.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [16 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
+) [20 </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf> </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
 
 pdfTeX warning: pdflatex (file /Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf
@@ -1004,37 +1014,37 @@ pdfTeX warning: pdflatex (file /Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat
 > </Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
 
 pdfTeX warning: pdflatex (file /Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [17]) [18] [19] [20]
-Overfull \hbox (4.71596pt too wide) in paragraph at lines 700--700
+>] [21] [22]) [23] [24] [25]
+Overfull \hbox (4.01723pt too wide) in paragraph at lines 879--879
 []\T1/cmr/bx/n/14.4 Hermitian Op-er-a-tors, Uni-tary Op-er-a-tors, Spec-tral the-o-rem, Hadamard-
  []
 
-[21] [22] [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 827.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 827.
+[26] [27] [28] [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1006.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1006.
  (/Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 827.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 827.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1006.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1006.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 52F499C85E02EE697548029009C565A1;1569.
+(rerunfilecheck)             Checksum: A4D64D6C2237E20B0F20E6DEB0DDAB68;1706.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27325 strings out of 480608
- 549374 string characters out of 5903630
- 957351 words of memory out of 5000000
- 42441 multiletter control sequences out of 15000+600000
+ 27413 strings out of 480608
+ 551797 string characters out of 5903630
+ 959917 words of memory out of 5000000
+ 42502 multiletter control sequences out of 15000+600000
  552284 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,16n,91p,1241b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on /Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.pdf (23 pages, 1612141 bytes).
+ 60i,16n,91p,1241b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on /Users/nagydaniel/Documents/ELTE/MSc/Szakdolgozat/msc-thesis/latex/thesis.pdf (29 pages, 1811822 bytes).
 PDF statistics:
- 882 PDF objects out of 1000 (max. 8388607)
- 584 compressed objects within 6 object streams
- 137 named destinations out of 1000 (max. 500000)
- 337 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1014 PDF objects out of 1200 (max. 8388607)
+ 666 compressed objects within 7 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 398 words of extra memory for PDF output out of 10000 (max. 10000000)
 
