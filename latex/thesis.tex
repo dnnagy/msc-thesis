@@ -197,6 +197,10 @@
 \thispagestyle{empty} %% No fancy
 \newpage
 
+\begin{center}
+    \nd{Acknowledgement}
+\end{center}
+
 \selectlanguage{english}
 % Add a link target to the TOC itself
 \addtocontents{toc}{\protect\hypertarget{toc}{}}
@@ -324,6 +328,7 @@ For a single mode,
 
 
 \section{Machine learning}
+\label{sec:ml-intro}
 
 Machine learning is simply said, a new paradigm in software development. Traditional software have
 a predefined behaviour, which does not change over time. In contrast, machine learning models
@@ -387,10 +392,10 @@ corresponding to the label $j$ will contain $1$ at the $j$th position and $0$ ev
 length of the resulting vectors is $K$. For example the one-hot encoding of labels $1$ and $3$ in case of 
 three categories would look like
 \begin{align}
-    \textrm{OneHot}(1,3) = \begin{bmatrix}
+    \texttt{OneHot}(1,3) = \begin{bmatrix}
         1\\0\\0
     \end{bmatrix}
-    &&\textrm{OneHot}(3,3) = \begin{bmatrix}
+    &&\texttt{OneHot}(3,3) = \begin{bmatrix}
         0\\0\\1
     \end{bmatrix}
 \end{align}
@@ -399,8 +404,10 @@ In machine learning, especially in deep learning one-hot encoding of categorical
 is proven to be very useful. Now, with one-hot encoded labels, we can easily define the categorical
 crossentropy:
 \begin{equation}
-    \textrm{CrossEntropy}(\mathbf y^{\textrm{pred}}, \mathbf y^{\textrm{true}})
-    = -\sum\limits_{i=1}^K y_i^{\textrm{true}} \log y_i^{\textrm{pred}} 
+    \texttt{CrossEntropy}: \mathbb R^K\times \mathbb R^K \rightarrow \mathbb R,~
+    \texttt{CrossEntropy}(\mathbf y^{\textrm{pred}}, \mathbf y^{\textrm{true}})
+    = -\sum\limits_{i=1}^K y_i^{\textrm{true}} \log y_i^{\textrm{pred}}
+    \label{eq:crossentropy}
 \end{equation}
 The crossentropy essentially measures how the predicted distribution of labels differs from the 
 true distribution, hence it is widely used in machine learning.
@@ -429,7 +436,7 @@ Where $\epsilon_i$ denotes a random statistical noise, usually assumed to follow
 The goal is to find an optimal set of parameters $\pmb\theta^*$ which minimizes the mean squared 
 error:
 \begin{equation}
-    \pmb\theta^* = \underset{\pmb\theta}{\arg\min}\sum\limits_{k=1}^N(y_k - f(\mathbf x_k;\pmb\theta))^2
+    \pmb\theta^* = \underset{\pmb\theta}{\arg\min}\,\sum\limits_{k=1}^N(y_k - f(\mathbf x_k;\pmb\theta))^2
 \end{equation}
 The mean squared error is itself a good measure of the performance of the regression model and
 is often used in machine learning and deep learning. Another scalar value for 
@@ -455,33 +462,155 @@ With these two quantities, we can now define the $R^2$-score as follows:
 \end{equation}
 
 \subsection{Deep Neural Networks and backpropagation}
+\label{sec:dnn}
 Probably the most successful machine learning models are deep neural networks, which enjoy a great 
 popularity in the recent years because of their flexibility and expressive power \cite{LeCun2015DeepLearning}.
-The training of deep neural networks for various machine learning task
-became possible after the proposal of back-propagation algorithm in 1986 by 
-Geoffrey Hinton et. al. \cite{BackpropPaper}.
+In this chapter we give a short introduction to deep neural networks by descibring the basic 
+ideas behind training neural networks for various tasks.
 
+Human brain is very good at some tasks in which computers are quite bad. While a computer 
+can calculate that $567,213\times 789,133 = 447,606,496,329$ in a few milliseconds it can not decide 
+wheter a picture shows a dog or a cat. In contrary humans are very good at recognizing pictures and 
+deciding wheter a picture shows a dog or a cat takes less than a second for a brain.
+Therefore the idea to mimic the brain with computers and solve tasks with brain-like algorithms 
+seems plausible. Although the basic idea is very simple, it took scientists decades to make 
+practically useful neural networks and training neural networks still requires huge amounts
+of computational power.
+To mimic the neural network of the brain, we need to come up with a mathematical model that is 
+simple enough to be simulated on computers, but still complex enough to be able to learn how 
+to do difficult tasks. Not surprisingly each neuron will be modeled by
+a parametric function $g(\mathbf x;\mathbf W, \mathbf b)$. Before defining the function 
+$g$ explicitly we should review, how biological neurons work. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/MLP.pdf}
+    \includegraphics[width=0.7\textwidth]{figures/Neuron3.eps}
+    \caption{neuron from \cite{wikipedianeuron}}
+    \label{fig:neuron}
 \end{figure}
+Figure \ref{fig:neuron} shows a biological neuron with input and output synapses. Each 
+of the input and output synapses is connected to other cells forming the neural 
+network with billions of individual cells.
+Without diving into the biochemical details, we can say that information is carried down the 
+axon in the form of spike-like electric pulses, and transmitted through the synapse with 
+the help of ions neurotransmitters and positive ions.
+The electrical potential in the cells is typically $-70$mV. When a synapse receives a
+signal, this potential slightly increases, and when it reaches a treshold of $\approx -55$mV, 
+the cell fires, and a signal will be sent to the output synapses. 
+Different input synapses have different importance, and thus they contribute to the 
+output signal with different coefficients. Therefore, we can say that the output 
+frequency of the $i$-th neuron is modeled by
+\begin{equation}
+    y_i = \theta\left(\sum\limits_j J_{ij}x_j - U_0\right),
+\end{equation} 
+where $\theta(x)$ is the Heaviside-step function, $x_j$ are input frequencies and $U_0=-55$mV is
+the treshold potential.
+From this model, we can derive a more general neuron model, which will be used to train 
+deep neural networks:
+\begin{equation}
+    \mathbf y = g\left(\mathbf W^\top\mathbf x + \mathbf b\right),
+\end{equation}
+where $g$ is called \textit{activation function}, $\mathbf W$ and $\mathbf b$ are the 
+\textit{weights} and \textit{bias}es, respectively.
+Some commonly used activation functions are shown on figure \ref{fig:activations} This model of a single neuron is called a 
+perceptron. 
+The simplest form of deep neural network uses many perceptrons and is called a \textit{multilayer-perceptron}
+(MLP), see figure \ref{fig:MLP}. In this case the input vectors are fed into many perceptrons, and the 
+outputs of these is fed into the perceptrons of the next layer. This architecture is often called 
+fully connected or dense neural network, and the layers of perceptrons are called hidden layers. 
+The outputs of an MLP can be scalars vector, or in some cases tensors of higher rank.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/MLP.pdf}
+    \caption{The multilayer perceptron architecture. Green circles are the input features which 
+    can be scalar or vector values, the yellow circles represent the weights and biases of the 
+    perceptrons of the hidden layers, while the red circle is the output. Data flow is noted with 
+    black arrows.}
+    \label{fig:MLP}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\textwidth]{figures/activation_functions.pdf}
+    \caption{The three most frequently used activation functions in deep neural networks.
+    Left: the sigmoid function, middle: rectified linear unit (ReLU), right: leaky ReLU.}
+    \label{fig:activations}
+\end{figure}
+
+There are many more sophisticated neural network architectures like convolutional neural networks (CNNs)
+\cite{LeCun-CNN}, which are useful for image processing tasks, recursive neural networks 
+with internal long term memory \cite{SchmidhuberLSTM} for speech recognition or time-series 
+forecasting, or transformers \cite{Transformer} for machine translation. 
+To dive into the details of these complex deep neural network architectures is out of the 
+scope of this thesis. 
+We will, however explain the gradient descent (GD) algorithm, which makes it possible to train 
+complex neural networks with the help of automatic differentiation.
+The training of deep neural networks for various machine learning task
+became possible after the proposal of backpropagation algorithm in 1986 by 
+Geoffrey Hinton et. al. \cite{BackpropPaper}.
+Essentially, training neural networks is finding the best weights $(\mathbf W^*, \mathbf b^*)\equiv
+\pmb\theta^*$, for which a defined loss function $\mathcal L$ has minimum:
+\begin{equation}
+    \pmb\theta^* = \underset{\pmb\theta}{\arg\min}\,\mathcal L (\mathbf y, f(\mathbf x; \pmb\theta)),
+\end{equation}
+where $f(\cdot; \pmb\theta)$ represents the neural network. The idea of gradient descent is 
+to find $\pmb\theta^*$ by starting at a random point $\pmb\theta^{(0)}$ and at each timestep
+update theta in the direction of gradient. In the standard version of gradient-descent, 
+we calculate the average loss $L = \frac{1}{N}\sum\limits_{k=1}^N \mathcal L(\mathbf y_k, f(\mathbf x_k; \pmb\theta^{(t)}))$
+for the entire dataset to do a single step of gradient descent (see algorithm \ref{algo:gd}).
+\begin{algorithm}[H]
+    \caption{Gradient Descent}
+    \begin{algorithmic}[1]
+    \Procedure {GradientDescent}{$ \{(\mathbf x_k, \mathbf y_k)\}_{k=1}^N,\, f,\, \pmb\theta^{(0)},\, \mathcal L,\, \alpha^{(0)},\,  T$}
+        \ForAll {$t \in \{0,...,T\}$}
+            \State Calculate $L = \frac{1}{N}\sum\limits_{k=1}^N \mathcal L(\mathbf y_k, f(\mathbf x_k; \pmb\theta^{(t)}))$ 
+            \ForAll{$\theta_j \in \pmb\theta$}
+                \State Calculate the gradients $ \left. \frac{\partial L}{\partial \theta_j} \right|_{\theta_j = \theta_j^{(t)}}$
+                \State Update the parameter $\theta_j^{(t+1)} \leftarrow \theta_j^{(t)} - \alpha_j^{(t)} \left. \frac{\partial L}{\partial \theta_j} \right|_{\theta_j = \theta_j^{(t)}}$
+            \EndFor
+        \EndFor
+    \EndProcedure
+    \end{algorithmic}
+    \label{algo:gd}
+\end{algorithm}
+
+In many cases, the dataset is very large, and it turned out to be useful to split the dataset 
+into mini-batches of a small size and calculate the losses and gradients for each individual 
+min-batch. This version of gradient descent is called mini-batch stochastic gradient descent or 
+mini-batch SGD, sometimes simply SGD. Using SGD instead of GD not only improves the overall perform
+ance of the models, but usually reduces time needed for convergence.
+
+
+\begin{equation}
+    \texttt{Softmax}:\mathbb R^m \rightarrow \mathbb R^m,~\left[\texttt{Softmax}(\mathbf x)\right]_j = \frac{e^{x_j}}{\sum\limits_ke^{x_k}}
+    \label{eq:softmax}
+\end{equation}
+
 \section{Quantum Machine Learning}
 QSVM paper = \cite{QSVMPaper}
 HHL paper = \cite{HHLPaper}
 Feature Hilbert Spaces = \cite{FeatureHilbertSpaces}
-Cv-Qnns -LLoyd = \cite{CVQNNLLoyd}
+
 \nd{related papers: quantum svm, Kernel methods, HHL algorithm for matrix inversion, quantum-inspired classical algos\\
 motivation: summary from Lloyd paper, regression, classification, hybrid traning, encoding, inference\\
 General structure: encoding, rotations and beamsplitter = interferometer, squeezing, interferometer, displacement, all = affine transformation + at the end non-linear, e.g., cubic phase operation (numeric instability switch to Kerr gates --> write at the performance test)  \\
 Loss functions: regression, classification\\
 Regularization: keep trace close to zero, non-Gaussian\\
 }
-\subsection{Parametric quantum circuits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/VQC-optimization.png}
+    \caption{VQC-optimization.}
+    \label{fig:VQC-optimization}
+\end{figure}
 \subsection{Variational Quantum Eigensolver}
 \label{sec:vqe}
-Variational Quantum Eigensolvers \cite{Peruzzo2014} are hybrid quantum-classical algorithms designed to find the lowest energy eigenvalue of some Hamiltonian $H$. VQEs are one of the most studied quantum algorithms because of their expected use cases in quantum chemistry and
-materials science \cite{Wei2020-QCHEM,VQE-HARTREE-FOCK,Kandala2017-VQE-QCHEM,PhysRevX-VQE-QCHEM}.
+Variational Quantum Eigensolvers \cite{Peruzzo2014} are hybrid quantum-classical algorithms 
+designed to find the lowest energy eigenvalue of some Hamiltonian $H$. VQEs are one 
+of the most studied quantum algorithms because of their expected use cases in 
+quantum chemistry and materials science 
+\cite{Wei2020-QCHEM,VQE-HARTREE-FOCK,Kandala2017-VQE-QCHEM,PhysRevX-VQE-QCHEM}.
+VQEs are a special class of variational quantum circuits, where the operator being 
+measured is the Hamiltonian of some system.
 The basic idea behind the variational quantum eigensolver is as follows. 
 First we fix the structure of a parametric quantum circuit called the ansatz, defined by a 
 unitary $U(\pmb\theta)$, where $\pmb\theta\in\mathbb{R}^m$ are real parameters. 
@@ -497,9 +626,9 @@ The goal is to minimize the loss $\mathcal L$ by iteratively updating the parame
 $\nabla_{\pmb\theta}\mathcal L$, which can be challenging, and is described in details in chapter \ref{sec:qgrad}. Algorithm \ref{algo:vqe} describes 
 the variational quantum eigensolver with a general gradient-based learning method. Notice that we wrote $\alpha_j^{(t)}$ for the learning rate, since in most modern optimizers like Adam \cite{Kingma2015AdamAM}, each parameter has its own learning rate and it may depend on the number of iterations already done.
 \begin{algorithm}[H]
-    \caption{VQE}
+    \caption{K-shot VQE}
     \begin{algorithmic}[1]
-    \Procedure {VQE}{$H,K,T,\alpha$}
+    \Procedure {K-VQE}{$H,K,T,\alpha$}
         \ForAll {$t \in \{1,...,T\}$}
             \State Prepare the ansatz $U(\pmb\theta)$
             \State Estimate the loss $\mathcal L = \bra{\psi_0}U^{\dagger}(\pmb\theta)HU(\pmb\theta)\ket{\psi_0}$ by averaging $K$ shots
@@ -512,7 +641,9 @@ the variational quantum eigensolver with a general gradient-based learning metho
     \end{algorithmic}
     \label{algo:vqe}
 \end{algorithm}
-
+\subsection{Quantum Neural Networks}
+\label{sec:qnn}
+Cv-Qnns -LLoyd = \cite{CVQNNLLoyd}
 \subsection{Calculating the gradients of the parameters}
 \label{sec:qgrad}
 In this section, we introduce the theory of calculating quantum gradients in the continuous variable setting. 
@@ -529,27 +660,77 @@ $\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observ
 
 
 \section{Results}
-\subsection{Regression}
+In this chapter we present the results of our numerical experiments. In section 
+\ref{sec:regression-results} we present the results obtained by applying a CV QNN to some 
+regression tasks, in section \ref{sec:classification-results} we discuss the performance of 
+the QNN-s on various classification examples. Finally, in section \ref{sec:bh-vqe-results}
+we present the performance of a continuous-variable VQE on finding the ground-state energy 
+of a Bose-Hubbard model. These numerical experiments were run using 
+Strawerry Fields \cite{Killoran2019strawberryfields, ApplicationsOfStrawberryFields}, an 
+open-source software for simulating photonic quantum circuits an Tensorflow \cite{abadi2016tensorflow},
+Google's open-source framework for calculating gradients via automatic differentiation. Although
+these software packages are very powerful and efficient for computing matrix algebra and 
+simulating quantum circuits, due to the exponential scaling of the Hilbert-space of CV quantum 
+systems, we can not efficiently simulate quantum circuits with more then a few qumodes. Therefore, 
+in the regression and classification example we use only two qumodes with cutoff dimension $10$,
+while in the VQE setting we used four qumodes with cutoff dimension $5$.
 
-\begin{equation}
-    \mathcal L = \frac{1}{|\mathcal B|}\sum\limits_{(x,y)\in\mathcal B}({y - \bra{\psi_0}\op U^{\dagger}(x;\pmb\theta)\op X_2 \op U(x;\pmb\theta)\ket{\psi_0}})^2 + \frac{\lambda}{|\mathcal B|}\sum||W^{\textrm{active}}||^2 
-\end{equation}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/BasicTwoModeRegressor-circuit.pdf}
-    \caption{}
-    \label{fig:single_layer_regression}
-\end{figure}
 
 \subsection{Classification}
+\label{sec:classification-results}
+In this section we present the architecture we used to solve different classification tasks
+using quantum neural networks and of course we present the results as well. We tested 
+the same ansatz circuit with the same loss function on three different synthetic datasets:
+blobs, moons and circles (see figure \ref{fig:classification_results} a-c).
+The datasets are generared with scikit-learn \cite{scikit-learn}, a python package which 
+contains a lot of implementations of data preprocessing and machine learning algorithms. 
+We use an Ansatz circuit architecture inspired by \cite{CVQNNLLoyd}, composed of beamsplitters, 
+displacment and squeezing gates and Kerr nonlinearities. Figure \ref{fig:single_layer_classification}
+shows the ansatz circuit with a single layer.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/Classifier-Circles-Ansatz.pdf}
-    \caption{}
+    \caption{Ansatz circuit used in the classification task with the first layer.}
     \label{fig:single_layer_classification}
 \end{figure}
 
+In all three datasests we used, the feature vectors are two-dimensional spacial coordinates
+$\mathbf x = (x_1,x_2)$, and we use displacement encoding to encode these vectors into quantum states.
+We use three-mode quantum neural network, and therefore the encoding function is 
+\begin{equation}
+    (x_1, x_2) \mapsto \op D_1(x_1)\otimes\op D_2(x_2)\otimes I_3 \ket{0,0,0},
+\end{equation}
+and we can decompose $\op U(\mathbf x; \pmb\theta)$
+\begin{equation}
+    \op U(\mathbf x; \pmb\theta) = \op U'(\pmb\theta)\otimes \left(\op D_1(x_1)\otimes\op D_2(x_2)\otimes I_3\right).
+\end{equation}
+To construct the loss function, we use homodyne measurements with \texttt{Softmax} and \texttt{CrossEntropy}.
+Depending on the number of classes in the dataset we measure modes $1-3$ in the case of blobs
+or $2-3$ in the case of moons and circles.
+The loss is simply
+\begin{equation}
+    \mathcal L =  \texttt{CrossEntropy}(\mathbf y^{\textrm{pred}}, \mathbf y^{\textrm{true}}) + \frac{\lambda}{|\mathcal B|}\sum||W^{\textrm{active}}||^2,
+\end{equation}
+where
+\begin{equation}
+    \mathbf y^{\textrm{pred}} = \texttt{Softmax}\begin{bmatrix}
+        \textrm{abs}\left(\Tr{\op\rho \op X_1}\right) \\[6.5pt]
+        \textrm{abs}\left(\Tr{\op\rho \op X_2}\right) \\[6.5pt]
+        \textrm{abs}\left(\Tr{\op\rho \op X_3}\right) \\[6.5pt]
+    \end{bmatrix}~\textrm{or}~
+    \mathbf y^{\textrm{pred}} = \texttt{Softmax}\begin{bmatrix}
+        \textrm{abs}\left(\Tr{\op\rho \op X_2}\right) \\[6.5pt]
+        \textrm{abs}\left(\Tr{\op\rho \op X_3}\right) \\[6.5pt]
+    \end{bmatrix},
+\end{equation}
+and $W^{\textrm{active}}$ are the weigths of the active gates in the QNN. 
+This way, assuming that the output state of the QNN is pure, we can write
+\begin{equation}
+    \rho = \ketbra{\psi}{\psi}\, \textrm{with}\, \ket\psi = \op U(\mathbf x; \pmb\theta)\ket{\psi_0}.
+\end{equation}
+In most cases this assumption is true in our simulations, because we use $L^2$ normalization
+on the active weights of the network, and thus $\Tr{\rho^2}\approx 1$.
 
 \newcommand{\thisfigurewidth}{0.31}
 \begin{figure}[H]
@@ -569,7 +750,7 @@ $\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observ
       (g) & (h) & (i) \\[6.5pt]
     \end{tabular}
     \caption{leiras}
-    \label{fig:exactdiagonalization}
+    \label{fig:classification_results}
 \end{figure}
 
 \begin{figure}[H]
@@ -579,7 +760,130 @@ $\partial_{\mu}f,\,\mu\in\pmb\theta$. In the continuous variable setting, observ
     \label{fig:single_layer_regression}
 \end{figure}
 
+
+\subsection{Regression}
+\label{sec:regression-results}
+As specified earlier, the aim of regression is to predict or forecast a value $y$ for 
+previously unseen feature vectors $\mathbf x$ by inferring a function $f$ from 
+given example pairs $(\mathbf x_k, y_k)$. 
+In this chapter, we present our results on testing regression with parametric quantum 
+circuits on a photonic CV architecture.
+We test our methods on synthetic datasets, as well as on a real-world dataset.
+In the simulations presented hereby, both the feature and the dependent
+value are scalars. 
+\nd{Data normalization and encoding}
+Data normalization is usually 
+a very important step in order to achieve good performance in machine learning.
+Therefore, we normalized our datasets so
+that most of the $x$ and $y$ values fall into the $[-1,1]$ interval.
+In chapter \ref{sec:qnn} we saw that encoding classical data into a quantum state is a 
+crucial step in quantum machine learning. Therefore we tested different encodings 
+and found that displacement encoding works the best in each of the simulations.
+Hence, in all of the simulations presented in this thesis we use displacement encoding, which means that 
+the feature $x$ is encoded into the quantum system by applying a single-mode Weyl-displacement
+operator $\op D(x)$ on one or more modes. In the regression task, we apply the same displacement
+on all of the modes:
+\begin{equation}
+    x \mapsto \op D_1(x)\otimes\op D_2(x) \ket{0,0}.
+\end{equation}
+This way the unitary matrix in equation \ref{eq:regression-output} can be decomposed as 
+\begin{equation}
+    \op U(x;\pmb\theta) = \op U'(\pmb\theta) \otimes \left(\otimes D_1(x)\otimes\op D_2(x)\right),
+\end{equation}
+where $\op U'(\pmb\theta)$ does not depend on the value of $x$.
+After data encoding, we apply a number of identical quantum layers composed of beamsplitters, 
+rotations, displacements, squeezing gates and Kerr nonlinearities. These gates are arranged in 
+a structure similar to that prosed in \cite{CVQNNLLoyd}.
+\nd{Weight normalization}
+Another important step to consider is weight normalization. Since passive photonic gates 
+do not change the overall energy of the system, we do not apply any kind of normalization 
+to the parameters of the passive gates. Active gates however like displacement and squeezing
+change the energy of the system (or photon number), and thus they can push the state 
+into a mixed state \cite{CVQNNLLoyd}, which we want to avoid as much as possible.
+Therefore we apply an $L^2$-regularization to the active weights $W^{\textrm{active}}$ of the 
+network. Therefore the loss function we use in the regression test is
+\begin{equation}
+    \mathcal L = \frac{1}{|\mathcal B|}\sum\limits_{(x,y)\in\mathcal B} \left(y - \Tr{\op\rho \op X_2} \right)^2 + \frac{\lambda}{|\mathcal B|}\sum||W^{\textrm{active}}||^2.
+\end{equation}
+where $\mathcal B$ is a mini-batch of size $|\mathcal B|$ and $\op \rho$ is the otput of the quantum neural network.
+Some regression tasks work better if we use $L^1$ regularization, or even both $L^1$ and $L^2$,
+but we found that $L^2$ regularization works perfectly fine in our cases.
+Assuming that the output state is pure, we can write
+\begin{equation}
+    \op \rho = \ketbra{\psi}{\psi},\, \textrm{with}\, \ket\psi = \op U(x;\pmb\theta)\ket{\psi_0}.
+    \label{eq:regression-output}
+\end{equation}
+
+
+We tested the performance of the QNN with different number of layers (see figure \ref{fig:tanh_layer_search}), 
+and concluded that we need at least six layers to achieve the target MSE of $0.002$ on the test set.
+The quantum neural network we use in the regression task is shown on figure \ref{fig:BasicTwoModeRegressor}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/BasicTwoModeRegressor-circuit.pdf}
+    \caption{Ansatz circuit for the regression task. We use displacement encoding and 
+    six consecutive identical layers with a homodyne measurement at the end.}
+    \label{fig:BasicTwoModeRegressor}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/tanh-test-mse-lr=0_001-bs=150-layersearch.pdf}
+    \caption{Comparison of the regression circuit performance on the test set
+    with different number of layers.}
+    \label{fig:tanh_layer_search}
+\end{figure}
+
+We tested the quantum neural network described above on two \nd{three?} datasets: one of them was a
+synthetic dataset, namely the $f(x)=\tanh(\pi x)$ function \nd{$x^3$?} the other one is a normalized
+I-V curve of a photodiode.
+We run a bunch of numerical experiments experiments
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c| } 
+     \hline
+     &  $\tanh$ & I-V \\ \hline
+     \#training data & $105$ & $100$\\ \hline 
+     \#test data & $45$ & $38$\\ \hline 
+     \#layers & $6 $& $6$ \\ \hline
+     \#qumodes & $2$ & $2$ \\ \hline
+     \#shots & $50$ to $1000$ & $50$ to $1000$ \\ \hline
+     mini-batch size & $4$ & $4$ \\ \hline
+     $\lambda$ & $0.1$ & $0.1$ \\ \hline
+     lr & $0.001$ & $0.001$ \\ \hline
+     \hline
+    
+    \end{tabular}
+    \caption{Hyperparameters of the regression simulations}
+    \label{tab:hyperparams-regression}
+\end{table}
+
+\renewcommand{\thisfigurewidth}{0.5}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf} & 
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf} \\
+      (a) & (b) \\[6.5pt]
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/tanh-results-bs=16-lr=0_001-s1000.pdf} & 
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/iv-bs=4-lr=0_001-s1000.pdf} \\
+      (c) & (d) \\[6.5pt]
+    \end{tabular}
+    \caption{The top row shows how the regression circuits perform on the test set. The figures show
+    loss curves with different number of shots for the $\tanh$ function (a) and the I-V curve (b).
+    The bottom rows show inference tests with $1000$ shots both for the $\tanh$ function (c) as well
+    as the I-V curve (d).
+    All simulations were run with $\alpha=0.001$ and mini-batch size $4$.\\
+    \nd{Change tanh-results-bs=16-lr=0\_001-s1000.pdf to tanh-results-bs=\red{4}-lr=0\_001-s1000.pdf}\\
+    \nd{increase tick size on inference plots}
+    }
+    \label{fig:regression_results}
+\end{figure}
+
 \subsection{CV-VQE for the Bose-Hubbard model}
+\label{sec:bh-vqe-results}
 The Bose-Hubbard model introduced first by Gersch and Knollman in 1963 for the description of interacting spinless bosons on a lattice, such as ultracold bosonic atoms on an optical lattice
 \cite{BoseHubbardOriginal,ColdAtomtHubbard}. This model has also gained popularity because it is found to be an adequate model for the description of the Superfluidity-Mott insulator (SF-MI) transition, which has been experimentally demonstrated \cite{SuperfluidityMottTransition,Greiner2002}.
 We chose this model, because an exact diagonalization of the Bose-Hubbard Hamiltonian with respect to a finite dimensional Fock-basis is possible and thus the model is numerically solvable. This enables the verification of the correctness of the results given by our variational quantum solver for small problem instances.
@@ -679,6 +983,8 @@ followed by quadrature measurements.
     \end{tabular}
     \caption{caption}
 \end{figure}
+
+\section{Conclusion and future work}
 
 \bibliography{references}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

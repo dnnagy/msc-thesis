@@ -1,9 +1,12 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[wik()]{wikipedianeuron}
+URL \url{https://en.wikipedia.org/wiki/File:Neuron3.png}.
 
 \bibitem[Deutsch and Jozsa(1992)]{DeutschJozsa1992}
 David Deutsch and Richard Jozsa.
@@ -85,6 +88,34 @@ Yann LeCun, Yoshua Bengio, and Geoffrey Hinton.
 \newblock \doi{10.1038/nature14539}.
 \newblock URL \url{https://doi.org/10.1038/nature14539}.
 
+\bibitem[LeCun et~al.(1989)LeCun, Boser, Denker, Henderson, Howard, Hubbard,
+  and Jackel]{LeCun-CNN}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel.
+\newblock {Backpropagation Applied to Handwritten Zip Code Recognition}.
+\newblock \emph{Neural Computation}, 1\penalty0 (4):\penalty0 541--551, 12
+  1989.
+\newblock ISSN 0899-7667.
+\newblock \doi{10.1162/neco.1989.1.4.541}.
+\newblock URL \url{https://doi.org/10.1162/neco.1989.1.4.541}.
+
+\bibitem[Hochreiter and Schmidhuber(1997)]{SchmidhuberLSTM}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock {Long Short-Term Memory}.
+\newblock \emph{Neural Computation}, 9\penalty0 (8):\penalty0 1735--1780, 11
+  1997.
+\newblock ISSN 0899-7667.
+\newblock \doi{10.1162/neco.1997.9.8.1735}.
+\newblock URL \url{https://doi.org/10.1162/neco.1997.9.8.1735}.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{Transformer}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock 2017.
+\newblock URL \url{https://arxiv.org/pdf/1706.03762.pdf}.
+
 \bibitem[Rumelhart et~al.(1986)Rumelhart, Hinton, and Williams]{BackpropPaper}
 David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
 \newblock Learning representations by back-propagating errors.
@@ -112,15 +143,6 @@ Maria Schuld and Nathan Killoran.
 \newblock \emph{Phys. Rev. Lett.}, 122:\penalty0 040504, Feb 2019.
 \newblock \doi{10.1103/PhysRevLett.122.040504}.
 \newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevLett.122.040504}.
-
-\bibitem[Killoran et~al.(2019)Killoran, Bromley, Arrazola, Schuld, Quesada, and
-  Lloyd]{CVQNNLLoyd}
-Nathan Killoran, Thomas~R. Bromley, Juan~Miguel Arrazola, Maria Schuld,
-  Nicol\'as Quesada, and Seth Lloyd.
-\newblock Continuous-variable quantum neural networks.
-\newblock \emph{Phys. Rev. Research}, 1:\penalty0 033063, Oct 2019.
-\newblock \doi{10.1103/PhysRevResearch.1.033063}.
-\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevResearch.1.033063}.
 
 \bibitem[Peruzzo et~al.(2014)Peruzzo, McClean, Shadbolt, Yung, Zhou, Love,
   Aspuru-Guzik, and O'Brien]{Peruzzo2014}
@@ -209,6 +231,16 @@ Diederik~P. Kingma and Jimmy Ba.
 \newblock Adam: A method for stochastic optimization.
 \newblock \emph{CoRR}, abs/1412.6980, 2015.
 
+\bibitem[Killoran et~al.(2019{\natexlab{a}})Killoran, Bromley, Arrazola,
+  Schuld, Quesada, and Lloyd]{CVQNNLLoyd}
+Nathan Killoran, Thomas~R. Bromley, Juan~Miguel Arrazola, Maria Schuld,
+  Nicol\'as Quesada, and Seth Lloyd.
+\newblock Continuous-variable quantum neural networks.
+\newblock \emph{Phys. Rev. Research}, 1:\penalty0 033063, Oct
+  2019{\natexlab{a}}.
+\newblock \doi{10.1103/PhysRevResearch.1.033063}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevResearch.1.033063}.
+
 \bibitem[Schuld et~al.(2019)Schuld, Bergholm, Gogolin, Izaac, and
   Killoran]{AnalyticGradientsSchuld}
 Maria Schuld, Ville Bergholm, Christian Gogolin, Josh Izaac, and Nathan
@@ -217,6 +249,47 @@ Maria Schuld, Ville Bergholm, Christian Gogolin, Josh Izaac, and Nathan
 \newblock \emph{Phys. Rev. A}, 99:\penalty0 032331, Mar 2019.
 \newblock \doi{10.1103/PhysRevA.99.032331}.
 \newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevA.99.032331}.
+
+\bibitem[Killoran et~al.(2019{\natexlab{b}})Killoran, Izaac, Quesada, Bergholm,
+  Amy, and Weedbrook]{Killoran2019strawberryfields}
+Nathan Killoran, Josh Izaac, Nicol{\'{a}}s Quesada, Ville Bergholm, Matthew
+  Amy, and Christian Weedbrook.
+\newblock Strawberry {F}ields: {A} {S}oftware {P}latform for {P}hotonic
+  {Q}uantum {C}omputing.
+\newblock \emph{{Quantum}}, 3:\penalty0 129, March 2019{\natexlab{b}}.
+\newblock ISSN 2521-327X.
+\newblock \doi{10.22331/q-2019-03-11-129}.
+\newblock URL \url{https://doi.org/10.22331/q-2019-03-11-129}.
+
+\bibitem[{Bromley} et~al.(2020){Bromley}, {Arrazola}, {Jahangiri}, {Izaac},
+  {Quesada}, {Gran}, {Schuld}, {Swinarton}, {Zabaneh}, and
+  {Killoran}]{ApplicationsOfStrawberryFields}
+Thomas~R. {Bromley}, Juan~Miguel {Arrazola}, Soran {Jahangiri}, Josh {Izaac},
+  Nicol{\'a}s {Quesada}, Alain~Delgado {Gran}, Maria {Schuld}, Jeremy
+  {Swinarton}, Zeid {Zabaneh}, and Nathan {Killoran}.
+\newblock {Applications of near-term photonic quantum computers: software and
+  algorithms}.
+\newblock \emph{Quantum Science and Technology}, 5\penalty0 (3):\penalty0
+  034010, July 2020.
+\newblock \doi{10.1088/2058-9565/ab8504}.
+
+\bibitem[Abadi et~al.(2016)Abadi, Barham, Chen, Chen, Davis, Dean, Devin,
+  Ghemawat, Irving, Isard, et~al.]{abadi2016tensorflow}
+Mart{\'\i}n Abadi, Paul Barham, Jianmin Chen, Zhifeng Chen, Andy Davis, Jeffrey
+  Dean, Matthieu Devin, Sanjay Ghemawat, Geoffrey Irving, Michael Isard, et~al.
+\newblock Tensorflow: A system for large-scale machine learning.
+\newblock In \emph{12th $\{$USENIX$\}$ Symposium on Operating Systems Design
+  and Implementation ($\{$OSDI$\}$ 16)}, pages 265--283, 2016.
+
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay]{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
+  2011.
 
 \bibitem[Gersch and Knollman(1963)]{BoseHubbardOriginal}
 H.~A. Gersch and G.~C. Knollman.
