@@ -234,9 +234,19 @@ for searching unordered databases runs in $O(N)$ time, Grover's algorithm solves
 with $O(\sqrt N)$ oracle queries. Beyond quantum algorithms, many quantum-inspired algorithms were 
 discovered \cite{Tang2019,Ding2019QuantumInspiredSVM,ArrazolaQuantumInspired2019}.
 
-\section{Quantum Computing with continuous variables}
+\cite{KLMScheme}, \cite{XanaduBlueprint}, \cite{PsiQuantumFBQC}
 \nd{cite: Xanadu paper, Photonic Supremacy paper, PsiQuantum Fusion-Based QC}
-Continuous variable (CV) systems have infinite degrees of freedom, and therefore the corresponding Hilbert-space is of infinite dimensions. 
+
+
+\section{Quantum Computing with continuous variables}
+In this chapter, we introduce the mathematical formalism used in the description of 
+continuous-variable (CV) quantum computing. This formalism is quite different from the 
+formalism used in qubit-based quantum computing literature, mostly because
+CV systems have infinite degrees of freedom. 
+We assume that the reader has basic knowledge of quantum mechanics, Hilbert-spaces, density
+matrices, braket notation, etc. Some of this basic mathematical background is covered in appendix
+\ref{appendix:mathematical-preliminaries}. 
+CV systems have infinite degrees of freedom, and therefore the corresponding Hilbert-space is of infinite dimensions. 
 Such systems can be modeled by $M$ harmonic oscillators, which are usually called \textit{modes}. 
 % each having a Hilbert-space $\mathcal H_k$. 
 With $H_k$ denoting the Hilbert-space of the $k$th mode, the Hilbert-space of the full CV system is their direct sum:
@@ -300,6 +310,7 @@ The derivation of the above formula is explained in detail in appendix \ref{appe
 the single-mode Weyl-displacement operator 
 \begin{equation}
     \op D_k(\alpha) = e^{\alpha\op a^\dagger_k - \alpha^*\op a_k},
+    \label{eq:singlemode-weyl}
 \end{equation}
 we can create coherent states from the vacuum state: $\ket\alpha_k = \op D_k(\alpha)\ket 0_k$. Of 
 course, we can define multimode coherent states 
@@ -309,6 +320,7 @@ course, we can define multimode coherent states
 where $\op D(\pmb\xi)$ is the multi-mode Weyl-displacement operator defined as
 \begin{equation}
     \op D(\pmb\xi) = e^{i\mathbf R^\top\pmb\Omega\pmb\xi}, ~ \pmb\xi \in \mathbb R^{2N}.
+    \label{eq:multimode-weyl}
 \end{equation}
 For a single mode, 
 \begin{equation}
@@ -319,13 +331,131 @@ For a single mode,
         \xi_1 \\ \xi_2
     \end{matrix}\right) = \frac{1}{\sqrt 2}\left(\begin{matrix}
         \textrm{Re}(\alpha_k) \\ \textrm{Im}(\alpha_k)
-    \end{matrix}\right)
+    \end{matrix}\right),
 \end{equation}
+equation \ref{eq:multimode-weyl} reproduces equation \ref{eq:singlemode-weyl}. The introduction
+of the Weyl-displacement operator is necessary to carry out the phase-space description
+of CV-systems, which we will do in the next chapter.
 
-\nd{Write about phase-space, quasiprobability}
+\subsection{Phase-space description}
+\label{sec:phasespace}
+The description of CV quantum systems with the help of canonical creation and annihillation operators in 
+the Fock-basis is equivalent to the description of these systems in the quadrature basis, 
+which is called the phase-space description. The phase-space description is useful, 
+because it makes possible to calculate quantities easier than it would be in the Fock-basis description.
+
+A CV quantum state $\op\rho$ can be descibed in Fock-space by an infinite-sized matrix. This is 
+problematic if we want to carry out actual calculations or simulate such systems. However, 
+phase-space description can be used to deal with these problems. Instead of giving the elements
+of the density matrix $\op\rho$, we can use the \textit{s-ordered characteristic functions} 
+(see \cite{Adesso2014}) to describe the state:
+\begin{equation}
+    \chi_{\op \rho}^s(\pmb\xi) = \Tr{\op\rho\op D(\pmb\xi)}e^{s||\pmb\xi||^2/2},~\pmb\xi\in\mathbb R^{2N}.
+\end{equation}
+The $2N$-dimensional vectors $\pmb\xi$ lie in the \textit{quantum phase-space} $\Gamma$. The 
+quantum phase-space $\Gamma=(\mathbb R^{2N}, \pmb\Omega)$ is a real $2N$-dimensional space 
+equipped with the symplectic form $\pmb\Omega$. While $\Gamma$ is the quantum phase-space of the 
+$N$-mode system, it can be decomposed into a direct sum of single-mode quantum phase spaces:
+\begin{equation}
+    \Gamma = \bigoplus\limits_{k=1}^N\Gamma_k,
+\end{equation}
+where $\Gamma_k=(\mathbb R^2, \pmb\omega)$ are the $2$-dimensional phase spaces associated with 
+the $k$th mode. Unlike in classical mechanics, where a state of the system is a single point 
+in its phase-space, quantum states are not single points, but a region in the phase space. This 
+is a consequence of the Heisenberg uncertainty principle, and the phase-space region 
+corresponding to a state depends on the product of the uncertainties of the 
+quadrature operators.
+\par
+By applying a Fourier-transform to the s-ordered characteristic function, we 
+can define a corresponding quasi-probability function:
+\begin{equation}
+    W_{\op\rho}^s(\pmb\xi) = \frac{1}{\pi^2}\int_{\mathbb R^{2N}}\chi_{\op\rho}^s
+    e^{i\pmb\kappa^\top\pmb\Omega\pmb\xi} \dd^{2N}\pmb\kappa.
+\end{equation}
+$W_{\op\rho}^s(\pmb\xi)$ are called quasi-probabilities, because they sum up to
+$1$, but they can have negative values or even be singular in some cases. 
+There are a bunch of notable quasi-probability distributions associated to 
+a state $\op\rho$: for $s=-1$, 
+\begin{equation}
+    W_{\op\rho}^{-1} = \frac{1}{\pi}\bra{\pmb\xi}\op\rho\ket{\pmb\xi}
+\end{equation}
+is called the Husimi Q-function, and for $s=1$, we have the so called P-representation or P-function,
+which is the representation of $\op\rho$ in the coherent basis:
+\begin{equation}
+    \op\rho = \int_{\mathbb R^{2N}} W_{\op\rho}^1(\pmb\xi)\ketbra{\pmb\xi}{\pmb\xi}\dd^{2N}\pmb\xi.
+\end{equation}
+Perhaps the most important quasiprobability is the $s=0$ case, for which $W^{0}_{\op\rho}\equiv W_{\op\rho}$
+is called the \textit{Wigner-function}, and $\chi_{\op\rho}^{0}\equiv \chi_{\op\rho}$ is simply called
+the characteristic function.
+The Wigner-function can be expressed in the quadrature-basis, namely the basis spanned by 
+the eigenvectors of the $\op X_j$ operators (the vectors satisfying $\op X_j=X_j\ket{\mathbf x}$), 
+which we will denote $\ket{\mathbf x}$:
+\begin{equation}
+    W_{\op\rho}(\mathbf x, \mathbf p) = \frac{1}{\pi^N}\int_{\mathbb R^N}\bra{\mathbf x + \mathbf y}
+    \op\rho \ket{\mathbf x-\mathbf y}e^{-2i\mathbf p\mathbf y}\dd^{N}\mathbf y
+\end{equation}
+The Wigner-function is normalized, i.e
+\begin{equation}
+    \int_{\mathbb R^{2N}}W_{\op\rho}(\mathbf x, \mathbf p) \dd^{N}\mathbf x \dd^{N}\mathbf p = \Tr{\op \rho} = \chi_{\op\rho}(0) = 1,
+\end{equation}
+and it can be used to calculate the \textit{purity} of the state $\mu_{\op\rho}$:
+\begin{equation}
+    \mu_{\op\rho} = \Tr{\op\rho^2} = (2\pi)^N \int_{\mathbb R^{2N}}\left(W_{\op\rho}(\mathbf x, \mathbf p)\right)^2 \dd^{N}\mathbf x \dd^{N}\mathbf p
+    = \int_{\mathbb R^{2N}} |\chi_{\op\rho}(\pmb\xi)|^2 \dd^{2N}\pmb\xi.
+\end{equation}
+The Wigner-function also can be used to calculate expectation values of the quadrature operators, 
+for example $\langle X_1 \rangle$ can be calculated by marginalizing over all other variables, 
+that is,
+\begin{equation}
+    \langle X_1 \rangle = \int_{\mathbb R^{2N-1}} W_{\op\rho}(\mathbf x, \mathbf p) \dd p_1 \cdots \dd p_N \dd x_2 \cdots \dd x_N.
+\end{equation}
 \nd{Write about different quantum gates.}
 \nd{Write about homodyne measurements, heterodyne measurements and photon number-resolving measurements}
+\subsection{CV quantum gates}
+In this section we present the most important quantum gates used in continuous variable 
+systems. We follow the notation also used in the documentation of Strawerry Fields \cite{Killoran2019strawberryfields,StrawberryFieldsDocumentation}.
+Some of the gates are Gaussian, others are non-Gaussian, again some of them 
+are expressed in terms of canonical creation and annihilation operators, others are expressed 
+in terms of the quadrature operators.
 
+In the visual representations of CV quantum circuits,
+wires represent photon carriers which are typically integrated waveguides on a 
+photonic integrated circuit, while boxes represent the device realizing the corresponding
+transformation on the quantum state.
+
+\par \textbf{Displacement.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/displacement.pdf}
+\end{figure}
+
+\begin{equation}
+     D(\alpha) = e^{\alpha \op a^\dagger - \alpha^* \op a} 
+      = \exp\left[r\left(e^{i\phi}\op a^\dagger - e^{-i\phi}\op a \right)\right],
+\end{equation}
+with $\alpha = re^{i\phi} \in\mathbb{C},\, r\geq 0,\, \phi\in [0,2\pi)$.
+\par \textbf{Rotation.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/rotation.pdf}
+\end{figure}
+
+\begin{equation}
+     R(\phi) = e^{i\phi\op a^\dagger \op a} = \exp\left[\frac{\phi}{2}\left(\frac{\op X^2 + \op P^2}{\hbar}-\op I\right)\right]
+\end{equation}
+
+
+\par \textbf{Squeezing.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/squeezing.pdf}
+\end{figure}
+
+\begin{equation}
+     S(z) = \exp\left[ \frac{1}{2}\left( z^*\op a^2 - z \op a^{\dagger^2} \right) \right]
+     = \exp\left[ \frac{r}{2}\left( e^{-i\phi}\op a^2 - e^{i\phi} \op a^{\dagger^2} \right) \right],
+\end{equation}
+with $z = re^{i\phi} \in\mathbb{C},\, r\geq 0,\, \phi\in [0,2\pi)$.
 
 \section{Machine learning}
 \label{sec:ml-intro}
@@ -386,7 +516,7 @@ crossentropy of two probability distributions $p$ and $q$ is defined as
     H(p,q) = -\int p(x)\log q(x)\dd x
 \end{equation}
 \nd{Explain the intuition behind entropy, cross-entropy etc.}
-To transform this general formula of cross-entropy to the case of classification, we need to introduce
+To transform this general formula of cross-entropy to fit the case of classification, we need to introduce
 one-hot encoding. One-hot encoding maps integer labels to binary vectors in a way that vector 
 corresponding to the label $j$ will contain $1$ at the $j$th position and $0$ everywhere else. The
 length of the resulting vectors is $K$. For example the one-hot encoding of labels $1$ and $3$ in case of 
@@ -460,6 +590,8 @@ With these two quantities, we can now define the $R^2$-score as follows:
 \begin{equation}
     R^2 = 1-\frac{SS_{\textrm{res}}}{SS_{\textrm{tot}}}.
 \end{equation}
+In this thesis, we will use the above definition of $R^2$-score to measure the performance of 
+our models.
 
 \subsection{Deep Neural Networks and backpropagation}
 \label{sec:dnn}
@@ -512,7 +644,7 @@ deep neural networks:
 \end{equation}
 where $g$ is called \textit{activation function}, $\mathbf W$ and $\mathbf b$ are the 
 \textit{weights} and \textit{bias}es, respectively.
-Some commonly used activation functions are shown on figure \ref{fig:activations} This model of a single neuron is called a 
+Some commonly used activation functions are shown on figure \ref{fig:activations}. This model of a single neuron is called a 
 perceptron. 
 The simplest form of deep neural network uses many perceptrons and is called a \textit{multilayer-perceptron}
 (MLP), see figure \ref{fig:MLP}. In this case the input vectors are fed into many perceptrons, and the 
@@ -536,8 +668,9 @@ The outputs of an MLP can be scalars vector, or in some cases tensors of higher 
     \label{fig:activations}
 \end{figure}
 
+
 There are many more sophisticated neural network architectures like convolutional neural networks (CNNs)
-\cite{LeCun-CNN}, which are useful for image processing tasks, recursive neural networks 
+\cite{LeCun-CNN}, which are useful for image processing tasks, recurrent neural networks 
 with internal long term memory \cite{SchmidhuberLSTM} for speech recognition or time-series 
 forecasting, or transformers \cite{Transformer} for machine translation. 
 To dive into the details of these complex deep neural network architectures is out of the 
@@ -578,8 +711,21 @@ into mini-batches of a small size and calculate the losses and gradients for eac
 min-batch. This version of gradient descent is called mini-batch stochastic gradient descent or 
 mini-batch SGD, sometimes simply SGD. Using SGD instead of GD not only improves the overall perform
 ance of the models, but usually reduces time needed for convergence.
-
-
+In algorithm \ref{algo:gd}, $\alpha_j^{(t)}$ are called learning rates, which determine the 
+magnitude of the gradient step. We used this notation because most modern GD algorithms like 
+Adam \cite{Kingma2015AdamAM} use different learning rates for each parameter, and the 
+value of learning rates is updated after each iteration. Initially, the learning rates are 
+typically in the range $[10^{-4},10^{-1}]$.
+Since the loss function $\mathcal L$ is in most cases not a globally convex hyperplane, it is 
+very hard to find its global minimum by GD. In fact, it is not even possible to tell if the 
+optimum found by a deep neural network is a global or local optimum. Therefore it is possible
+for a network to get stuck in a local minimum, which is suboptimal. There are two solutions to 
+this problem: one can run the same model parallely with different initial parameters $\pmb\theta^{(0)}$,
+or we can use a cyclic learning rate. Using a cyclic learning rate means, that when the 
+variance of $\mathcal L$ reaches close to zero, we increase the learning rate, so we try to 
+push the model out of the minimum, in the hope that it will find a better solution.
+\nd{write about overfitting}\\
+\nd{write about softmax}
 \begin{equation}
     \texttt{Softmax}:\mathbb R^m \rightarrow \mathbb R^m,~\left[\texttt{Softmax}(\mathbf x)\right]_j = \frac{e^{x_j}}{\sum\limits_ke^{x_k}}
     \label{eq:softmax}
@@ -589,6 +735,7 @@ ance of the models, but usually reduces time needed for convergence.
 QSVM paper = \cite{QSVMPaper}
 HHL paper = \cite{HHLPaper}
 Feature Hilbert Spaces = \cite{FeatureHilbertSpaces}
+Quantum Hopfield Networks = \cite{QuantumHopfield}
 
 \nd{related papers: quantum svm, Kernel methods, HHL algorithm for matrix inversion, quantum-inspired classical algos\\
 motivation: summary from Lloyd paper, regression, classification, hybrid traning, encoding, inference\\
@@ -701,9 +848,9 @@ We use three-mode quantum neural network, and therefore the encoding function is
 \begin{equation}
     (x_1, x_2) \mapsto \op D_1(x_1)\otimes\op D_2(x_2)\otimes I_3 \ket{0,0,0},
 \end{equation}
-and we can decompose $\op U(\mathbf x; \pmb\theta)$
+and we can write $\op U(\mathbf x; \pmb\theta)$ as a product:
 \begin{equation}
-    \op U(\mathbf x; \pmb\theta) = \op U'(\pmb\theta)\otimes \left(\op D_1(x_1)\otimes\op D_2(x_2)\otimes I_3\right).
+    \op U(\mathbf x; \pmb\theta) = \op U'(\pmb\theta)\left(\op D_1(x_1)\otimes\op D_2(x_2)\otimes I_3\right).
 \end{equation}
 To construct the loss function, we use homodyne measurements with \texttt{Softmax} and \texttt{CrossEntropy}.
 Depending on the number of classes in the dataset we measure modes $1-3$ in the case of blobs
@@ -786,9 +933,9 @@ on all of the modes:
 \begin{equation}
     x \mapsto \op D_1(x)\otimes\op D_2(x) \ket{0,0}.
 \end{equation}
-This way the unitary matrix in equation \ref{eq:regression-output} can be decomposed as 
+This way the unitary matrix in equation \ref{eq:regression-output} can be written as 
 \begin{equation}
-    \op U(x;\pmb\theta) = \op U'(\pmb\theta) \otimes \left(\otimes D_1(x)\otimes\op D_2(x)\right),
+    \op U(x;\pmb\theta) = \op U'(\pmb\theta) \left(\op D_1(x)\otimes\op D_2(x)\right),
 \end{equation}
 where $\op U'(\pmb\theta)$ does not depend on the value of $x$.
 After data encoding, we apply a number of identical quantum layers composed of beamsplitters, 
@@ -860,16 +1007,18 @@ We run a bunch of numerical experiments experiments
     \label{tab:hyperparams-regression}
 \end{table}
 
-\renewcommand{\thisfigurewidth}{0.5}
+\renewcommand{\thisfigurewidth}{0.33}
 \begin{figure}[H]
     \centering
-    \begin{tabular}{cc}
+    \begin{tabular}{ccc}
       \includegraphics[width=\thisfigurewidth\textwidth]{figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf} & 
-      \includegraphics[width=\thisfigurewidth\textwidth]{figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf} \\
-      (a) & (b) \\[6.5pt]
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf} &
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/x2-test-mse-bs=4-lr=0_001-shotsearch.pdf} \\
+      (a) & (b) & (c) \\[6.5pt]
       \includegraphics[width=\thisfigurewidth\textwidth]{figures/tanh-results-bs=16-lr=0_001-s1000.pdf} & 
-      \includegraphics[width=\thisfigurewidth\textwidth]{figures/iv-bs=4-lr=0_001-s1000.pdf} \\
-      (c) & (d) \\[6.5pt]
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/iv-bs=4-lr=0_001-s1000.pdf} &
+      \includegraphics[width=\thisfigurewidth\textwidth]{figures/x2-bs=4-lr=0_001-s1000.pdf} \\
+      (d) & (e) & (f) \\[6.5pt]
     \end{tabular}
     \caption{The top row shows how the regression circuits perform on the test set. The figures show
     loss curves with different number of shots for the $\tanh$ function (a) and the I-V curve (b).
@@ -899,6 +1048,7 @@ where $M$ is the number of bosonic modes in the system. If we restrict the total
 \end{equation}
 which explosively grows with the system size. Therefore finding the groundstate of the Bose-Hubbard Hamiltonian for larger systems can be intractable even on classical supercomputers, making quantum computers, especially continuous-variable quantum computers a potential candidate for solving these problems in the future.
 Compared to the original definition of the Bose-Hubbard Hamiltonian, we omitted the term $-\mu\sum\limits_{i}^{M} n_i$, because it is not relevant in our particular experiments.
+
 
 \subsubsection{Solving the model by exact diagonalization}
 \nd{Analytic solution by diagonalization}
@@ -1046,8 +1196,10 @@ And so, a coherent state can be written as
     \ket\alpha = e^{i\varphi}e^{\frac{-|\alpha|^2}{2}}\sum\limits_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\ket n
 \end{equation*}
 \section{Mathematical preliminaries}
+\label{appendix:mathematical-preliminaries}
 
 \subsection{Hilbert spaces}
+\label{appendix:Hilbertspace}
 \begin{definition}
     \textbf{Hilbert-space}\\
     Given a field $T$ (real or complex), a vector space $\mathcal H$ endowed with an inner product, is called a Hilbert-space, if
@@ -1118,7 +1270,7 @@ And so, a coherent state can be written as
 \end{definition}
 
 \subsection{Linear operators on Hilbert spaces}
-
+\label{appendix:linear-ops}
 \begin{definition}
     \textbf{Linear operators}\\
     A map $\hat A: \mathcal H_1 \rightarrow \mathcal H_2$ is a linear operator, if 
@@ -1275,6 +1427,7 @@ There are 2 important special cases:
 \end{theorem}
 
 \subsection{Pure and mixed quantum states}
+\label{appendix:pure-and-mixed-states}
 \begin{definition}
     \textbf{Quantum states}\\
     A quantum state of a quantum system is a mathematical entity that provides a probability distribution 

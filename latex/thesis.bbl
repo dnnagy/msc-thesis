@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -54,6 +54,56 @@ Juan~Miguel {Arrazola}, Alain {Delgado}, Bhaskar~Roy {Bardhan}, and Seth
   {Lloyd}.
 \newblock {Quantum-inspired algorithms in practice}.
 \newblock \emph{arXiv e-prints}, art. arXiv:1905.10415, May 2019.
+
+\bibitem[Knill et~al.(2001)Knill, Laflamme, and Milburn]{KLMScheme}
+E.~Knill, R.~Laflamme, and G.~J. Milburn.
+\newblock A scheme for efficient quantum computation with linear optics.
+\newblock \emph{Nature}, 409\penalty0 (6816):\penalty0 46--52, January 2001.
+\newblock \doi{10.1038/35051009}.
+\newblock URL \url{https://doi.org/10.1038/35051009}.
+
+\bibitem[Bourassa et~al.(2021)Bourassa, Alexander, Vasmer, Patil, Tzitrin,
+  Matsuura, Su, Baragiola, Guha, Dauphinais, Sabapathy, Menicucci, and
+  Dhand]{XanaduBlueprint}
+J.~Eli Bourassa, Rafael~N. Alexander, Michael Vasmer, Ashlesha Patil, Ilan
+  Tzitrin, Takaya Matsuura, Daiqin Su, Ben~Q. Baragiola, Saikat Guha, Guillaume
+  Dauphinais, Krishna~K. Sabapathy, Nicolas~C. Menicucci, and Ish Dhand.
+\newblock Blueprint for a scalable photonic fault-tolerant quantum computer.
+\newblock \emph{Quantum}, 5:\penalty0 arXiv:2010.02905v2, February 2021.
+\newblock \doi{10.22331/q-2021-02-04-392}.
+\newblock URL \url{https://doi.org/10.22331/q-2021-02-04-392}.
+
+\bibitem[{Bartolucci} et~al.(2021){Bartolucci}, {Birchall}, {Bombin}, {Cable},
+  {Dawson}, {Gimeno-Segovia}, {Johnston}, {Kieling}, {Nickerson}, {Pant},
+  {Pastawski}, {Rudolph}, and {Sparrow}]{PsiQuantumFBQC}
+Sara {Bartolucci}, Patrick {Birchall}, Hector {Bombin}, Hugo {Cable}, Chris
+  {Dawson}, Mercedes {Gimeno-Segovia}, Eric {Johnston}, Konrad {Kieling}, Naomi
+  {Nickerson}, Mihir {Pant}, Fernando {Pastawski}, Terry {Rudolph}, and Chris
+  {Sparrow}.
+\newblock {Fusion-based quantum computation}.
+\newblock \emph{arXiv e-prints}, art. arXiv:2101.09310, January 2021.
+
+\bibitem[Adesso et~al.(2014)Adesso, Ragy, and Lee]{Adesso2014}
+Gerardo Adesso, Sammy Ragy, and Antony~R. Lee.
+\newblock Continuous variable quantum information: Gaussian states and beyond.
+\newblock \emph{Open Systems {\&} Information Dynamics}, 21\penalty0
+  (01n02):\penalty0 1440001, March 2014.
+\newblock \doi{10.1142/s1230161214400010}.
+\newblock URL \url{https://doi.org/10.1142/s1230161214400010}.
+
+\bibitem[Killoran et~al.(2019{\natexlab{a}})Killoran, Izaac, Quesada, Bergholm,
+  Amy, and Weedbrook]{Killoran2019strawberryfields}
+Nathan Killoran, Josh Izaac, Nicol{\'{a}}s Quesada, Ville Bergholm, Matthew
+  Amy, and Christian Weedbrook.
+\newblock Strawberry {F}ields: {A} {S}oftware {P}latform for {P}hotonic
+  {Q}uantum {C}omputing.
+\newblock \emph{{Quantum}}, 3:\penalty0 129, March 2019{\natexlab{a}}.
+\newblock ISSN 2521-327X.
+\newblock \doi{10.22331/q-2019-03-11-129}.
+\newblock URL \url{https://doi.org/10.22331/q-2019-03-11-129}.
+
+\bibitem[Str()]{StrawberryFieldsDocumentation}
+URL \url{https://strawberryfields.ai/photonics/conventions/gates.html}.
 
 \bibitem[{Kingma} and {Welling}(2013)]{VAEPaper}
 Diederik~P {Kingma} and Max {Welling}.
@@ -123,6 +173,11 @@ David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
 \newblock \doi{10.1038/323533a0}.
 \newblock URL \url{https://doi.org/10.1038/323533a0}.
 
+\bibitem[Kingma and Ba(2015)]{Kingma2015AdamAM}
+Diederik~P. Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock \emph{CoRR}, abs/1412.6980, 2015.
+
 \bibitem[Rebentrost et~al.(2014)Rebentrost, Mohseni, and Lloyd]{QSVMPaper}
 Patrick Rebentrost, Masoud Mohseni, and Seth Lloyd.
 \newblock Quantum support vector machine for big data classification.
@@ -143,6 +198,14 @@ Maria Schuld and Nathan Killoran.
 \newblock \emph{Phys. Rev. Lett.}, 122:\penalty0 040504, Feb 2019.
 \newblock \doi{10.1103/PhysRevLett.122.040504}.
 \newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevLett.122.040504}.
+
+\bibitem[Rebentrost et~al.(2018)Rebentrost, Bromley, Weedbrook, and
+  Lloyd]{QuantumHopfield}
+Patrick Rebentrost, Thomas~R. Bromley, Christian Weedbrook, and Seth Lloyd.
+\newblock Quantum hopfield neural network.
+\newblock \emph{Phys. Rev. A}, 98:\penalty0 042308, Oct 2018.
+\newblock \doi{10.1103/PhysRevA.98.042308}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevA.98.042308}.
 
 \bibitem[Peruzzo et~al.(2014)Peruzzo, McClean, Shadbolt, Yung, Zhou, Love,
   Aspuru-Guzik, and O'Brien]{Peruzzo2014}
@@ -226,18 +289,13 @@ D.~Zhu, N.~M. Linke, M.~Benedetti, K.~A. Landsman, N.~H. Nguyen, C.~H.
 \newblock \doi{10.1126/sciadv.aaw9918}.
 \newblock URL \url{https://doi.org/10.1126/sciadv.aaw9918}.
 
-\bibitem[Kingma and Ba(2015)]{Kingma2015AdamAM}
-Diederik~P. Kingma and Jimmy Ba.
-\newblock Adam: A method for stochastic optimization.
-\newblock \emph{CoRR}, abs/1412.6980, 2015.
-
-\bibitem[Killoran et~al.(2019{\natexlab{a}})Killoran, Bromley, Arrazola,
+\bibitem[Killoran et~al.(2019{\natexlab{b}})Killoran, Bromley, Arrazola,
   Schuld, Quesada, and Lloyd]{CVQNNLLoyd}
 Nathan Killoran, Thomas~R. Bromley, Juan~Miguel Arrazola, Maria Schuld,
   Nicol\'as Quesada, and Seth Lloyd.
 \newblock Continuous-variable quantum neural networks.
 \newblock \emph{Phys. Rev. Research}, 1:\penalty0 033063, Oct
-  2019{\natexlab{a}}.
+  2019{\natexlab{b}}.
 \newblock \doi{10.1103/PhysRevResearch.1.033063}.
 \newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevResearch.1.033063}.
 
@@ -249,17 +307,6 @@ Maria Schuld, Ville Bergholm, Christian Gogolin, Josh Izaac, and Nathan
 \newblock \emph{Phys. Rev. A}, 99:\penalty0 032331, Mar 2019.
 \newblock \doi{10.1103/PhysRevA.99.032331}.
 \newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevA.99.032331}.
-
-\bibitem[Killoran et~al.(2019{\natexlab{b}})Killoran, Izaac, Quesada, Bergholm,
-  Amy, and Weedbrook]{Killoran2019strawberryfields}
-Nathan Killoran, Josh Izaac, Nicol{\'{a}}s Quesada, Ville Bergholm, Matthew
-  Amy, and Christian Weedbrook.
-\newblock Strawberry {F}ields: {A} {S}oftware {P}latform for {P}hotonic
-  {Q}uantum {C}omputing.
-\newblock \emph{{Quantum}}, 3:\penalty0 129, March 2019{\natexlab{b}}.
-\newblock ISSN 2521-327X.
-\newblock \doi{10.22331/q-2019-03-11-129}.
-\newblock URL \url{https://doi.org/10.22331/q-2019-03-11-129}.
 
 \bibitem[{Bromley} et~al.(2020){Bromley}, {Arrazola}, {Jahangiri}, {Izaac},
   {Quesada}, {Gran}, {Schuld}, {Swinarton}, {Zabaneh}, and

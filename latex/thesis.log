@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.22)  11 MAY 2021 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.22)  14 MAY 2021 14:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,13 +1147,30 @@ This may cause the page layout to be inconsistent, however.
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [7] [8] [9] [10] [11]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-01.
+ [7] [8] [9] [10] [11] [12]
+<figures/displacement.pdf, id=335, 213.79875pt x 69.6201pt>
+File: figures/displacement.pdf Graphic file (type pdf)
+<use figures/displacement.pdf>
+Package pdftex.def Info: figures/displacement.pdf  used on input line 429.
+(pdftex.def)             Requested size: 131.594pt x 42.85168pt.
+<figures/rotation.pdf, id=336, 208.78pt x 69.6201pt>
+File: figures/rotation.pdf Graphic file (type pdf)
+<use figures/rotation.pdf>
+Package pdftex.def Info: figures/rotation.pdf  used on input line 440.
+(pdftex.def)             Requested size: 131.594pt x 43.88425pt.
+<figures/squeezing.pdf, id=337, 202.7575pt x 69.6201pt>
+File: figures/squeezing.pdf Graphic file (type pdf)
+<use figures/squeezing.pdf>
+Package pdftex.def Info: figures/squeezing.pdf  used on input line 451.
+(pdftex.def)             Requested size: 131.594pt x 45.1856pt.
+ [13 <./figures/displacement.pdf> <./figures/rotation.pdf> <./figures/squeezing
+.pdf>] [14]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
+31.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [12] [13]
+) [15] [16]
 Package epstopdf Info: Source file: <figures/Neuron3.eps>
 (epstopdf)                    date: 2021-05-10 16:57:06
 (epstopdf)                    size: 106312 bytes
@@ -1162,163 +1179,183 @@ Package epstopdf Info: Source file: <figures/Neuron3.eps>
 (epstopdf)                    size: 35713 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/Neuron3-eps-conver
 ted-to.pdf figures/Neuron3.eps>
-(epstopdf)             \includegraphics on input line 487.
+(epstopdf)             \includegraphics on input line 619.
 Package epstopdf Info: Output file is already uptodate.
-<figures/Neuron3-eps-converted-to.pdf, id=323, 312.16624pt x 164.615pt>
+<figures/Neuron3-eps-converted-to.pdf, id=425, 312.16624pt x 164.615pt>
 File: figures/Neuron3-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/Neuron3-eps-converted-to.pdf>
 Package pdftex.def Info: figures/Neuron3-eps-converted-to.pdf  used on input li
-ne 487.
+ne 619.
 (pdftex.def)             Requested size: 368.4616pt x 194.30681pt.
 
-[14 <./figures/Neuron3-eps-converted-to.pdf>]
-<figures/MLP.pdf, id=346, 666.99188pt x 265.74281pt>
+[17 <./figures/Neuron3-eps-converted-to.pdf>]
+<figures/MLP.pdf, id=445, 666.99188pt x 265.74281pt>
 File: figures/MLP.pdf Graphic file (type pdf)
 <use figures/MLP.pdf>
-Package pdftex.def Info: figures/MLP.pdf  used on input line 524.
+Package pdftex.def Info: figures/MLP.pdf  used on input line 656.
 (pdftex.def)             Requested size: 368.4616pt x 146.80373pt.
-<figures/activation_functions.pdf, id=347, 1084.05pt x 289.08pt>
+<figures/activation_functions.pdf, id=446, 1084.05pt x 289.08pt>
 File: figures/activation_functions.pdf Graphic file (type pdf)
 <use figures/activation_functions.pdf>
-Package pdftex.def Info: figures/activation_functions.pdf  used on input line 5
-33.
+Package pdftex.def Info: figures/activation_functions.pdf  used on input line 6
+65.
 (pdftex.def)             Requested size: 521.11513pt x 138.96854pt.
- [15 <./figures/MLP.pdf>]
+ [18 <./figures/MLP.pdf> <./figures/activation_functions.pdf
+
+pdfTeX warning: pdflatex (file ./figures/activation_functions.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 561.
- [16 <./figures/activation_functions.pdf>]
-<figures/VQC-optimization.png, id=464, 3051.4pt x 2015.53pt>
+put line 694.
+ [19]
+<figures/VQC-optimization.png, id=567, 3051.4pt x 2015.53pt>
 File: figures/VQC-optimization.png Graphic file (type png)
 <use figures/VQC-optimization.png>
-Package pdftex.def Info: figures/VQC-optimization.png  used on input line 601.
+Package pdftex.def Info: figures/VQC-optimization.png  used on input line 748.
 (pdftex.def)             Requested size: 315.82881pt x 208.60757pt.
- [17 <./figures/VQC-optimization.png>]
-[18]
-<figures/Classifier-Circles-Ansatz.pdf, id=510, 1576.89125pt x 483.16508pt>
+ [20 <./figures/VQC-optimization.png>] [21]
+<figures/Classifier-Circles-Ansatz.pdf, id=614, 1576.89125pt x 483.16508pt>
 File: figures/Classifier-Circles-Ansatz.pdf Graphic file (type pdf)
 <use figures/Classifier-Circles-Ansatz.pdf>
 Package pdftex.def Info: figures/Classifier-Circles-Ansatz.pdf  used on input l
-ine 693.
+ine 840.
 (pdftex.def)             Requested size: 394.782pt x 120.96054pt.
- [19]
-<figures/fig_dataset_blobs.png, id=523, 462.528pt x 346.896pt>
+ [22]
+<figures/fig_dataset_blobs.png, id=623, 462.528pt x 346.896pt>
 File: figures/fig_dataset_blobs.png Graphic file (type png)
 <use figures/fig_dataset_blobs.png>
-Package pdftex.def Info: figures/fig_dataset_blobs.png  used on input line 739.
+Package pdftex.def Info: figures/fig_dataset_blobs.png  used on input line 886.
 
 (pdftex.def)             Requested size: 163.17526pt x 122.38406pt.
-<figures/fig_dataset_circles.png, id=524, 462.528pt x 346.896pt>
+<figures/fig_dataset_circles.png, id=624, 462.528pt x 346.896pt>
 File: figures/fig_dataset_circles.png Graphic file (type png)
 <use figures/fig_dataset_circles.png>
-Package pdftex.def Info: figures/fig_dataset_circles.png  used on input line 74
-0.
+Package pdftex.def Info: figures/fig_dataset_circles.png  used on input line 88
+7.
 (pdftex.def)             Requested size: 163.17526pt x 122.38406pt.
-<figures/fig_dataset_moons.png, id=525, 462.528pt x 346.896pt>
+<figures/fig_dataset_moons.png, id=625, 462.528pt x 346.896pt>
 File: figures/fig_dataset_moons.png Graphic file (type png)
 <use figures/fig_dataset_moons.png>
-Package pdftex.def Info: figures/fig_dataset_moons.png  used on input line 741.
+Package pdftex.def Info: figures/fig_dataset_moons.png  used on input line 888.
 
 (pdftex.def)             Requested size: 163.17526pt x 122.38406pt.
-<figures/test_acc_blobs_lr=0_1.png, id=526, 425.59pt x 281.05pt>
+<figures/test_acc_blobs_lr=0_1.png, id=626, 425.59pt x 281.05pt>
 File: figures/test_acc_blobs_lr=0_1.png Graphic file (type png)
 <use figures/test_acc_blobs_lr=0_1.png>
 Package pdftex.def Info: figures/test_acc_blobs_lr=0_1.png  used on input line 
-743.
+890.
 (pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
-<figures/test_acc_circles_lr=0_1.png, id=527, 425.59pt x 281.05pt>
+<figures/test_acc_circles_lr=0_1.png, id=627, 425.59pt x 281.05pt>
 File: figures/test_acc_circles_lr=0_1.png Graphic file (type png)
 <use figures/test_acc_circles_lr=0_1.png>
 Package pdftex.def Info: figures/test_acc_circles_lr=0_1.png  used on input lin
-e 744.
+e 891.
 (pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
-<figures/test_acc_moons_lr=0_001.png, id=528, 425.59pt x 281.05pt>
+<figures/test_acc_moons_lr=0_001.png, id=628, 425.59pt x 281.05pt>
 File: figures/test_acc_moons_lr=0_001.png Graphic file (type png)
 <use figures/test_acc_moons_lr=0_001.png>
 Package pdftex.def Info: figures/test_acc_moons_lr=0_001.png  used on input lin
-e 745.
+e 892.
 (pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
-<figures/test_loss_blobs_lr=0_001.png, id=529, 425.59pt x 281.05pt>
+<figures/test_loss_blobs_lr=0_001.png, id=629, 425.59pt x 281.05pt>
 File: figures/test_loss_blobs_lr=0_001.png Graphic file (type png)
 <use figures/test_loss_blobs_lr=0_001.png>
 Package pdftex.def Info: figures/test_loss_blobs_lr=0_001.png  used on input li
-ne 747.
+ne 894.
 (pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
-<figures/test_loss_circles_lr=0_1.png, id=530, 425.59pt x 281.05pt>
+<figures/test_loss_circles_lr=0_1.png, id=630, 425.59pt x 281.05pt>
 File: figures/test_loss_circles_lr=0_1.png Graphic file (type png)
 <use figures/test_loss_circles_lr=0_1.png>
 Package pdftex.def Info: figures/test_loss_circles_lr=0_1.png  used on input li
-ne 748.
+ne 895.
 (pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
-<figures/test_loss_moons_lr=0_001.png, id=531, 425.59pt x 281.05pt>
+<figures/test_loss_moons_lr=0_001.png, id=631, 425.59pt x 281.05pt>
 File: figures/test_loss_moons_lr=0_001.png Graphic file (type png)
 <use figures/test_loss_moons_lr=0_001.png>
 Package pdftex.def Info: figures/test_loss_moons_lr=0_001.png  used on input li
-ne 749.
+ne 896.
 (pdftex.def)             Requested size: 163.17526pt x 107.75642pt.
- [20 <./figures/Classifier-Circles-Ansatz.pdf>]
-<figures/classifier-test-acc-shots.png, id=572, 425.59pt x 281.05pt>
+ [23 <./figures/Classifier-Circles-Ansatz.pdf>]
+<figures/classifier-test-acc-shots.png, id=669, 425.59pt x 281.05pt>
 File: figures/classifier-test-acc-shots.png Graphic file (type png)
 <use figures/classifier-test-acc-shots.png>
 Package pdftex.def Info: figures/classifier-test-acc-shots.png  used on input l
-ine 758.
+ine 905.
 (pdftex.def)             Requested size: 263.188pt x 173.81177pt.
- [21 <./figures/fig_dataset_blobs.png> <./figures/fig_dataset_circles.png> <./f
+ [24 <./figures/fig_dataset_blobs.png> <./figures/fig_dataset_circles.png> <./f
 igures/fig_dataset_moons.png> <./figures/test_acc_blobs_lr=0_1.png> <./figures/
 test_acc_circles_lr=0_1.png> <./figures/test_acc_moons_lr=0_001.png> <./figures
 /test_loss_blobs_lr=0_001.png> <./figures/test_loss_circles_lr=0_1.png> <./figu
 res/test_loss_moons_lr=0_001.png> <./figures/classifier-test-acc-shots.png>] [2
-2]
-<figures/BasicTwoModeRegressor-circuit.pdf, id=601, 1242.6425pt x 331.59883pt>
+5]
+<figures/BasicTwoModeRegressor-circuit.pdf, id=699, 1242.6425pt x 331.59883pt>
 File: figures/BasicTwoModeRegressor-circuit.pdf Graphic file (type pdf)
 <use figures/BasicTwoModeRegressor-circuit.pdf>
 Package pdftex.def Info: figures/BasicTwoModeRegressor-circuit.pdf  used on inp
-ut line 824.
+ut line 971.
 (pdftex.def)             Requested size: 394.782pt x 105.3447pt.
-<figures/tanh-test-mse-lr=0_001-bs=150-layersearch.pdf, id=602, 433.62pt x 289.
+<figures/tanh-test-mse-lr=0_001-bs=150-layersearch.pdf, id=700, 433.62pt x 289.
 08pt>
 File: figures/tanh-test-mse-lr=0_001-bs=150-layersearch.pdf Graphic file (type 
 pdf)
 <use figures/tanh-test-mse-lr=0_001-bs=150-layersearch.pdf>
 Package pdftex.def Info: figures/tanh-test-mse-lr=0_001-bs=150-layersearch.pdf 
- used on input line 832.
+ used on input line 979.
 (pdftex.def)             Requested size: 263.188pt x 175.46515pt.
-<figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf, id=603, 433.62pt x 289.08p
+<figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf, id=701, 433.62pt x 289.08p
 t>
 File: figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf Graphic file (type pdf
 )
 <use figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf>
 Package pdftex.def Info: figures/tanh-test-mse-bs=4-lr=0_001-shotsearch.pdf  us
-ed on input line 867.
-(pdftex.def)             Requested size: 263.188pt x 175.46515pt.
-<figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf, id=604, 433.62pt x 289.08pt>
+ed on input line 1014.
+(pdftex.def)             Requested size: 173.70503pt x 115.80197pt.
+<figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf, id=702, 433.62pt x 289.08pt>
 
 File: figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf Graphic file (type pdf)
 <use figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf>
 Package pdftex.def Info: figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf  used
- on input line 868.
-(pdftex.def)             Requested size: 263.188pt x 175.46515pt.
-<figures/tanh-results-bs=16-lr=0_001-s1000.pdf, id=605, 578.16pt x 361.35pt>
+ on input line 1015.
+(pdftex.def)             Requested size: 173.70503pt x 115.80197pt.
+<figures/x2-test-mse-bs=4-lr=0_001-shotsearch.pdf, id=703, 433.62pt x 289.08pt>
+
+File: figures/x2-test-mse-bs=4-lr=0_001-shotsearch.pdf Graphic file (type pdf)
+<use figures/x2-test-mse-bs=4-lr=0_001-shotsearch.pdf>
+Package pdftex.def Info: figures/x2-test-mse-bs=4-lr=0_001-shotsearch.pdf  used
+ on input line 1016.
+(pdftex.def)             Requested size: 173.70503pt x 115.80197pt.
+<figures/tanh-results-bs=16-lr=0_001-s1000.pdf, id=704, 578.16pt x 361.35pt>
 File: figures/tanh-results-bs=16-lr=0_001-s1000.pdf Graphic file (type pdf)
 <use figures/tanh-results-bs=16-lr=0_001-s1000.pdf>
 Package pdftex.def Info: figures/tanh-results-bs=16-lr=0_001-s1000.pdf  used on
- input line 870.
-(pdftex.def)             Requested size: 263.188pt x 164.4917pt.
-<figures/iv-bs=4-lr=0_001-s1000.pdf, id=606, 578.16pt x 361.35pt>
+ input line 1018.
+(pdftex.def)             Requested size: 173.70503pt x 108.56573pt.
+<figures/iv-bs=4-lr=0_001-s1000.pdf, id=705, 650.43pt x 433.62pt>
 File: figures/iv-bs=4-lr=0_001-s1000.pdf Graphic file (type pdf)
 <use figures/iv-bs=4-lr=0_001-s1000.pdf>
 Package pdftex.def Info: figures/iv-bs=4-lr=0_001-s1000.pdf  used on input line
- 871.
-(pdftex.def)             Requested size: 263.188pt x 164.4917pt.
+ 1019.
+(pdftex.def)             Requested size: 173.70503pt x 115.80197pt.
+<figures/x2-bs=4-lr=0_001-s1000.pdf, id=706, 650.43pt x 433.62pt>
+File: figures/x2-bs=4-lr=0_001-s1000.pdf Graphic file (type pdf)
+<use figures/x2-bs=4-lr=0_001-s1000.pdf>
+Package pdftex.def Info: figures/x2-bs=4-lr=0_001-s1000.pdf  used on input line
+ 1020.
+(pdftex.def)             Requested size: 173.70503pt x 115.80197pt.
 
-Overfull \hbox (24.00003pt too wide) in paragraph at lines 866--881
+Overfull \hbox (30.73914pt too wide) in paragraph at lines 1013--1030
  [][] 
  []
 
-[23 <./figures/BasicTwoModeRegressor-circuit.pdf> <./figures/tanh-test-mse-lr=0
-_001-bs=150-layersearch.pdf>] [24 <./figures/tanh-test-mse-bs=4-lr=0_001-shotse
+[26 <./figures/BasicTwoModeRegressor-circuit.pdf> <./figures/tanh-test-mse-lr=0
+_001-bs=150-layersearch.pdf>] [27 <./figures/tanh-test-mse-bs=4-lr=0_001-shotse
 arch.pdf> <./figures/iv-test-mse-bs=4-lr=0_001-shotsearch.pdf
 
 pdfTeX warning: pdflatex (file ./figures/iv-test-mse-bs=4-lr=0_001-shotsearch.p
+df): PDF inclusion: multiple pdfs with page group included in a single page
+> <./figures/x2-test-mse-bs=4-lr=0_001-shotsearch.pdf
+
+pdfTeX warning: pdflatex (file ./figures/x2-test-mse-bs=4-lr=0_001-shotsearch.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 > <./figures/tanh-results-bs=16-lr=0_001-s1000.pdf
 
@@ -1328,77 +1365,82 @@ pdfTeX warning: pdflatex (file ./figures/tanh-results-bs=16-lr=0_001-s1000.pdf)
 
 pdfTeX warning: pdflatex (file ./figures/iv-bs=4-lr=0_001-s1000.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
+> <./figures/x2-bs=4-lr=0_001-s1000.pdf
+
+pdfTeX warning: pdflatex (file ./figures/x2-bs=4-lr=0_001-s1000.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
 >]
-<figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf, id=810, 433.62pt x 28
+<figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf, id=975, 433.62pt x 28
 9.08pt>
 File: figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf Graphic file (typ
 e pdf)
 <use figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf>
 Package pdftex.def Info: figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pd
-f  used on input line 934.
+f  used on input line 1084.
 (pdftex.def)             Requested size: 222.82387pt x 148.54982pt.
-<figures/diagonalized_solutions_M=4_cutoff=4.pdf, id=811, 505.89pt x 289.08pt>
+<figures/diagonalized_solutions_M=4_cutoff=4.pdf, id=976, 505.89pt x 289.08pt>
 File: figures/diagonalized_solutions_M=4_cutoff=4.pdf Graphic file (type pdf)
 <use figures/diagonalized_solutions_M=4_cutoff=4.pdf>
 Package pdftex.def Info: figures/diagonalized_solutions_M=4_cutoff=4.pdf  used 
-on input line 934.
+on input line 1084.
 (pdftex.def)             Requested size: 259.96117pt x 148.54982pt.
- [25]
-<figures/BH-Ansatz.pdf, id=827, 1146.2825pt x 515.28508pt>
+ [28]
+<figures/BH-Ansatz.pdf, id=990, 1146.2825pt x 515.28508pt>
 File: figures/BH-Ansatz.pdf Graphic file (type pdf)
 <use figures/BH-Ansatz.pdf>
-Package pdftex.def Info: figures/BH-Ansatz.pdf  used on input line 960.
+Package pdftex.def Info: figures/BH-Ansatz.pdf  used on input line 1110.
 (pdftex.def)             Requested size: 347.41008pt x 156.1671pt.
-<figures/BH-layersearch-2.pdf, id=828, 578.16pt x 433.62pt>
+<figures/BH-layersearch-2.pdf, id=991, 578.16pt x 433.62pt>
 File: figures/BH-layersearch-2.pdf Graphic file (type pdf)
 <use figures/BH-layersearch-2.pdf>
-Package pdftex.def Info: figures/BH-layersearch-2.pdf  used on input line 971.
+Package pdftex.def Info: figures/BH-layersearch-2.pdf  used on input line 1121.
+
 (pdftex.def)             Requested size: 347.41008pt x 260.55775pt.
- [26 <./figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf> <./figures/dia
+ [29 <./figures/real_fock_matrix_M=4_cutoff=4_t=-0_5_U=-0_5.pdf> <./figures/dia
 gonalized_solutions_M=4_cutoff=4.pdf
 
 pdfTeX warning: pdflatex (file ./figures/diagonalized_solutions_M=4_cutoff=4.pd
 f): PDF inclusion: multiple pdfs with page group included in a single page
 > <./figures/BH-Ansatz.pdf>]
-<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=899, 578.16pt x
- 433.62pt>
+<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=1062, 578.16pt 
+x 433.62pt>
 File: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf Graphic file (
 type pdf)
 <use figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf>
 Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50
-.pdf  used on input line 979.
+.pdf  used on input line 1129.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
-<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=900, 578.16
-pt x 433.62pt>
+<figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id=1063, 578.1
+6pt x 433.62pt>
 File: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf Graphic fi
 le (type pdf)
 <use figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf>
 Package pdftex.def Info: figures/BH-stoch-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-
-5000.pdf  used on input line 979.
+5000.pdf  used on input line 1129.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
-<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=901
-, 578.16pt x 433.62pt>
+<figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf, id=106
+4, 578.16pt x 433.62pt>
 File: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf Gr
 aphic file (type pdf)
 <use figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf>
 Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_00
-1-shots=5-50.pdf  used on input line 981.
+1-shots=5-50.pdf  used on input line 1131.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
 <figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf, id
-=902, 578.16pt x 433.62pt>
+=1065, 578.16pt x 433.62pt>
 File: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pd
 f Graphic file (type pdf)
 <use figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_001-shots=100-5000.pdf
 >
 Package pdftex.def Info: figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5-lr=0_00
-1-shots=100-5000.pdf  used on input line 981.
+1-shots=100-5000.pdf  used on input line 1131.
 (pdftex.def)             Requested size: 263.188pt x 197.39003pt.
 
-Overfull \hbox (24.00003pt too wide) in paragraph at lines 978--984
+Overfull \hbox (24.00003pt too wide) in paragraph at lines 1128--1134
  [][] 
  []
 
-[27 <./figures/BH-layersearch-2.pdf>] (./thesis.bbl [28 <./figures/BH-stoch-L=6
+[30 <./figures/BH-layersearch-2.pdf>] (./thesis.bbl [31 <./figures/BH-stoch-L=6
 -t=-0_5-U=-0_5-lr=0_001-shots=5-50.pdf> <./figures/BH-stoch-L=6-t=-0_5-U=-0_5-l
 r=0_001-shots=100-5000.pdf
 
@@ -1416,34 +1458,34 @@ d in a single page
 pdfTeX warning: pdflatex (file ./figures/BH-doublystoch-bs=12-L=6-t=-0_5-U=-0_5
 -lr=0_001-shots=100-5000.pdf): PDF inclusion: multiple pdfs with page group inc
 luded in a single page
->] [29] [30] [31]) [32] [33] [34]
-Overfull \hbox (4.01723pt too wide) in paragraph at lines 1185--1185
+>] [32] [33] [34]) [35] [36] [37] [38]
+Overfull \hbox (4.01723pt too wide) in paragraph at lines 1337--1337
 []\T1/cmr/bx/n/14.4 Hermitian Op-er-a-tors, Uni-tary Op-er-a-tors, Spec-tral th
 e-o-rem, Hadamard-
  []
 
-[35] [36] [37] [38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1312.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1312.
+[39] [40] [41]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1465.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1465.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1312.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1312.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1465.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1465.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 668FE6281474A56DFBA786F1252C5962;1764.
+(rerunfilecheck)             Checksum: 37F3E4DFC05AB59081FA5120BC62D345;1903.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27548 strings out of 480608
- 554231 string characters out of 5903630
- 963808 words of memory out of 5000000
- 42590 multiletter control sequences out of 15000+600000
+ 27628 strings out of 480608
+ 556235 string characters out of 5903630
+ 964785 words of memory out of 5000000
+ 42642 multiletter control sequences out of 15000+600000
  552910 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,16n,91p,1170b,590s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,16n,91p,1170b,572s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
@@ -1474,10 +1516,10 @@ ts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts
 ype1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
 e1/public/cm-super/sfti1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
 /public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (38 pages, 2375314 bytes).
+Output written on thesis.pdf (41 pages, 2493094 bytes).
 PDF statistics:
- 1367 PDF objects out of 1440 (max. 8388607)
- 842 compressed objects within 9 object streams
- 193 named destinations out of 1000 (max. 500000)
- 446 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1539 PDF objects out of 1728 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 487 words of extra memory for PDF output out of 10000 (max. 10000000)
 

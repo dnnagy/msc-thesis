@@ -1,25 +1,27 @@
 \select@language {english} \hypertarget {toc}{}
 \select@language {english} \contentsline {section}{\numberline {1}Introduction}{9}{section.1}%
 \select@language {english} \contentsline {section}{\numberline {2}Quantum Computing with continuous variables}{9}{section.2}%
-\select@language {english} \contentsline {section}{\numberline {3}Machine learning}{11}{section.3}%
-\select@language {english} \contentsline {subsection}{\numberline {3.1}Supervised Classification and Regression}{12}{subsection.3.1}%
-\select@language {english} \contentsline {subsubsection}{\numberline {3.1.1}Classification}{12}{subsubsection.3.1.1}%
-\select@language {english} \contentsline {subsubsection}{\numberline {3.1.2}Regression}{13}{subsubsection.3.1.2}%
-\select@language {english} \contentsline {subsection}{\numberline {3.2}Deep Neural Networks and backpropagation}{14}{subsection.3.2}%
-\select@language {english} \contentsline {section}{\numberline {4}Quantum Machine Learning}{17}{section.4}%
-\select@language {english} \contentsline {subsection}{\numberline {4.1}Variational Quantum Eigensolver}{18}{subsection.4.1}%
-\select@language {english} \contentsline {subsection}{\numberline {4.2}Quantum Neural Networks}{18}{subsection.4.2}%
-\select@language {english} \contentsline {subsection}{\numberline {4.3}Calculating the gradients of the parameters}{19}{subsection.4.3}%
-\select@language {english} \contentsline {section}{\numberline {5}Results}{19}{section.5}%
-\select@language {english} \contentsline {subsection}{\numberline {5.1}Classification}{19}{subsection.5.1}%
-\select@language {english} \contentsline {subsection}{\numberline {5.2}Regression}{22}{subsection.5.2}%
-\select@language {english} \contentsline {subsection}{\numberline {5.3}CV-VQE for the Bose-Hubbard model}{24}{subsection.5.3}%
-\select@language {english} \contentsline {subsubsection}{\numberline {5.3.1}Solving the model by exact diagonalization}{25}{subsubsection.5.3.1}%
-\select@language {english} \contentsline {subsubsection}{\numberline {5.3.2}Variational solutions}{26}{subsubsection.5.3.2}%
-\select@language {english} \contentsline {section}{\numberline {6}Conclusion and future work}{28}{section.6}%
-\select@language {english} \contentsline {section}{\numberline {A}Coherent states}{32}{appendix.A}%
-\select@language {english} \contentsline {section}{\numberline {B}Mathematical preliminaries}{33}{appendix.B}%
-\select@language {english} \contentsline {subsection}{\numberline {B.1}Hilbert spaces}{33}{subsection.B.1}%
-\select@language {english} \contentsline {subsection}{\numberline {B.2}Linear operators on Hilbert spaces}{35}{subsection.B.2}%
-\select@language {english} \contentsline {subsection}{\numberline {B.3}Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma}{35}{subsection.B.3}%
-\select@language {english} \contentsline {subsection}{\numberline {B.4}Pure and mixed quantum states}{37}{subsection.B.4}%
+\select@language {english} \contentsline {subsection}{\numberline {2.1}Phase-space description}{11}{subsection.2.1}%
+\select@language {english} \contentsline {subsection}{\numberline {2.2}CV quantum gates}{13}{subsection.2.2}%
+\select@language {english} \contentsline {section}{\numberline {3}Machine learning}{14}{section.3}%
+\select@language {english} \contentsline {subsection}{\numberline {3.1}Supervised Classification and Regression}{14}{subsection.3.1}%
+\select@language {english} \contentsline {subsubsection}{\numberline {3.1.1}Classification}{15}{subsubsection.3.1.1}%
+\select@language {english} \contentsline {subsubsection}{\numberline {3.1.2}Regression}{15}{subsubsection.3.1.2}%
+\select@language {english} \contentsline {subsection}{\numberline {3.2}Deep Neural Networks and backpropagation}{16}{subsection.3.2}%
+\select@language {english} \contentsline {section}{\numberline {4}Quantum Machine Learning}{20}{section.4}%
+\select@language {english} \contentsline {subsection}{\numberline {4.1}Variational Quantum Eigensolver}{20}{subsection.4.1}%
+\select@language {english} \contentsline {subsection}{\numberline {4.2}Quantum Neural Networks}{21}{subsection.4.2}%
+\select@language {english} \contentsline {subsection}{\numberline {4.3}Calculating the gradients of the parameters}{21}{subsection.4.3}%
+\select@language {english} \contentsline {section}{\numberline {5}Results}{22}{section.5}%
+\select@language {english} \contentsline {subsection}{\numberline {5.1}Classification}{22}{subsection.5.1}%
+\select@language {english} \contentsline {subsection}{\numberline {5.2}Regression}{25}{subsection.5.2}%
+\select@language {english} \contentsline {subsection}{\numberline {5.3}CV-VQE for the Bose-Hubbard model}{27}{subsection.5.3}%
+\select@language {english} \contentsline {subsubsection}{\numberline {5.3.1}Solving the model by exact diagonalization}{28}{subsubsection.5.3.1}%
+\select@language {english} \contentsline {subsubsection}{\numberline {5.3.2}Variational solutions}{29}{subsubsection.5.3.2}%
+\select@language {english} \contentsline {section}{\numberline {6}Conclusion and future work}{31}{section.6}%
+\select@language {english} \contentsline {section}{\numberline {A}Coherent states}{36}{appendix.A}%
+\select@language {english} \contentsline {section}{\numberline {B}Mathematical preliminaries}{37}{appendix.B}%
+\select@language {english} \contentsline {subsection}{\numberline {B.1}Hilbert spaces}{37}{subsection.B.1}%
+\select@language {english} \contentsline {subsection}{\numberline {B.2}Linear operators on Hilbert spaces}{38}{subsection.B.2}%
+\select@language {english} \contentsline {subsection}{\numberline {B.3}Hermitian Operators, Unitary Operators, Spectral theorem, Hadamard-lemma}{39}{subsection.B.3}%
+\select@language {english} \contentsline {subsection}{\numberline {B.4}Pure and mixed quantum states}{41}{subsection.B.4}%

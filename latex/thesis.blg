@@ -3,51 +3,54 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: unsrtnat.bst
 Database file #1: references.bib
+Warning--entry type for "StrawberryFieldsDocumentation" isn't style-file defined
+--line 404 of file references.bib
 Warning--entry type for "wikipedianeuron" isn't style-file defined
---line 393 of file references.bib
+--line 450 of file references.bib
 Warning--empty year in wikipedianeuron
 Warning--empty year in Shor1994
 Warning--empty year in Shor1994
+Warning--empty year in StrawberryFieldsDocumentation
 Warning--empty booktitle in Transformer
-You've used 35 entries,
+You've used 41 entries,
             2481 wiz_defined-function locations,
-            851 strings with 15371 characters,
-and the built_in function-call counts, 18451 in all, are:
-= -- 1257
-> -- 1698
-< -- 15
-+ -- 605
-- -- 534
-* -- 1892
-:= -- 3284
-add.period$ -- 161
-call.type$ -- 35
-change.case$ -- 69
-chr.to.int$ -- 34
-cite$ -- 40
-duplicate$ -- 685
-empty$ -- 1258
-format.name$ -- 582
-if$ -- 3651
+            899 strings with 17073 characters,
+and the built_in function-call counts, 21161 in all, are:
+= -- 1444
+> -- 1929
+< -- 16
++ -- 689
+- -- 606
+* -- 2169
+:= -- 3753
+add.period$ -- 185
+call.type$ -- 41
+change.case$ -- 80
+chr.to.int$ -- 40
+cite$ -- 48
+duplicate$ -- 795
+empty$ -- 1459
+format.name$ -- 659
+if$ -- 4193
 int.to.chr$ -- 2
-int.to.str$ -- 36
-missing$ -- 34
-newline$ -- 236
-num.names$ -- 102
-pop$ -- 233
+int.to.str$ -- 42
+missing$ -- 39
+newline$ -- 272
+num.names$ -- 117
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 41
 quote$ -- 0
-skip$ -- 350
+skip$ -- 410
 stack$ -- 0
-substring$ -- 585
-swap$ -- 116
-text.length$ -- 5
+substring$ -- 656
+swap$ -- 134
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 245
-warning$ -- 4
-while$ -- 104
+type$ -- 287
+warning$ -- 5
+while$ -- 118
 width$ -- 0
-write$ -- 563
-(There were 5 warnings)
+write$ -- 651
+(There were 7 warnings)
